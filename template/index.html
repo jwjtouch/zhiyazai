@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>首页</title>
+    <link rel="stylesheet" href="../public/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/static/common.css">
+    <link rel="stylesheet" href="../public/static/login.css">
+    <style>
+        body{padding-bottom:70px;}
+        .white{color:#ffffff !important;}
+        .active{background-color:#0482BA;}
+        [class *= col-]{
+            background-color: #eee;
+
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <h1>1、强调</h1>
+    <p>我是普通文本，我的样子长成这样我是普通文本，我的样子长成这样我是普通文本，</p>
+    <p class="lead">我是特意要突出的文本，我的样子成这样。我是特意要突出的文本，我的样子长成这样。</p>
+    <hr>
+    <h1>2、强调相关的类</h1>
+    <div class="text-muted">.text-muted 效果</div>
+    <div class="text-primary">.text-primary效果</div>
+    <div class="text-success">.text-success效果</div>
+    <div class="text-info">.text-info效果</div>
+    <div class="text-warning">.text-warning效果</div>
+    <div class="text-danger">.text-danger效果</div>
+    <hr>
+    <h1>3、文本对齐风格</h1>
+    <p class="text-left">我居左</p>
+    <p class="text-center">我居中</p>
+    <p class="text-right">我居右</p>
+    <p class="text-justify">There is clearly a need for CSS to be taken seriously by graphic artists. The Zen Garden
+        aims to excite, inspire, and encourage participation. To begin, view some of the existing designs in the list.
+        Clicking on any one will load the style sheet into this very page. The code remains the same, the only thing that
+        has changed is the external .css file. </p>
+    <hr>
+    <h1>4、普通列表</h1>
+    <ul>
+        <li>列表项目</li>
+        <li>列表项目</li>
+        <li>列表项目</li>
+        <li>列表项目</li>
+        <li>列表项目</li>
+    </ul>
+    <hr>
+    <h1>5、有序列表</h1>
+    <ol>
+        <li>项目列表一</li>
+        <li>项目列表二</li>
+        <li>项目列表三</li>
+    </ol>
+    <hr>
+    <h1>6、有序列表嵌套</h1>
+    <ol>
+        <li>有序列表</li>
+        <li>
+            有序列表
+            <ol>
+                <li>有序列表(2)</li>
+                <li>有序列表(2)</li>
+            </ol>
+        </li>
+        <li>有序列表</li>
+    </ol>
+    <hr>
+    <h1>7、“.list-unstyled”无序列表去点</h1>
+    <ul>
+        <li>
+            项目列表
+            <ul>
+                <li>带有项目符号</li>
+                <li>带有项目符号</li>
+            </ul>
+        </li>
+        <li>
+            项目列表
+            <ul class="list-unstyled">
+                <li>不带项目符号</li>
+                <li>不带项目符号</li>
+            </ul>
+        </li>
+        <li>项目列表</li>
+    </ul>
+    <h1>8、“.list-unstyled”有序列表去序号</h1>
+    <ol>
+        <li>
+            项目列表
+            <ol>
+                <li>带有项目编号</li>
+                <li>带有项目编号</li>
+            </ol>
+        </li>
+        <li>
+            项目列表
+            <ol class="list-unstyled">
+                <li>不带项目编号</li>
+                <li>不带项目编号</li>
+            </ol>
+        </li>
+        <li>项目列表</li>
+    </ol>
+    <hr>
+    <h1>9、“.list-inline”来实现内联列表（把垂直列表换成水平列表，而且去掉项目符号（编号），保持水平显示）</h1>
+    <ul class="list-inline">
+        <li>W3cplus</li>
+        <li>Blog</li>
+        <li>CSS3</li>
+        <li>jQuery</li>
+        <li>PHP</li>
+    </ul>
+    <hr>
+    <h1>10、自定义列表</h1>
+    <dl>
+        <dt>W3cplus</dt>
+        <dd>一个致力于推广国内前端行业的技术博客</dd>
+        <dt>慕课网</dt>
+        <dd>一个真心在做教育的网站</dd>
+    </dl>
+    <h1>11、“.dl-horizontal”自定义水平列表</h1>
+    <p>其实现主要方式：<br/>
+        1、将dt设置了一个左浮动，并且设置了一个宽度为160px<br/>
+        2、将dd设置一个margin-left的值为180px，达到水平的效果<br/>
+        3、当标题宽度超过160px时，将会显示三个省略号</p>
+    <dl class="dl-horizontal">
+        <dt>W3cplus</dt>
+        <dd>一个致力于推广国内前端行业的技术博客。它以探索为己任，不断活跃在行业技术最前沿，努力提供高质量前端技术博文</dd>
+        <dt>慕课网</dt>
+        <dd>一个专业的，真心实意在做培训的网站</dd>
+        <dt>我来测试一个标题，我来测试一个标题</dt>
+        <dd>我在写一个水平定义列表的效果，我在写一个水平定义列表的效果</dd>
+    </dl>
+    <h1>12、代码</h1>
+    code风格：显示单行内联代码
+    <div>Bootstrap的代码风格有三种：<code>&lt;code&gt;</code>、<code>&lt;pre&gt;</code>和<code>&lt;kbd&gt;</code></div>
+    pre风格：显示多行块代码
+    <div>
+    <pre>
+    &lt;ul&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;li&gt;...&lt;/li&gt;
+    &lt;/ul&gt;
+    </pre>
+    </div>
+    kbd风格：显示用户输入代码
+    <div>请输入<kbd>ctrl+c</kbd>来复制代码，然后使用<kbd>ctrl+v</kbd>来粘贴代码</div>
+    <hr>
+    <h1>13、基础表格</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>表格标题</th>
+            <th>表格标题</th>
+            <th>表格标题</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>表格单元格</td>
+            <td>表格单元格</td>
+            <td>表格单元格</td>
+        </tr>
+        <tr>
+            <td>表格单元格</td>
+            <td>表格单元格</td>
+            <td>表格单元格</td>
+        </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h1>14、斑马线表格</h1>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>表格标题</th>
+            <th>表格标题</th>
+            <th>表格标题</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>表格单元格</td>
+            <td>表格单元格</td>
+            <td>表格单元格</td>
+        </tr>
+        <tr>
+            <td>表格单元格</td>
+            <td>表格单元格</td>
+            <td>表格单元格</td>
+        </tr>
+        <tr>
+            <td>表格单元格</td>
+            <td>表格单元格</td>
+            <td>表格单元格</td>
+        </tr>
+        <tr>
+            <td>表格单元格</td>
+            <td>表格单元格</td>
+            <td>表格单元格</td>
+        </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h1>15、带边框的表格</h1>
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th>表格标题</th>
+            <th>表格标题</th>
+            <th>表格标题</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>表格单元格</td>
+            <td>表格单元格</td>
+            <td>表格单元格</td>
+        </tr>
+        <tr>
+            <td>表格单元格</td>
+            <td>表格单元格</td>
+            <td>表格单元格</td>
+        </tr>
+        <tr>
+            <td>表格单元格</td>
+            <td>表格单元格</td>
+            <td>表格单元格</td>
+        </tr>
+        <tr>
+            <td>表格单元格</td>
+            <td>表格单元格</td>
+            <td>表格单元格</td>
+        </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h1>16、鼠标悬浮高亮的表格</h1>
+    <table class="table table-striped table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>表格标题</th>
+            <th>表格标题</th>
+            <th>表格标题</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>表格单元格</td>
+            <td>表格单元格</td>
+            <td>表格单元格</td>
+        </tr>
+        <tr>
+            <td>表格单元格</td>
+            <td>表格单元格</td>
+            <td>表格单元格</td>
+        </tr>
+        <tr>
+            <td>表格单元格</td>
+            <td>表格单元格</td>
+            <td>表格单元格</td>
+        </tr>
+        <tr>
+            <td>表格单元格</td>
+            <td>表格单元格</td>
+            <td>表格单元格</td>
+        </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h1>17、紧凑型表格</h1>
+    <table class="table table-condensed">
+        <thead>
+        <tr>
+            <th>表格标题</th>
+            <th>表格标题</th>
+            <th>表格标题</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>表格单元格</td>
+            <td>表格单元格</td>
+            <td>表格单元格</td>
+        </tr>
+        <tr>
+            <td>表格单元格</td>
+            <td>表格单元格</td>
+            <td>表格单元格</td>
+        </tr>
+        <tr>
+            <td>表格单元格</td>
+            <td>表格单元格</td>
+            <td>表格单元格</td>
+        </tr>
+        <tr>
+            <td>表格单元格</td>
+            <td>表格单元格</td>
+            <td>表格单元格</td>
+        </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h1>18、响应式表格</h1>
+    <p>Bootstrap提供了一个容器，并且此容器设置类名“.table-responsive”,此容器就具有响应式效果，然后将table置于这个容器当中，这样表格也就具有响应式效果</p>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>表格标题</th>
+                <th>表格标题</th>
+                <th>表格标题</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+            </tr>
+            <tr>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+            </tr>
+            <tr>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+            </tr>
+            <tr>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+                <td>表格单元格</td>
+            </tr>
+            </tbody>
+        </table>
+        <hr>
+        <h1>19、表格行的类(注意要实现悬浮状态，需要在<kbd>table</kbd>标签上加入".table-hover"类。)</h1>
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                <th>类名</th>
+                <th>描述</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="active">
+                <td>.active</td>
+                <td>表示当前活动的信息</td>
+            </tr>
+            <tr class="success">
+                <td>.success</td>
+                <td>表示成功或者正确的行为</td>
+            </tr>
+            <tr class="info">
+                <td>.info</td>
+                <td>表示中立的信息或行为</td>
+            </tr>
+            <tr class="warning">
+                <td>.warning</td>
+                <td>表示警告，需要特别注意</td>
+            </tr>
+            <tr class="danger">
+                <td>.danger</td>
+                <td>表示危险或者可能是错误的行为</td>
+            </tr>
+        </table>
+        <hr>
+        <h1>20、水平表单</h1>
+        <p>在Bootstrap框架中要实现水平表单效果，必须满足以下两个条件：<br/>
+            1、在<form>元素是使用类名“form-horizontal”。<br/>
+        2、配合Bootstrap框架的网格系统。</p>
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">邮箱</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="请输入您的邮箱地址">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">密码</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="inputPassword3" placeholder="请输入您的邮箱密码">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> 记住密码
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">进入邮箱</button>
+                </div>
+            </div>
+        </form>
+        <h1>21、内联表单</h1>
+        <p>在 form 元素中添加类名“form-inline”即可</p>
+        <form class="form-inline" role="form">
+            <div class="form-group">
+                <label class="sr-only" for="exampleInputEmail2">邮箱</label>
+                <input type="email" class="form-control" id="exampleInputEmail2" placeholder="请输入你的邮箱地址">
+            </div>
+            <div class="form-group">
+                <label class="sr-only" for="exampleInputPassword2">密码</label>
+                <input type="password" class="form-control" id="exampleInputPassword2" placeholder="请输入你的邮箱密码">
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> 记住密码
+                </label>
+            </div>
+            <button type="submit" class="btn btn-default">进入邮箱</button>
+        </form>
+        <hr>
+        <h1>22、下拉选择框(多行选择设置multiple属性的值为multiple)</h1>
+        <form role="form">
+            <div class="form-group">
+                <select class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select multiple class="form-control">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+
+        </form>
+        <hr>
+        <h1>23、表单控件——下拉选择框select元素</h1>
+        <p>设置rows可定义其高度，设置cols可以设置其宽度。但如果textarea元素中添加了类名“form-control”类名，则无需设置cols属性。因为
+            Bootstrap框架中的“form-control”样式的表单控件宽度为100%或auto</p>
+        <form role="form">
+            <div class="form-group">
+                <textarea class="form-control" rows="3"></textarea>
+            </div>
+        </form>
+        <hr>
+        <h1>24、表单控件——表单控件大</h1>
+        <p>1、不管是checkbox还是radio都使用label包起来了<br/>
+            2、checkbox连同label标签放置在一个名为“.checkbox”的容器内<br/>
+            3、radio连同label标签放置在一个名为“.radio”的容器内<br/>
+            在Bootstrap框架中，主要借助“.checkbox”和“.radio”样式，</p>
+        <form role="form">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="">
+                    记住密码
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="love" checked>
+                    喜欢
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="hate">
+                    不喜欢
+                </label>
+            </div>
+        </form>
+        <hr>
+        <h1>25、表单控件(复选框和单选按钮水平排列)</h1>
+        <p>1、如果checkbox需要水平排列，只需要在label标签上添加类名“checkbox-inline”<br/>
+            2、如果radio需要水平排列，只需要在label标签上添加类名“radio-inline”</p>
+        <form role="form">
+            <div class="form-group">
+                <label class="checkbox-inline">
+                    <input type="checkbox"  value="option1">游戏
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox"  value="option2">摄影
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox"  value="option3">旅游
+                </label>
+            </div>
+            <div class="form-group">
+                <label class="radio-inline">
+                    <input type="radio"  value="option1" name="sex">男性
+                </label>
+                <label class="radio-inline">
+                    <input type="radio"  value="option2" name="sex">女性
+                </label>
+                <label class="radio-inline">
+                    <input type="radio"  value="option3" name="sex">中性
+                </label>
+            </div>
+        </form>
+        <hr>
+        <h1>26、表单控件高度的控制（.input-lg与.input-sm）</h1>
+        <form role="form">
+            <div class="form-group">
+                <label class="control-label">控件变大</label>
+                <input class="form-control input-lg" type="text" placeholder="添加.input-lg，控件变大">
+            </div>
+            <div class="form-group">
+                <label class="control-label">正常大小</label>
+                <input class="form-control" type="text" placeholder="正常大小">
+            </div>
+            <div class="form-group">
+                <label class="control-label">控件变小</label>
+                <input class="form-control input-sm" type="text" placeholder="添加.input-sm，控件变小">
+            </div>
+        </form>
+        <hr>
+        <h1>27、表单控件宽度的控制(借住Bootstrap框架的网格系统)</h1>
+        <form role="form" class="form-horizontal">
+            <div class="form-group">
+                <div class="col-xs-4">
+                    <input class="form-control input-lg" type="text" placeholder=".col-xs-4">
+                </div>
+                <div class="col-xs-4">
+                    <input class="form-control input-lg" type="text" placeholder=".col-xs-4">
+                </div>
+                <div class="col-xs-4">
+                    <input class="form-control input-lg" type="text" placeholder=".col-xs-4">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-6"><input class="form-control" type="text" placeholder=".col-xs-6"></div>
+                <div class="col-xs-6"><input class="form-control" type="text" placeholder=".col-xs-6"></div>
+
+            </div>
+            <div class="form-group">
+                <div class="col-xs-5">
+                    <input class="form-control input-sm" type="text" placeholder=".col-xs-5">
+                </div>
+                <div class="col-xs-7">
+                    <input class="form-control input-sm" type="text" placeholder=".col-xs-7">
+                </div>
+            </div>
+        </form>
+        <hr>
+        <h1>28、表单控件状态—验证状态</h1>
+        <p>1、.has-warning:警告状态（黄色）<br/>
+            2、.has-error：错误状态（红色）<br/>
+            3、.has-success：成功状态（绿色）<br/>
+            使用的时候只需要在form-group容器上对应添加状态类名
+        </p>
+        <form role="form">
+            <div class="form-group has-success">
+                <label class="control-label" for="inputSuccess1">成功状态</label>
+                <input type="text" class="form-control" id="inputSuccess1" placeholder="成功状态" >
+            </div>
+            <div class="form-group has-warning">
+                <label class="control-label" for="inputWarning1">警告状态</label>
+                <input type="text" class="form-control" id="inputWarning1" placeholder="警告状态">
+            </div>
+            <div class="form-group has-error">
+                <label class="control-label" for="inputError1">错误状态</label>
+                <input type="text" class="form-control" id="inputError1" placeholder="错误状态">
+            </div>
+        </form>
+        <hr>
+        <h1>29、表单控件状态-验证状态,带有图标</h1>
+        <p>只需要在对应的状态下添加类名“has-feedback”。请注意，此类名要与“has-error”、“has-warning”和“has-success”在一起</p>
+        <form role="form">
+            <div class="form-group has-success has-feedback">
+                <label class="control-label" for="inputSuccess1">成功状态</label>
+                <input type="text" class="form-control" id="inputSuccess1" placeholder="成功状态" >
+                <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+            </div>
+            <div class="form-group has-warning has-feedback">
+                <label class="control-label" for="inputWarning1">警告状态</label>
+                <input type="text" class="form-control" id="inputWarning1" placeholder="警告状态">
+                <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+            </div>
+            <div class="form-group has-error has-feedback">
+                <label class="control-label" for="inputError1">错误状态</label>
+                <input type="text" class="form-control" id="inputError1" placeholder="错误状态">
+                <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+            </div>
+
+        </form>
+        <hr>
+        <h1>30、表单提示信息-在控件的下面</h1>
+        <p>使用了一个"help-block"样式，将提示信息以块状显示，并且显示在控件底部</p>
+        <form role="form">
+            <div class="form-group has-success has-feedback">
+                <label class="control-label" for="inputSuccess1">成功状态</label>
+                <input type="text" class="form-control" id="inputSuccess1" placeholder="成功状态" >
+                <span class="help-block">你输入的信息是正确的</span>
+                <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+            </div>
+            <div class="form-group has-warning has-feedback">
+                <label class="control-label" for="inputWarning1">警告状态</label>
+                <input type="text" class="form-control" id="inputWarning1" placeholder="警告状态">
+                <span class="help-block">请输入正确信息</span>
+                <span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+            </div>
+            <div class="form-group has-error has-feedback">
+                <label class="control-label" for="inputError1">错误状态</label>
+                <input type="text" class="form-control" id="inputError1" placeholder="错误状态">
+
+                <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+            </div>
+        </form>
+        <hr>
+        <h1>31、表单提示信息-在控件的后面</h1>
+        <p>借助于Bootstrap的网格系统</p>
+        <form role="form">
+            <div class="form-group">
+                <label class="control-label" for="inputSuccess1">成功状态</label>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <input type="text" class="form-control" id="inputSuccess1" placeholder="成功状态" >
+                    </div>
+                    <span class="col-xs-6 help-block">你输入的信息是正确的</span>
+                </div>
+            </div>
+        </form>
+        <hr>
+        <h1>32、按钮</h1>
+        <p>通过类名“btn”来实现</p>
+        <button class="btn" type="button">我是一个基本按钮</button>
+        <p>使用默认按钮风格也非常的简单，只需要在基础按钮“btn”的基础上增加类名“btn-default”即可</p>
+        <button class="btn btn-default" type="button">默认按钮</button>
+        <hr>
+        <h1>33、按钮-多标签支持</h1>
+        <p>注意：虽然在Bootstrap框架中使用任何标签元素都可以实现按钮风格，但个人并不建议这样使用，为了避免浏览器兼容性问题，个人强烈建议使用
+            button或a标签来制作按钮。</p>
+        <button class="btn btn-default" type="button">button标签按钮</button>
+        <input type="submit" class="btn btn-default" value="input标签按钮"/>
+        <span class="btn btn-default">span标签按钮</span>
+        <div class="btn btn-default">div标签按钮</div>
+        <hr>
+        <h1>34、按钮-定制风格</h1>
+        <p>只需要在基础按钮“.btn”基础上追加对应的类名</p>
+        <button class="btn" type="button">基础按钮.btn</button>
+        <button class="btn btn-default" type="button">默认按钮.btn-default</button>
+        <button class="btn btn-primary" type="button">主要按钮.btn-primary</button>
+        <button class="btn btn-success" type="button">成功按钮.btn-success</button>
+
+        <button class="btn btn-warning" type="button">警告按钮.btn-warning</button>
+        <button class="btn btn-danger" type="button">危险按钮.btn-danger</button>
+        <button class="btn btn-link" type="button">链接按钮.btn-link</button>
+        <h1>35、按钮-按钮大小</h1>
+        <button class="btn btn-primary btn-lg" type="button">大型按钮.btn-lg</button>
+        <button class="btn btn-primary" type="button">正常按钮</button>
+        <button class="btn btn-primary btn-sm" type="button">小型按钮.btn-sm</button>
+        <button class="btn btn-primary btn-xs" type="button">超小型按钮.btn-xs</button>
+        <hr>
+        <h1>36、按钮-块状按钮</h1>
+        <p>让按钮的宽度充满整个容器,只需要在原按钮类名上添加“.btn-block”类名，当然“.btn”类名是不可或缺的</p>
+        <button class="btnbtn-primary btn-lg btn-block" type="button">大型按钮.btn-lg</button>
+        <button class="btnbtn-primary btn-block" type="button">正常按钮</button>
+        <button class="btnbtn-primary btn-sm btn-block" type="button">小型按钮.btn-sm</button>
+        <button class="btnbtn-primary btn-xs btn-block" type="button">超小型按钮.btn-xs</button>
+        <hr>
+        <h1>37、按钮状态-禁用状态</h1>
+        <p>在Bootstrap框架中，要禁用按钮有两种实现方式：<br/>
+            方法1：在标签中添加disabled属性<br/>
+            方法2：在元素标签中添加类名“disabled”<br/>
+            “.disabled”样式不会禁止按钮的默认行为，比如说提交和重置行为等。如果想要让这样的禁用按钮也能禁止按钮的默认行为，则需要通过
+            JavaScript这样的语言来处理。对于a标签也存在类似问题，如果通过类名“.disable”来禁用按钮，其链接行为是无法禁止。而在元素标签中
+                添加“disabled”属性的方法是可以禁止元素的默认行为的
+        </p>
+        <button class="btn btn-primary btn-lg btn-block" type="button" disabled="disabled">通过disabled属性禁用按钮</button>
+        <button class="btn btn-primary btn-block disabled" type="button">通过添加类名disabled禁用按钮</button>
+        <button class="btn btn-primary btn-sm btn-block" type="button">未禁用的按钮</button>
+        <hr>
+        <h1>38、图像</h1>
+        <p>
+            1、img-responsive：响应式图片，主要针对于响应式设计<br/>
+            2、img-rounded：圆角图片<br/>
+            3、img-circle：圆形图片<br/>
+            4、img-thumbnail：缩略图片
+        </p>
+        <p>注：由于样式没有对图片做大小上的样式限制，所以在实际使用的时候，需要通过其他的方式来处理图片大小。比如说控制图片容器大小。（注意不可以
+            通过css样式直接修改img图片的大小，这样操作就不响应了）</p>
+        <div class="row">
+            <div class="col-sm-4">
+                <img   alt="140x140" src="http://placehold.it/140x140">
+                <div>默认图片</div>
+            </div>
+            <div class="col-sm-4">
+                <img  class="img-rounded" alt="140x140" src="http://placehold.it/140x140">
+                <div>圆角图片</div>
+            </div>
+            <div class="col-sm-4">
+                <img  class="img-circle" alt="140x140" src="http://placehold.it/140x140">
+                <div>圆形图片</div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <img  class="img-thumbnail" alt="140x140" src="http://placehold.it/140x140">
+                    <div>缩略图</div>
+                </div>
+                <div class="col-sm-6">
+                    <img  class="img-responsive" alt="140x140" src="http://placehold.it/140x140" />
+                    <div>响应式图片</div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <h1>39、图标一</h1>
+        <p>自定义完字体之后，需要对icon设置一个默认样式，在Bootstrap框架中是通过给元素添加“glyphicon”类名来实现，
+            然后通过伪元素“:before”的“content”属性调取对应的icon编码<br/>
+            所有icon都是以”glyphicon-”前缀的类名开始，然后后缀表示图标的名称
+        </p>
+        <span class="glyphicon glyphicon-search"></span>
+        <span class="glyphicon glyphicon-asterisk"></span>
+        <span class="glyphicon glyphicon-plus"></span>
+        <span class="glyphicon glyphicon-cloud"></span>
+        <hr>
+        <h1>40、网格系统</h1>
+        <p>数据行(.row)必须包含在容器（.container）中，以便为其赋予合适的对齐方式和内距(padding)</p>
+        <div class="row">
+            <div class="col-md-4">.col-md-4</div>
+            <div class="col-md-8">.col-md-8</div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">.col-md-4</div>
+            <div class="col-md-4">.col-md-4</div>
+            <div class="col-md-4">.col-md-4</div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">.col-md-3</div>
+            <div class="col-md-6">.col-md-6</div>
+            <div class="col-md-3">.col-md-3</div>
+        </div>
+        <hr>
+        <h1>41、网格系统-列偏移</h1>
+        <p>使用列偏移也非常简单，只需要在列元素上添加类名“col-md-offset-*”(其中星号代表要偏移的列组合数)，那么具有这个类名的列就会向右偏移</p>
+        <h4>列向右移动四列的间距</h4>
+        <div class="row">
+            <div class="col-md-4">.col-md-4</div>
+            <div class="col-md-2 col-md-offset-4">列向右移动四列的间距</div>
+            <div class="col-md-2">.col-md-3</div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">.col-md-4</div>
+            <div class="col-md-4 col-md-offset-4">列向右移动四列的间距</div>
+        </div>
+        <br />
+        <h4>发生行断裂</h4>
+        <div class="row">
+            <div class="col-md-4">.col-md-4</div>
+            <div class="col-md-2 col-md-offset-4">列向右移动四列的间距</div>
+            <div class="col-md-2">.col-md-3</div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">.col-md-4</div>
+            <div class="col-md-4 col-md-offset-4">列向右移动四列的间距</div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">.col-md-3</div>
+            <div class="col-md-3 col-md-offset-3">col-md-offset-3</div>
+            <div class="col-md-4">col-md-4</div>
+        </div>
+        <hr>
+        <h1>42、网格系统-列组合</h1>
+        <p>列排序其实就是改变列的方向，就是改变左右浮动，并且设置浮动的距离。在Bootstrap框架的网格系统中是通过添加类名“col-md-push-*”和
+            “col-md-pull-*” (其中星号代表移动的列组合数)</p>
+        <div class="row">
+            <div class="col-md-4 col-md-push-8">.col-md-4</div>
+            <div class="col-md-8 col-md-pull-4">.col-md-8</div>
+        </div>
+        <hr>
+        <h1>43、网格系统-列嵌套(看源码)</h1>
+        <div class="row">
+            <div class="col-md-8">
+                <!--我的里面嵌套了一个网格-->
+                <div class="row">
+                    <div class="col-md-6">col-md-6</div>
+                    <div class="col-md-6">col-md-6</div>
+                </div>
+            </div>
+            <div class="col-md-4">col-md-4</div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">.col-md-4</div>
+            <div class="col-md-8">
+                <!--我的里面嵌套了一个网格-->
+                <div class="row">
+                    <div class="col-md-4">col-md-4</div>
+                    <div class="col-md-4">col-md-4</div>
+                    <div class="col-md-4">col-md-4</div>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+    </div>
+
+</body>
+<script src="../public/static/jquery.min.js"></script>
+<script src="../public/static/bootstrap/js/bootstrap.min.js"></script>
+<script>
+
+</script>
+</html>
