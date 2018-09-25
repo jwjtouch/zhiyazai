@@ -802,16 +802,1230 @@
                 </div>
             </div>
         </div>
-        
+        <hr>
+        <h1>44、下拉菜单-基本用法</h1>
+        <p>使用方法：
 
+            在使用Bootstrap框架中的下拉菜单组件时，其结构运用的正确与否非常的重要，如果结构和类名未使用正确，直接影响组件是否能正常运用。
+            我们来简单的看看：<br/>
 
+            1、使用一个名为“dropdown”的容器包裹了整个下拉菜单元素<br/>
 
+        2、使用了一个button按钮做为父菜单，并且定义类名“dropdown-toggle”和自定义“data-toggle”属性，且值必须和最外容器类名一致，此示例为:
+
+        data-toggle="dropdown"<br/>
+
+        3、下拉菜单项使用一个ul列表，并且定义一个类名为“dropdown-menu”<br/>
+
+            </p>
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                下拉菜单
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+            </ul>
+        </div>
+        <hr>
+        <h1>45、下拉菜单-下拉分割线</h1>
+        <p>假设下拉菜单有两个组，那么组与组之间可以通过添加一个空的<li>，并且给这个<li>添加类名“divider”来实现添加下拉分隔线的功能</p>
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                下拉菜单
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+                <li role="presentation" class="divider"></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+            </ul>
+        </div>
+        <hr>
+        <h1>46、下拉菜单-菜单标题</h1>
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                下拉菜单
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation" class="dropdown-header">第一部分菜单头部</li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+                <li role="presentation" class="divider"></li>
+                <li role="presentation" class="dropdown-header">第二部分菜单头部</li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+            </ul>
+        </div>
+        <hr>
+        <h1>47、下拉菜单-对齐方式</h1>
+        <h4>使用pull-right类使下拉菜单与父容器右边对齐</h4>
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                下拉菜单
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+                <li role="presentation" class="divider"></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+            </ul>
+        </div>
+        <h4>使用dropdown-menu-right类使下拉菜单与父容器右边对齐</h4>
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                下拉菜单
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+                <li role="presentation" class="divider"></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+            </ul>
+        </div>
+        <h4>使用dropdown-menu-left类使下拉菜单与父容器左边对齐</h4>
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                下拉菜单
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-left" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+                <li role="presentation" class="divider"></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+            </ul>
+        </div>
+        <hr>
+        <h1>48、下拉菜单-菜单项状态</h1>
+        <p>当前状态（.active）和禁用状态（.disabled）</p>
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                下拉菜单
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation" class="active"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+                <li role="presentation" class="divider"></li>
+                <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#">下拉菜单项</a></li>
+            </ul>
+        </div>
+        <hr>
+        <h1>49、按钮组</h1>
+        <p>使用一个名为“btn-group”的容器，把多个按钮放到这个容器中</p>
+        <div class="btn-group">
+            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-step-backward"></span></button>
+            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-fast-backward"></span></button>
+            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-backward"></span></button>
+            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-play"></span></button>
+            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-pause"></span></button>
+            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-stop"></span></button>
+            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-forward "></span></button>
+            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-fast-forward"></span></button>
+            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-step-forward"></span></button>
+        </div>
+        <hr>
+        <h1>50、按钮工具栏</h1>
+        <p>只需要将按钮组“btn-group”按组放在一个大的容器“btn-toolbar”中</p>
+        <div class="btn-toolbar">
+            <div class="btn-group">
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-left"></span></button>
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-center"></span></button>
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-right"></span></button>
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-justify"></span></button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-indent-left"></span></button>
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-indent-right"></span></button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-font"></span></button>
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-bold"></span></button>
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-italic"></span></button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-text-height"></span></button>
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-text-width"></span></button>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="btn-toolbar">
+            <div class="btn-group btn-group-lg">
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-left"></span></button>
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-center"></span></button>
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-right"></span></button>
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-justify"></span></button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-indent-left"></span></button>
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-indent-right"></span></button>
+            </div>
+            <div class="btn-group btn-group-sm">
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-font"></span></button>
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-bold"></span></button>
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-italic"></span></button>
+            </div>
+            <div class="btn-group btn-group-xs">
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-text-height"></span></button>
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-text-width"></span></button>
+            </div>
+        </div>
+        <hr>
+        <h1>51、按钮-嵌套分组</h1>
+        <p>我们常把下拉菜单和普通的按钮组排列在一起，实现类似于导航菜单的效果.<br/>
+            只需要把当初制作下拉菜单的“dropdown”的容器换成“btn-group”，并且和普通的按钮放在同一级</p>
+        <div class="btn-group">
+            <button class="btn btn-default" type="button">首页</button>
+            <button class="btn btn-default" type="button">产品展示</button>
+            <button class="btn btn-default" type="button">案例分析</button>
+            <button class="btn btn-default" type="button">联系我们</button>
+            <div class="btn-group">
+                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">关于我们<span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="##">公司简介</a></li>
+                    <li><a href="##">企业文化</a></li>
+                    <li><a href="##">组织结构</a></li>
+                    <li><a href="##">客服服务</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <h1>52、按钮-垂直分组</h1>
+        <p>只需要把水平分组的“btn-group”类名换成“btn-group-vertical”即可</p>
+        <div class="btn-group-vertical">
+            <button class="btn btn-default" type="button">首页</button>
+            <button class="btn btn-default" type="button">产品展示</button>
+            <button class="btn btn-default" type="button">案例分析</button>
+            <button class="btn btn-default" type="button">联系我们</button>
+            <div class="btn-group">
+                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">关于我们<span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="##">公司简介</a></li>
+                    <li><a href="##">企业文化</a></li>
+                    <li><a href="##">组织结构</a></li>
+                    <li><a href="##">客服服务</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <h1>53、按钮-等分按钮</h1>
+        <p>等分按钮也常被称为是自适应分组按钮，其实现方法也非常的简单，只需要在按钮组“btn-group”上追加一个“btn-group-justified”类名</p>
+        <div class="btn-wrap">
+            <div class="btn-group btn-group-justified">
+                <a class="btn btn-default" href="#">首页</a>
+                <a class="btn btn-default" href="#">产品展示</a>
+                <a class="btn btn-default" href="#">案例分析</a>
+                <a class="btn btn-default" href="#">联系我们</a>
+            </div>
+        </div>
+        <hr>
+        <h1>54、按钮-按钮下拉菜单</h1>
+        <p>按钮下拉菜单仅从外观上看和上一节介绍的下拉菜单效果基本上是一样的。不同的是在普通的下拉菜单的基础上封装了按钮（.btn）样式效果。简单点说就是点击一个按钮，会显示隐藏的下拉菜单</p>
+        <p>按钮下拉菜单其实就是普通的下拉菜单，只不过把“a”标签元素换成了“button”标签元素。唯一不同的是外部容器“div.dropdown”换成了“div.btn-group”</p>
+        <div class="btn-group">
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">按钮下拉菜单<span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li><a href="##">按钮下拉菜单项</a></li>
+                <li><a href="##">按钮下拉菜单项</a></li>
+                <li><a href="##">按钮下拉菜单项</a></li>
+                <li><a href="##">按钮下拉菜单项</a></li>
+            </ul>
+        </div>
+        <hr>
+        <h1>55、按钮的向下向上三角形</h1>
+        <p>按钮的向下三角形，我们是通过在button标签中添加一个“span”标签元素，并且命名为“caret”</p>
+        <p>有的时候我们的下拉菜单会向上弹起（接下来一个小节会介绍），这个时候我们的三角方向需要朝上显示，实现方法：需要在“.btn-group”类上
+            追加“dropup”类名（这也是做向上弹起下拉菜单要用的类名）</p>
+        <div class="btn-group dropup">
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button">按钮下拉菜单<span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li><a href="##">按钮下拉菜单项</a></li>
+                <li><a href="##">按钮下拉菜单项</a></li>
+                <li><a href="##">按钮下拉菜单项</a></li>
+                <li><a href="##">按钮下拉菜单项</a></li>
+            </ul>
+        </div>
+        <hr>
+        <h1>56、导航-基础样式</h1>
+        <p>制作导航条主要通过“.nav”样式。默认的“.nav”样式不提供默认的导航样式，必须附加另外一个样式才会有效，比如“nav-tabs”、“nav-pills”之类</p>
+        <ul class="nav nav-tabs">
+            <li><a href="##">Home</a></li>
+            <li><a href="##">CSS3</a></li>
+            <li><a href="##">Sass</a></li>
+            <li><a href="##">jQuery</a></li>
+            <li><a href="##">Responsive</a></li>
+        </ul>
+        <hr>
+        <h1>57、导航-标签形(tab)导航</h1>
+        <p>标签形导航，也称为选项卡导航</p>
+        <p>标签形导航是通过“nav-tabs”样式来实现。在制作标签形导航时需要在原导航“nav”上追加此类名</p>
+        <ul class="nav nav-tabs">
+            <li><a href="##">Home</a></li>
+            <li><a href="##">CSS3</a></li>
+            <li><a href="##">Sass</a></li>
+            <li><a href="##">jQuery</a></li>
+            <li><a href="##">Responsive</a></li>
+        </ul>
+        <br />
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="##">Home</a></li>
+            <li><a href="##">CSS3</a></li>
+            <li><a href="##">Sass</a></li>
+            <li><a href="##">jQuery</a></li>
+            <li><a href="##">Responsive</a></li>
+        </ul>
+        <br />
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="##">Home</a></li>
+            <li><a href="##">CSS3</a></li>
+            <li><a href="##">Sass</a></li>
+            <li><a href="##">jQuery</a></li>
+            <li class="disabled"><a href="##">Responsive</a></li>
+        </ul>
+        <hr>
+        <h1>58、导航-胶囊形(pills)导航</h1>
+        <p>其实现方法和“nav-tabs”类似，同样的结构，只需要把类名“nav-tabs”换成“nav-pills”即可</p>
+        <ul class="nav nav-pills">
+            <li class="active"><a href="##">Home</a></li>
+            <li><a href="##">CSS3</a></li>
+            <li><a href="##">Sass</a></li>
+            <li><a href="##">jQuery</a></li>
+            <li class="disabled"><a href="##">Responsive</a></li>
+        </ul>
+        <hr>
+        <h1>59、导航-垂直堆叠的导航</h1>
+        <p>制作垂直堆叠导航只需要在“nav-pills”的基础上添加一个“nav-stacked”类名即可</p>
+        <ul class="nav nav-pills nav-stacked">
+            <li class="active"><a href="##">Home</a></li>
+            <li><a href="##">CSS3</a></li>
+            <li><a href="##">Sass</a></li>
+            <li><a href="##">jQuery</a></li>
+            <li class="disabled"><a href="##">Responsive</a></li>
+        </ul>
+        <br />
+        <ul class="nav nav-pills nav-stacked">
+            <li class="active"><a href="##">Home</a></li>
+            <li><a href="##">CSS3</a></li>
+            <li><a href="##">Sass</a></li>
+            <li><a href="##">jQuery</a></li>
+            <li class="nav-divider"></li>
+            <li class="disabled"><a href="##">Responsive</a></li>
+        </ul>
+        <hr>
+        <h1>60、导航-自适应导航</h1>
+        <p>自适应导航和前面使用“btn-group-justified”制作的自适应按钮组是一样的。只不过在制作自适应导航时更换了另一个类名“nav-justified”。
+            当然他需要和“nav-tabs”或者“nav-pills”配合在一起使用。</p>
+        <ul class="nav nav-tabs nav-justified">
+            <li class="active"><a href="##">Home</a></li>
+            <li><a href="##">CSS3</a></li>
+            <li><a href="##">Sass</a></li>
+            <li><a href="##">jQuery</a></li>
+            <li><a href="##">Responsive</a></li>
+        </ul>
+        <hr>
+        <h1>61、导航-导航加下拉菜单（二级导航）</h1>
+        <p>只需要将li当作父容器，使用类名“dropdown”，同时在li中嵌套另一个列表ul</p>
+        <ul class="nav nav-pills">
+            <li class="active"><a href="##">首页</a></li>
+            <li class="dropdown">
+                <a href="##" class="dropdown-toggle" data-toggle="dropdown">教程<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="##">CSS3</a></li>
+                    <li><a href="##">Sass</a></li>
+                    <li><a href="##">jQuery</a></li>
+                    <li><a href="##">Responsive</a></li>
+                </ul>
+            </li>
+            <li><a href="##">关于我们</a></li>
+        </ul>
+        <hr>
+        <h1>62、导航-面包屑式导航</h1>
+        <p>面包屑(Breadcrumb)一般用于导航，主要是起的作用是告诉用户现在所处页面的位置（当前位置）</p>
+        <ol class="breadcrumb">
+            <li><a href="#">首页</a></li>
+            <li><a href="#">我的书</a></li>
+            <li>《图解CSS3》</li>
+        </ol>
+        <hr>
+        <h1>63、导航条</h1>
+        <p>导航条（navbar）和上一节介绍的导航（nav），就相差一个字，多了一个“条”字。其实在Bootstrap框架中他们还是明显的区别。
+            在导航条(navbar)中有一个背景色、而且导航条可以是纯链接（类似导航），也可以是表单，还有就是表单和导航一起结合等多种形式</p>
+        <hr>
+        <h1>64、导航条-基本导航条</h1>
+        <p>第一步：首先在制作导航的列表(.nav)基础上添加类名“navbar-nav”<br/>
+        第二步：在列表外部添加一个容器（div），并且使用类名“navbar”和“navbar-default”</p>
+        <div class="navbar navbar-default" role="navigation">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="##">网站首页</a></li>
+                <li><a href="##">系列教程</a></li>
+                <li><a href="##">名师介绍</a></li>
+                <li><a href="##">成功案例</a></li>
+                <li><a href="##">关于我们</a></li>
+            </ul>
+        </div>
+        <hr>
+        <h1>65、导航条-为导航条添加标题、二级菜单及状态</h1>
+        <p>通过“navbar-header”和“navbar-brand”来实现</p>
+        <p>在基础导航条中对菜单提供了当前状态，禁用状态，悬浮状态等效果，而且也可以带有二级菜单的导航条(看示例代码)</p>
+        <!--加入导航条标题-->
+        <div class="navbar navbar-default" role="navigation">
+            　<div class="navbar-header">
+            　    <a href="##" class="navbar-brand">慕课网</a>
+            　</div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="##">网站首页</a></li>
+                <li><a href="##">系列教程</a></li>
+                <li><a href="##">名师介绍</a></li>
+                <li><a href="##">成功案例</a></li>
+                <li><a href="##">关于我们</a></li>
+            </ul>
+        </div>
+        <!--导航条状态及二级菜单-->
+        <div class="navbar navbar-default" role="navigation">
+            　<div class="navbar-header">
+            　    <a href="##" class="navbar-brand">慕课网</a>
+            　</div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="##">网站首页</a></li>
+                <li class="dropdown">
+                    <a href="##" data-toggle="dropdown" class="dropdown-toggle">系列教程<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="##">CSS3</a></li>
+                        <li><a href="##">JavaScript</a></li>
+                        <li class="disabled"><a href="##">PHP</a></li>
+                    </ul>
+                </li>
+                <li><a href="##">名师介绍</a></li>
+                <li><a href="##">成功案例</a></li>
+                <li><a href="##">关于我们</a></li>
+            </ul>
+        </div>
+        <hr>
+        <h1>66、导航条-带表单的导航条</h1>
+        <p>在navbar容器中放置一个带有navbar-form类名的表单</p>
+        <div class="navbar navbar-default" role="navigation">
+            　<div class="navbar-header">
+            　    <a href="##" class="navbar-brand">慕课网</a>
+            　</div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="##">网站首页</a></li>
+                <li class="dropdown">
+                    <a href="##" data-toggle="dropdown" class="dropdown-toggle">系列教程<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="##">CSS3</a></li>
+                        <li><a href="##">JavaScript</a></li>
+                        <li class="disabled"><a href="##">PHP</a></li>
+                    </ul>
+                </li>
+                <li><a href="##">名师介绍</a></li>
+                <li><a href="##">成功案例</a></li>
+                <li><a href="##">关于我们</a></li>
+            </ul>
+            <form action="##" class="navbar-form navbar-left" rol="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="请输入关键词" />
+                </div>
+                <button type="submit" class="btn btn-default">搜索</button>
+            </form>
+        </div>
+        <hr>
+        <h1>67、导航条-导航条中的按钮、文本和链接</h1>
+        <p>1、导航条中的按钮navbar-btn<br/>
+            2、导航条中的文本navbar-text<br/>
+            3、导航条中的普通链接navbar-link</p>
+        <p>但这三种样式在框架中使用时受到一定的限制，需要和navbar-brand、navbar-nav配合起来使用。而且对数量也有一定的限制，一般情况在使用
+            一到两个不会有问题，超过两个就会有问题</p>
+        <div class="navbar navbar-default" role="navigation">
+            　<div class="navbar-header">
+            　    <a href="##" class="navbar-brand">慕课网</a>
+            　</div>
+            <ul class="nav navbar-nav">
+                <li><a href="##" class="navbar-text">Navbar Text</a></li>
+                <li><a href="##" class="navbar-text">Navbar Text</a></li>
+                <li><a href="##" class="navbar-text">Navbar Text</a></li>
+            </ul>
+        </div>
+
+        <div class="navbar navbar-default" role="navigation">
+            　<div class="navbar-header">
+            　    <a href="##" class="navbar-brand">慕课网</a>
+            　</div>
+            <div class="nav navbar-nav">
+                <a href="##" class="navbar-text">Navbar Text</a>
+                <a href="##" class="navbar-text">Navbar Text</a>
+                <a href="##" class="navbar-text">Navbar Text</a>
+            </div>
+        </div>
+        <hr>
+        <h1>68、导航条-固定导航条</h1>
+        <p> .navbar-fixed-top：导航条固定在浏览器窗口顶部<br/>
+            .navbar-fixed-bottom：导航条固定在浏览器窗口底部<br/>
+            使用方法很简单，只需要在制作导航条最外部容器navbar上追加对应的类名即可</p>
+        <hr>
+        <h1>69、导航条-响应式导航条</h1>
+        <p>使用方法：<br/>
+            1、保证在窄屏时需要折叠的内容必须包裹在带一个div内，并且为这个div加入collapse、navbar-collapse两个类名。最后为这个div添加
+            一个class类名或者id名。<br/>
+            2、保证在窄屏时要显示的图标样式（固定写法）<br/>
+            3、并为button添加data-target=".类名/#id名"，究竞是类名还是id名呢？由需要折叠的div来决定。
+        </p>
+        <div class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+                　<!-- .navbar-toggle样式用于toggle收缩的内容，即nav-collapse collapse样式所在元素 -->
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- 确保无论是宽屏还是窄屏，navbar-brand都显示 -->
+                <a href="##" class="navbar-brand">慕课网</a>
+            </div>
+            <!-- 屏幕宽度小于768px时，div.navbar-responsive-collapse容器里的内容都会隐藏，显示icon-bar图标，当点击icon-bar图标时，再展开。屏幕大于768px时，默认显示。 -->
+            <div class="collapse navbar-collapse navbar-responsive-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="##">网站首页</a></li>
+                    <li><a href="##">系列教程</a></li>
+                    <li><a href="##">名师介绍</a></li>
+                    <li><a href="##">成功案例</a></li>
+                    <li><a href="##">关于我们</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <h1>70、导航条-反色导航条</h1>
+        <p>反色导航条其实是Bootstrap框架为大家提供的第二种风格的导航条，与默认的导航条相比，使用方法并无区别，
+            只是将navbar-deafult类名换成navbar-inverse。其变化只是导航条的背景色和文本做了修改。</p>
+        <div class="navbar navbar-inverse" role="navigation">
+            <div class="navbar-header">
+                <a href="##" class="navbar-brand">慕课网</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="">首页</a></li>
+                <li><a href="">教程</a></li>
+                <li><a href="">关于我们</a></li>
+            </ul>
+        </div>
+        <hr>
+        <h1>71、分页导航</h1>
+        <p>注意：要禁用当前状态和禁用状态不能点击，我们还要依靠js来实现，或者将这两状态下的a标签换成span标签。<br/>
+            1、通过“pagination-lg”让分页导航变大<br/>
+            2、通过“pagination-sm”让分页导航变小
+        </p>
+        <ul class="pagination pagination-lg">
+            <li><a href="#">&laquo;第一页</a></li>
+            <li><a href="#">11</a></li>
+            <li><a href="#">12</a></li>
+            <li class="active"><a href="#">13</a></li>
+            <li><a href="#">14</a></li>
+            <li><a href="#">15</a></li>
+            <li class="disabled"><a href="#">最后一页&raquo;</a></li>
+        </ul>
+
+        <ul class="pagination pagination">
+            <li><a href="#">&laquo;第一页</a></li>
+            <li><a href="#">11</a></li>
+            <li><a href="#">12</a></li>
+            <li class="active"><a href="#">13</a></li>
+            <li><a href="#">14</a></li>
+            <li><a href="#">15</a></li>
+            <li class="disabled"><a href="#">最后一页&raquo;</a></li>
+        </ul>
+        <ul class="pagination pagination-sm">
+            <li><a href="#">&laquo;第一页</a></li>
+            <li><a href="#">11</a></li>
+            <li><a href="#">12</a></li>
+            <li class="active"><a href="#">13</a></li>
+            <li><a href="#">14</a></li>
+            <li><a href="#">15</a></li>
+            <li class="disabled"><a href="#">最后一页&raquo;</a></li>
+        </ul>
+        <hr>
+        <h1>72、分页导航（翻页分页导航）</h1>
+        <p>翻页分页导航和带页码的分页导航类似，为ul标签加入pager类<br/>
+            默认情况之下，翻页分页导航是居中显示，但有的时候我们需要一个居左，一个居右。Bootstrap框架提供了两个样式：<br/>
+            previous：让“上一步”按钮居左<br/>
+            next：让“下一步”按钮居右<br/>
+            状态样式设置：<br/>
+            和带页码分页导航一样，如果在li标签上添加了disabled类名的时候，分页按钮处于禁用状态，但同样不能禁止其点击功能。
+            你可以通过js来处理，或将a标签换成span标签
+        </p>
+        <ul class="pager">
+            <li><a href="#">&laquo;上一页</a></li>
+            <li><a href="#">下一页&raquo;</a></li>
+        </ul>
+        <!--左右对齐-->
+        <ul class="pager">
+            <li class="previous"><a href="#">&laquo;上一页</a></li>
+            <li class="next"><a href="#">下一页&raquo;</a></li>
+        </ul>
+        <!--禁止状态-->
+        <ul class="pager">
+            <li class="disabled"><span>&laquo;上一页</span></li>
+            <li><a href="#">下一页&raquo;</a></li>
+        </ul>
+        <hr>
+        <h1>73、标签</h1>
+        <p>在Bootstrap框架中特意将这样的效果提取出来成为一个标签组件，并且以“.label”样式来实现高亮显示<br/>
+            label样式也提供了多种颜色：<br/>
+            label-deafult:默认标签，深灰色<br/>
+            label-primary：主要标签，深蓝色<br/>
+            label-success：成功标签，绿色<br/>
+            label-info：信息标签，浅蓝色<br/>
+            label-warning：警告标签，橙色<br/>
+            label-danger：错误标签，红色
+        </p>
+        <h3>Example heading <span class="label label-default">New</span></h3>
+        <!--代码-->
+        <span class="label label-default">默认标签</span>
+        <span class="label label-primary">主要标签</span>
+        <span class="label label-success">成功标签</span>
+        <span class="label label-info">信息标签</span>
+        <span class="label label-warning">警告标签</span>
+        <span class="label label-danger">错误标签</span>
+        <hr>
+        <h1>74、徽章</h1>
+        <p>你可以像标签一样，使用span标签来制作，然后为他加入badge类</p>
+        <a href="#">Inbox <span class="badge">42</span></a>
+        <!--navbar-default导航条勋章-->
+        <div class="navbar navbar-default" role="navigation">
+            　<div class="navbar-header">
+            　    <a href="##" class="navbar-brand">慕课网</a>
+            　</div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="##">网站首页</a></li>
+                <li><a href="##">系列教程</a></li>
+                <li><a href="##">名师介绍</a></li>
+                <li><a href="##">成功案例<span class="badge">23</span></a></li>
+                <li><a href="##">关于我们</a></li>
+            </ul>
+        </div>
+        <!--nav-pills导航条勋章-->
+        <ul class="nav nav-pills">
+            <li class="active"><a href="#">Home <span class="badge">42</span></a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Messages <span class="badge">3</span></a></li>
+        </ul>
+        <br />
+        <ul class="nav nav-pills nav-stacked" style="max-width: 260px;">
+            <li class="active">
+                <a href="#">
+                    <span class="badge pull-right">42</span>
+                    Home
+                </a>
+            </li>
+            <li><a href="#">Profile</a></li>
+            <li>
+                <a href="#">
+                    <span class="badge pull-right">3</span>
+                    Messages
+                </a>
+            </li>
+        </ul>
+        <br />
+        <!--按钮勋章-->
+        <button class="btn btn-primary" type="button">
+            Messages <span class="badge">4</span>
+        </button>
+        <hr>
+        <h1>75、缩略图一</h1>
+        <p>通过“thumbnail”样式配合bootstrap的网格系统来实现</p>
+        <p>下面的结构表示在宽屏幕（可视区域大于768px）的时候，一行显示四个缩略图</p>
+        <p>下面的结构表示在窄屏（可视区域小于768px）的时候，一行只显示两个缩略图</p>
+        <div class="row">
+            <div class="col-xs-6 col-md-3">
+                <a href="#" class="thumbnail">
+                    <img alt="100%x180" src="http://img.mukewang.com/5434eba100014fe906000338.png" style="height: 180px; width: 100%; display: block;" >
+                </a>
+            </div>
+            <div class="col-xs-6 col-md-3">
+                <a href="#" class="thumbnail">
+                    <img alt="100%x180" src="http://img.mukewang.com/5434eba100014fe906000338.png" style="height: 180px; width: 100%; display: block;">
+                </a>
+            </div>
+            <div class="col-xs-6 col-md-3">
+                <a href="#" class="thumbnail">
+                    <img alt="100%x180" src="http://img.mukewang.com/5434eba100014fe906000338.png" style="height: 180px; width: 100%; display: block;">
+                </a>
+            </div>
+            <div class="col-xs-6 col-md-3">
+                <a href="#" class="thumbnail">
+                    <img alt="100%x180" src="http://img.mukewang.com/5434eba100014fe906000338.png" style="height: 180px; width: 100%; display: block;">
+                </a>
+            </div>
+        </div>
+        <hr>
+        <h1>76、缩略图二</h1>
+        <p>在仅有缩略图的基础上，添加了一个div名为“caption“的容器，在这个容器中放置其他内容，比如说标题，文本描述，按钮等</p>
+        <div class="row">
+            <div class="col-xs-6 col-md-3">
+                <a href="#" class="thumbnail">
+                    <img src="http://img.mukewang.com/5434eba100014fe906000338.png" style="height: 180px; width: 100%; display: block;" alt="">
+                </a>
+                <div class="caption">
+                    <h3>Bootstrap框架系列教程</h3>
+                    <p>Bootstrap框架是一个优秀的前端框，就算您是一位后端程序员或者你是一位不懂设计的前端人员，你也能依赖于Bootstrap制作做优美的网站...</p>
+                    <p>
+                        <a href="##" class="btn btn-primary">开始学习</a>
+                        <a href="##" class="btn btn-info">正在学习</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-3">
+                <a href="#" class="thumbnail">
+                    <img alt="100%x180" src="http://img.mukewang.com/5434eba100014fe906000338.png" style="height: 180px; width: 100%; display: block;">
+                </a>
+                <div class="caption">
+                    <h3>Bootstrap框架系列教程</h3>
+                    <p>	Bootstrap框架是一个优秀的前端框，就算您是一位后端程序员或者你是一位不懂设计的前端人员，你也能依赖于Bootstrap制作做优美的网站...</p>
+                    <p>
+                        <a href="##" class="btn btn-primary">开始学习</a>
+                        <a href="##" class="btn btn-info">正在学习</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-3">
+                <a href="#" class="thumbnail">
+                    <img alt="100%x180" src="http://img.mukewang.com/5434eba100014fe906000338.png" style="height: 180px; width: 100%; display: block;">
+                </a>
+                <div class="caption">
+                    <h3>Bootstrap框架系列教程</h3>
+                    <p>Bootstrap框架是一个优秀的前端框，就算您是一位后端程序员或者你是一位不懂设计的前端人员，你也能依赖于Bootstrap制作做优美的网站...</p>
+                    <p>
+                        <a href="##" class="btn btn-primary">开始学习</a>
+                        <a href="##" class="btn btn-info">正在学习</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-xs-6 col-md-3">
+                <a href="#" class="thumbnail">
+                    <img alt="100%x180" src="http://img.mukewang.com/5434eba100014fe906000338.png" style="height: 180px; width: 100%; display: block;">
+                </a>
+                <div class="caption">
+                    <h3>Bootstrap框架系列教程</h3>
+                    <p>Bootstrap框架是一个优秀的前端框，就算您是一位后端程序员或者你是一位不懂设计的前端人员，你也能依赖于Bootstrap制作做优美的网站...</p>
+                    <p>
+                        <a href="##" class="btn btn-primary">开始学习</a>
+                        <a href="##" class="btn btn-info">正在学习</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <h1>77、警示框-默认警示框</h1>
+        <p>通过“alert“样式来实现警示框效果。在默认情况之下，提供了四种不同的警示框效果<br/>
+            1、成功警示框：告诉用用户操作成功，在“alert”样式基础上追加“alert-success”样式，具体呈现的是背景、边框和文本都是绿色；<br/>
+            2、信息警示框：给用户提供提示信息，在“alert”样式基础上追加“alert-info”样式，具体呈现的是背景、边框和文本都是浅蓝色；<br/>
+            3、警告警示框：提示用户小心操作（提供警告信息），在“alert”样式基础上追加“alert-warning”样式，具体呈现的是背景、边框、文本都是浅黄色；<br/>
+            4、错误警示框：提示用户操作错误，在“alert”样式基础上追加“alert-danger”样式，具体呈现的是背景、边框和文本都是浅红色。
+        </p>
+        <div class="alert alert-success" role="alert">恭喜您操作成功！</div>
+        <div class="alert alert-info" role="alert">请输入正确的密码</div>
+        <div class="alert alert-warning" role="alert">您已操作失败两次，还有最后一次机会</div>
+        <div class="alert alert-danger" role="alert">对不起，您输入的密码有误</div>
+        <hr>
+        <h1>78、警示框-可关闭的警示框</h1>
+        <p>只需要在默认的警示框里面添加一个关闭按钮。然后进行三个步骤：<br/>
+            1、需要在基本警示框“alert”的基础上添加“alert-dismissable”样式。<br/>
+            2、在button标签中加入class="close"类，实现警示框关闭按钮的样式。<br/>
+            3、要确保关闭按钮元素上设置了自定义属性：“data-dismiss="alert"”（因为可关闭警示框需要借助于Javascript来检测该属性，从而控制
+            警示框的关闭）。</p>
+        <div class="alert alert-success alert-dismissable" role="alert">
+            <button class="close" type="button" data-dismiss="alert">&times;</button>
+            恭喜您操作成功！
+        </div>
+        <div class="alert alert-info alert-dismissable" role="alert">
+            <button class="close" type="button" data-dismiss="alert">&times;</button>
+            请输入正确的密码
+        </div>
+        <div class="alert alert-warning alert-dismissable" role="alert">
+            <button class="close" type="button" data-dismiss="alert">&times;</button>
+            您已操作失败两次，还有最后一次机会
+        </div>
+        <div class="alert alert-danger alert-dismissable" role="alert">
+            <button class="close" type="button" data-dismiss="alert">&times;</button>
+            对不起，您输入的密码有误
+        </div>
+        <hr>
+        <h1>79、警示框-警示框的链接</h1>
+        <p>通过给警示框加的链接添加一个名为“alert-link”的类名，通过“alert-link”样式给链接提供高亮显示</p>
+        <div class="alert alert-success" role="alert">
+            <strong>Well done!</strong>
+            You successfully read
+            <a href="#" class="alert-link">this important alert message</a>
+            .
+        </div>
+        <div class="alert alert-info" role="alert">
+            <strong>Heads up!</strong>
+            This
+            <a href="#" class="alert-link">alert needs your attention</a>
+            , but it's not super important.
+        </div>
+        <hr>
+        <h1>80、进度条-基本样式</h1>
+        <p>他提供了两个容器，外容器使用“progress”样式，子容器使用“progress-bar”样式。其中progress用来设置进度条的容器样式，
+            而progress-bar用于限制进度条的进度</p>
+        <div class="progress">
+            <div class="progress-bar" style="width:40%">
+            </div>
+        </div>
+        <hr>
+        <h1>81、进度条-彩色进度条</h1>
+        <p>只需要在基础的进度上增加对应的类名<br/>
+            progress-bar-info：表示信息进度条，进度条颜色为蓝色<br/>
+            progress-bar-success：表示成功进度条，进度条颜色为绿色<br/>
+            progress-bar-warning：表示警告进度条，进度条颜色为黄色<br/>
+            progress-bar-danger：表示错误进度条，进度条颜色为红色</p>
+        <div class="progress">
+            <div class="progress-bar progress-bar-success" style="width:40%"></div>
+        </div>
+        <div class="progress">
+            <div class="progress-bar progress-bar-info" style="width:60%"></div>
+        </div>
+        <div class="progress">
+            <div class="progress-bar progress-bar-warning" style="width:80%"></div>
+        </div>
+        <div class="progress">
+            <div class="progress-bar progress-bar-danger" style="width:50%"></div>
+        </div>
+        <hr>
+        <h1>82、进度条-条纹进度条</h1>
+        <p>条纹进度条只需要在进度条的容器“progress”基础上增加类名“progress-striped”，当然，如果你要让你的进度条条纹像彩色进度一样，具有
+            彩色效果，你只需要在进度条上增加相应的颜色类名</p>
+        <div class="progress progress-striped">
+            <div class="progress-bar progress-bar-success" style="width:40%"></div>
+        </div>
+        <div class="progress progress-striped">
+            <div class="progress-bar progress-bar-info" style="width:60%"></div>
+        </div>
+        <div class="progress progress-striped">
+            <div class="progress-bar progress-bar-warning" style="width:80%"></div>
+        </div>
+        <div class="progress progress-striped">
+            <div class="progress-bar progress-bar-danger" style="width:50%"></div>
+        </div>
+        <hr>
+        <h1>83、进度条-动态进度条</h1>
+        <p>在进度条“progress progress-striped”两个类的基础上再加入“active”类名</p>
+        <div class="progress progress-striped active">
+            <div class="progress-bar progress-bar-success" style="width:40%"></div>
+        </div>
+        <div class="progress progress-striped active">
+            <div class="progress-bar progress-bar-info" style="width:60%"></div>
+        </div>
+        <div class="progress progress-striped active">
+            <div class="progress-bar progress-bar-warning" style="width:80%"></div>
+        </div>
+        <div class="progress progress-striped active">
+            <div class="progress-bar progress-bar-danger" style="width:50%"></div>
+        </div>
+        <hr>
+        <h1>84、进度条-层叠进度条</h1>
+        <p></p>
+        <h5>正常层叠进度条</h5>
+        <div class="progress">
+            <div class="progress-bar progress-bar-success" style="width:20%"></div>
+            <div class="progress-bar progress-bar-info" style="width:10%"></div>
+            <div class="progress-bar progress-bar-warning" style="width:30%"></div>
+            <div class="progress-bar progress-bar-danger" style="width:15%"></div>
+        </div>
+        <h5>不良效果层叠进度条</h5>
+        <div class="progress">
+            <div class="progress-bar progress-bar-success" style="width:20%"></div>
+            <div class="progress-bar progress-bar-info" style="width:40%"></div>
+            <div class="progress-bar progress-bar-warning" style="width:30%"></div>
+            <div class="progress-bar progress-bar-danger" style="width:45%"></div>
+        </div>
+        <h5>层叠条纹进度条</h5>
+        <div class="progress">
+            <div class="progress-bar progress-bar-success" style="width:20%"></div>
+            <div class="progress-bar progress-bar-info" style="width:20%"></div>
+            <div class="progress-bar progress-bar-warning" style="width:30%"></div>
+            <div class="progress-bar progress-bar-danger" style="width:15%"></div>
+        </div>
+        <div class="progress">
+            <div class="progress-bar progress-bar-success progress-bar-striped" style="width:20%"></div>
+            <div class="progress-bar progress-bar-info progress-bar-striped" style="width:20%"></div>
+            <div class="progress-bar progress-bar-striped progress-bar-warning" style="width:30%"></div>
+            <div class="progress-bar progress-bar-danger progress-bar-striped" style="width:15%"></div>
+        </div>
+        <div class="progress">
+            <div class="progress-bar progress-bar-success" style="width:20%"></div>
+            <div class="progress-bar progress-bar-info progress-bar-striped" style="width:20%"></div>
+            <div class="progress-bar progress-bar-warning" style="width:30%"></div>
+            <div class="progress-bar progress-bar-danger progress-bar-striped" style="width:15%"></div>
+        </div>
+        <hr>
+        <h1>85、进度条-带Label的进度条</h1>
+        <p></p>
+        <div class="progress">
+            <div class="progress-bar progress-bar-success"  role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:20%">20%</div>
+        </div>
+        <div class="progress">
+            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"   style="width:70%">70%</div>
+        </div>
+        <div class="progress">
+            <div class="progress-bar progress-bar-warning"  role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width:30%">30%</div>
+        </div>
+        <div class="progress">
+            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" style="width:15%">15%</div>
+        </div>
+        <hr>
+        <h1>86、媒体对象-默认媒体对象</h1>
+        <p>媒体对象一般是成组出现，而一组媒体对象常常包括以下几个部分：<br/>
+            媒体对像的容器：常使用“media”类名表示，用来容纳媒体对象的所有内容<br/>
+            媒体对像的对象：常使用“media-object”表示，就是媒体对象中的对象，常常是图片<br/>
+            媒体对象的主体：常使用“media-body”表示，就是媒体对像中的主体内容，可以是任何元素，常常是图片侧边内容<br/>
+            媒体对象的标题：常使用“media-heading”表示，就是用来描述对象的一个标题，此部分可选<br/>
+            在Bootstrap框架中还常常使用“pull-left”或者“pull-right”来控制媒体对象中的对象浮动方式
+        </p>
+        <div class="media">
+            <a class="pull-left" href="#">
+                <img class="media-object" src="http://img.mukewang.com/52e1d29d000161fe06000338-300-170.jpg" alt="...">
+            </a>
+            <div class="media-body">
+                <h4 class="media-heading">系列：十天精通CSS3</h4>
+                <div>全方位深刻详解CSS3模块知识，经典案例分析，代码同步调试，让网页穿上绚丽装备！</div>
+            </div>
+        </div>
+        <hr>
+        <h1>87、媒体对象-媒体对象的嵌套</h1>
+        <p>从外往里看，这里有三个媒体对象，只不过是一个嵌套在另一个的里面。那么在Bootstrap框架中的媒体对象也具备这样的功能，只需要将另一个媒体
+            对象结构放置在媒体对象的主体内“media-body”</p>
+        <div class="media">
+            <a class="pull-left" href="#">
+                <img class="media-object" src="http://a.disquscdn.com/uploads/users/3740/2069/avatar92.jpg?1406972031" alt="...">
+            </a>
+            <div class="media-body">
+                <h4 class="media-heading">我是大漠</h4>
+                <div>我是W3cplus站长大漠，我在写Bootstrap框中的媒体对象测试用例</div>
+                <div class="media">
+                    <a class="pull-left" href="#">
+                        <img class="media-object" src="http://tp2.sinaimg.cn/3306361973/50/22875318196/0" alt="...">
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading">慕课网</h4>
+                        <div>大漠写的《玩转Bootstrap》系列教程即将会在慕课网上发布</div>
+                        <div class="media">
+                            <a class="pull-left" href="#">
+                                <img class="media-object" src="http://tp4.sinaimg.cn/1167075935/50/22838101204/1" alt="...">
+                            </a>
+                            <div class="media-body">
+                                <h4 class="media-heading">W3cplus</h4>
+                                <div>W3cplus站上还有很多教程....</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <h1>88、媒体对象-媒体对象列表</h1>
+        <p>在写结构的时候可以使用ul，并且在ul上添加类名“media-list”，而在li上使用“media”</p>
+        <ul class="media-list">
+            <li class="media">
+                <a class="pull-left" href="#">
+                    <img class="media-object" src="http://a.disquscdn.com/uploads/users/3740/2069/avatar92.jpg?1406972031" alt="...">
+                </a>
+                <div class="media-body">
+                    <h4 class="media-heading">Media Header</h4>
+                    <div>我是描述我是描述我是描述我是描述我是描述我是描述我是描述</div>
+                </div>
+            </li>
+            <li class="media">
+                <a class="pull-left" href="#">
+                    <img class="media-object" src="http://tp2.sinaimg.cn/3306361973/50/22875318196/0" alt="...">
+                </a>
+                <div class="media-body">
+                    <h4 class="media-heading">Media Header</h4>
+                    <div>我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述</div>
+                </div>
+            </li>
+            <li class="media">
+                <a class="pull-left" href="#">
+                    <img class="media-object" src="http://tp4.sinaimg.cn/1167075935/50/22838101204/1" alt="...">
+                </a>
+                <div class="media-body">
+                    <h4 class="media-heading">Media Header</h4>
+                    <div>我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述我是描述</div>
+                </div>
+            </li>
+        </ul>
+        <hr>
+        <h1>89、列表组-基础列表组</h1>
+        <p>基础列表组，看上去就是去掉了列表符号的列表项，并且配上一些特定的样式。在Bootstrap框架中的基础列表组主要包括两个部分<br/>
+            list-group：列表组容器，常用的是ul元素，当然也可以是ol或者div元素<br/>
+            list-group-item：列表项，常用的是li元素，当然也可以是div元素
+        </p>
+        <ul class="list-group">
+            <li class="list-group-item">揭开CSS3的面纱</li>
+            <li class="list-group-item">CSS3选择器</li>
+            <li class="list-group-item">CSS3边框</li>
+            <li class="list-group-item">CSS3背景</li>
+            <li class="list-group-item">CSS3文本</li>
+        </ul>
+        <hr>
+        <h1>90、列表组-带徽章的列表组</h1>
+        <p>带徽章的列表组其实就是将Bootstrap框架中的徽章组件和基础列表组结合在一起的一个效果。具体做法很简单，只需要在“list-group-item”中
+            添加徽章组件“badge”</p>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <span class="badge">13</span>揭开CSS3的面
+            </li>
+            <li class="list-group-item">
+                <span class="badge">456</span>CSS3选择器
+            </li>
+            <li class="list-group-item">
+                <span class="badge">892</span>CSS3边框
+            </li>
+            <li class="list-group-item">
+                <span class="badge">90</span>CSS3背景
+            </li>
+            <li class="list-group-item">
+                <span class="badge">1290</span>CSS3文本
+            </li>
+        </ul>
+        <hr>
+        <h1>91、列表组-带链接的列表组</h1>
+        <p>将ul.list-group使用div.list-group来替换，而li.list-group-item直接用a.list-group-item来替换,成为了整行作为点击对象</p>
+        <h3>带链接的列表组1</h3>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <a href="##">揭开CSS3的面</a>
+            </li>
+            <li class="list-group-item">
+                <a href="##">CSS3选择器</a>
+            </li>
+            <li class="list-group-item">
+                <a href="##">CSS3边框</a>
+            </li>
+            <li class="list-group-item">
+                <a href="##">CSS3背景</a>
+            </li>
+            <li class="list-group-item">
+                <a href="##">CSS3文本</a>
+            </li>
+        </ul>
+        <h3>带链接的列表组2</h3>
+        <div class="list-group">
+            <a href="##" class="list-group-item">图解CSS3</a>
+            <a href="##" class="list-group-item"><span class="badge">220</span>Sass教程</a>
+            <a href="##" class="list-group-item">玩转Bootstrap</a>
+        </div>
+        <hr>
+        <h1>92、列表组-自定义列表组</h1>
+        <p> list-group-item-heading：用来定义列表项头部样式<br/>
+            list-group-item-text：用来定义列表项主要内容<br/>
+            这两个样式最大的作用就是用来帮助开发者可以自定义列表项里的内容
+        </p>
+        <div class="list-group">
+            <a href="##" class="list-group-item">
+                <h4 class="list-group-item-heading">图解CSS3</h4>
+                <p class="list-group-item-text">详细讲解了选择器、边框、背景、文本、颜色、盒模型、伸缩布局盒模型、多列布局、渐变、过渡、动画、媒体、响应Web设计、Web字体等主题下涵盖的所有CSS3新特性...</p>
+            </a>
+            <a href="##" class="list-group-item">
+                <h4 class="list-group-item-heading">Sass中国</h4>
+                <p class="list-group-item-text">致力于为中国开发者提供最全面，最具影响力，最前沿的Sass相关技术与教程...</p>
+            </a>
+        </div>
+        <hr>
+        <h1>93、列表组-组合列表项的状态</h1>
+        <p> active：表示当前状态<br/>
+            disabled：表示禁用状态
+        </p>
+        <div class="list-group">
+            <a href="##" class="list-group-item active"><span class="badge">5902</span>图解CSS3</a>
+            <a href="##" class="list-group-item"><span class="badge">15902</span>W3cplus</a>
+            <a href="##" class="list-group-item"><span class="badge">59020</span>慕课网</a>
+            <a href="##" class="list-group-item disabled"><span class="badge">0</span>Sass中国</a>
+        </div>
+        <hr>
+        <h1>94、列表组-多彩列表组</h1>
+        <p>list-group-item-success：成功，背景色绿色<br/>
+           list-group-item-info：信息，背景色蓝色<br/>
+            list-group-item-warning：警告，背景色为黄色<br/>
+            list-group-item-danger：错误，背景色为红色
+        </p>
+        <div class="list-group">
+            <a href="##" class="list-group-item active"><span class="badge">5902</span>图解CSS3</a>
+            <a href="##" class="list-group-item list-group-item-success"><span class="badge">15902</span>W3cplus</a>
+            <a href="##" class="list-group-item list-group-item-info"><span class="badge">59020</span>慕课网</a>
+            <a href="##" class="list-group-item list-group-item-warning"><span class="badge">0</span>Sass中国</a>
+            <a href="##" class="list-group-item list-group-item-danger"><span class="badge">10</span>Mobile教程</a>
+        </div>
+        <hr>
+        <h1>95、面板-基础面板</h1>
+        <p>基础面板非常简单，就是一个div容器运用了“panel”样式，产生一个具有边框的文本显示块。由于“panel”不控制主题颜色，所以在“panel”的基
+            础上增加一个控制颜色的主题“panel-default”，另外在里面添加了一个“div.panel-body”来放置面板主体内容</p>
+        <div class="panel panel-default">
+            <div class="panel-body">我是一个基础面板，带有默认主题样式风格</div>
+        </div>
+        <hr>
+        <h1>96、面板-带有头和尾的面板</h1>
+        <p> panel-heading：用来设置面板头部样式<br/>
+            panel-footer：用来设置面板尾部样式
+        </p>
+        <div class="panel panel-default">
+            <div class="panel-heading">图解CSS3</div>
+            <div class="panel-body">…</div>
+            <div class="panel-footer">作者：大漠</div>
+        </div>
+        <hr>
+        <h1>97、面板-彩色面板</h1>
+        <p>
+            panel-primary：重点蓝<br/>
+            panel-success：成功绿<br/>
+            panel-info:信息蓝<br/>
+            panel-warning：警告黄<br/>
+            panel-danger：危险红
+        </p>
+        <div class="panel panel-default">
+            <div class="panel-heading">图解CSS3</div>
+            <div class="panel-body">详细讲解了选择器、边框、背景、文本、颜色、盒模型、伸缩布局盒模型、多列布局、渐变、过渡、动画、媒体、响应Web设计、Web字体等主题下涵盖的所有CSS3新特性</div>
+            <div class="panel-footer">作者：大漠</div>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">图解CSS3</div>
+            <div class="panel-body">详细讲解了选择器、边框、背景、文本、颜色、盒模型、伸缩布局盒模型、多列布局、渐变、过渡、动画、媒体、响应Web设计、Web字体等主题下涵盖的所有CSS3新特性</div>
+            <div class="panel-footer">作者：大漠</div>
+        </div>
+        <div class="panel panel-success">
+            <div class="panel-heading">图解CSS3</div>
+            <div class="panel-body">详细讲解了选择器、边框、背景、文本、颜色、盒模型、伸缩布局盒模型、多列布局、渐变、过渡、动画、媒体、响应Web设计、Web字体等主题下涵盖的所有CSS3新特性</div>
+            <div class="panel-footer">作者：大漠</div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading">图解CSS3</div>
+            <div class="panel-body">详细讲解了选择器、边框、背景、文本、颜色、盒模型、伸缩布局盒模型、多列布局、渐变、过渡、动画、媒体、响应Web设计、Web字体等主题下涵盖的所有CSS3新特性</div>
+            <div class="panel-footer">作者：大漠</div>
+        </div>
+        <div class="panel panel-warning">
+            <div class="panel-heading">图解CSS3</div>
+            <div class="panel-body">详细讲解了选择器、边框、背景、文本、颜色、盒模型、伸缩布局盒模型、多列布局、渐变、过渡、动画、媒体、响应Web设计、Web字体等主题下涵盖的所有CSS3新特性</div>
+            <div class="panel-footer">作者：大漠</div>
+        </div>
+        <div class="panel panel-danger">
+            <div class="panel-heading">图解CSS3</div>
+            <div class="panel-body">详细讲解了选择器、边框、背景、文本、颜色、盒模型、伸缩布局盒模型、多列布局、渐变、过渡、动画、媒体、响应Web设计、Web字体等主题下涵盖的所有CSS3新特性</div>
+            <div class="panel-footer">作者：大漠</div>
+        </div>
+        <hr>
+        <h1>98、面板--面板中嵌套表格、列表组（一）</h1>
+        <p></p>
+        <h3>面板中嵌套表格（一）</h3>
+        <div class="panel panel-default">
+            <div class="panel-heading">图解CSS3</div>
+            <div class="panel-body">
+                <p>详细讲解了选择器、边框、背景、文本、颜色、盒模型、伸缩布局盒模型、多列布局、渐变、过渡、动画、媒体、响应Web设计、Web字体等主题下涵盖的所有CSS3新特性
+                </p>
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>＃</th>
+                        <th>我的书</th>
+                        <th>发布时间</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>《图解CSS3》</td>
+                        <td>2014-07-10</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="panel-footer">作者：大漠</div>
+        </div>
+        <h3>面板中嵌套表格（二）</h3>
+        <div class="panel panel-default">
+            <div class="panel-heading">图解CSS3</div>
+            <div class="panel-body">
+                <p>详细讲解了选择器、边框、背景、文本、颜色、盒模型、伸缩布局盒模型、多列布局、渐变、过渡、动画、媒体、响应Web设计、Web字体等主题下涵盖的所有CSS3新特性
+                </p>
+            </div>
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>＃</th>
+                    <th>我的书</th>
+                    <th>发布时间</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>《图解CSS3》</td>
+                    <td>2014-07-10</td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="panel-footer">作者：大漠</div>
+        </div>
+        <hr>
+        <h1>99、面板-面板中嵌套表格、列表组（二）</h1>
+        <p></p>
+        <h3>面板中嵌套列表组（一）</h3>
+        <div class="panel panel-default">
+            <div class="panel-heading">图解CSS3</div>
+            <div class="panel-body">
+                <p>详细讲解了选择器、边框、背景、文本、颜色、盒模型、伸缩布局盒模型、多列布局、渐变、过渡、动画、媒体、响应Web设计、Web字体等主题下涵盖的所有CSS3新特性
+                </p>
+                <ul class="list-group">
+                    <li class="list-group-item">我是列表项</li>
+                    <li class="list-group-item">我是列表项</li>
+                    <li class="list-group-item">我是列表项</li>
+                </ul>
+            </div>
+            <div class="panel-footer">作者：大漠</div>
+        </div>
+
+        <h3>面板中嵌套列表组（二）</h3>
+        <div class="panel panel-default">
+            <div class="panel-heading">图解CSS3</div>
+            <div class="panel-body">
+                <p>详细讲解了选择器、边框、背景、文本、颜色、盒模型、伸缩布局盒模型、多列布局、渐变、过渡、动画、媒体、响应Web设计、Web字体等主题下涵盖的所有CSS3新特性
+                </p>
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item">我是列表项</li>
+                <li class="list-group-item">我是列表项</li>
+                <li class="list-group-item">我是列表项</li>
+            </ul>
+            <div class="panel-footer">作者：大漠</div>
+        </div>
+
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/>
     </div>
+
 
 </body>
 <script src="../public/static/jquery.min.js"></script>
 <script src="../public/static/bootstrap/js/bootstrap.min.js"></script>
+<!--案例100-->
+<script src="http://cdn.bootcss.com/bootstrap/2.3.1/js/bootstrap-modal.js"></script>
 <script>
-
+    $(function(){
+        <!--案例100-->
+        $(".btn").click(function(){
+            $("#mymodal").modal("toggle");
+        });
+    });
 </script>
 </html>
