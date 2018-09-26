@@ -8,16 +8,67 @@
     <title>Document</title>
     <style>
     .rgba{background-color:rgba(100,120,60,0.5);}
-
+    .gradient{width:300px;height:36px;background-image:linear-gradient(to left, red, orange,yellow,green,blue,indigo,violet);}
     </style>
 </head>
 <body>
-<div class="rgba" style="width:800px;margin:0 auto;">
+<div class="rgba" style="width:800px;margin:0 auto;padding:20px;">
     <h1>1、CSS3颜色 颜色之RGBA</h1>
     <p>color：rgba(R,G,B,A)</p>
     <p>以上R、G、B三个参数，正整数值的取值范围为：0 - 255。百分数值的取值范围为：0.0% - 100.0%。超出范围的数值将被截至其最接近的取值极限。
         并非所有浏览器都支持使用百分数值。A为透明度参数，取值在0~1之间，不可为负值。</p>
     <p>background-color:rgba(100,120,60,0.5);</p>
+
+    <br/><br/><br/><br/><br/><br/>
+    <h1>2、CSS3颜色 渐变色彩</h1>
+    <p>
+        线性渐变：<br/>
+        linear-gradient(to bottom,#fff,#999)<br/>
+        linear-gradient:渐变类型<br/>
+        to bottom：渐变方向，等价于180deg<br/>
+        #fff,#999：表示颜色的起始点和结束点，可以有两至多个色值
+        第一个参数指定渐变方向，可以用角度的关键词或英文来表示：
+    <table>
+        <tr>
+            <td>角度</td>
+            <td>用英文</td>
+            <td>作用</td>
+        </tr>
+        <tr>
+            <td>0deg</td>
+            <td>to top</td>
+            <td>从下向上</td>
+        </tr>
+        <tr>
+            <td>90deg</td>
+            <td>to right</td>
+            <td>从左向右</td>
+        </tr>
+        <tr>
+            <td>180deg</td>
+            <td>to bottom</td>
+            <td>从上向下</td>
+        </tr>
+        <tr>
+            <td>270deg</td>
+            <td>to left</td>
+            <td>从右向左</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>to top left</td>
+            <td>右下角到左上角</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>to top right</td>
+            <td>左下角到右上角</td>
+        </tr>
+    </table>
+    </p>
+    <p>第一个参数省略时，默认为"180deg",等同于to bottom</p>
+    <p>第二个和第三个参数，表示颜色的起始点和结束点，可以有多个颜色值。</p>
+    <div class="gradient"></div>
 
 </div>
 
