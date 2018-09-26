@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        pre{font-size:16px;}
+        /**实心上半圆**/
+        .semi-circle-1{
+            height:50px;/*是width的一半*/
+            width:100px;
+            background:#9da;
+            border-radius:50px 50px 0 0;/*半径至少设置为height的值*/
+        }
+        /**实心圆**/
+        .circle-1{
+            height:100px;/*与width设置一致*/
+            width:100px;
+            background:#9da;
+            border-radius:50px;/*四个圆角值都设置为宽度或高度值的一半*/
+        }
+
+        /**外阴影**/
+        .boxshadow-outset-2{
+            width:100px;
+            height:100px;
+            box-shadow:4px 4px 6px #666;
+        }
+
+        /**内阴影**/
+        .boxshadow-inset-2{
+            width:100px;
+            height:100px;
+            box-shadow:4px 4px 6px #666 inset;
+        }
+
+        /**多个阴影**/
+        .boxshadow-multi-2{
+            width:100px;
+            height:100px;
+            box-shadow:4px 2px 6px #f00, -4px -2px 6px #000, 0px 0px 12px 5px #33CC00 inset;
+        }
+
+        /**x轴为负数**/
+        .boxshadow-outset-xminus-2{
+            width:100px;
+            height:100px;
+            box-shadow:-4px 4px 6px #666;
+        }
+
+        /**y轴为负数**/
+        .boxshadow-outset-yminus-2{
+            width:100px;
+            height:100px;
+            box-shadow:4px -4px 6px #666;
+        }
+
+    </style>
+</head>
+<body>
+<div style="width:800px;margin:0 auto;">
+    <h1>1、CSS3边框 圆角效果 border-radius</h1>
+    <p>border-radius是向元素添加圆角边框。</p>
+    <p>使用方法：<br/>
+        border-radius:10px; /* 所有角都使用半径为10px的圆角 */
+    </p>
+    <p>border-radius: 5px 4px 3px 2px; /* 四个半径值分别是左上角、右上角、右下角和左下角，顺时针 */ </p>
+    <p>不要以为border-radius的值只能用px单位，你还可以用百分比或者em，但兼容性目前还不太好。</p>
+    <br/>
+    <p> 实心上半圆：<br/>
+        方法：把高度(height)设为宽度（width）的一半，并且只设置左上角和右上角的半径与元素的高度一致（大于也是可以的）。</p>
+    <pre>
+        div{
+            height:50px;/*是width的一半*/
+            width:100px;
+            background:#9da;
+            border-radius:50px 50px 0 0;/*半径至少设置为height的值*/
+        }
+    </pre>
+    <div class="semi-circle-1">
+    </div>
+    <br/>
+    <p>
+        实心圆：<br/>
+        方法：把宽度（width）与高度(height)值设置为一致（也就是正方形），并且四个圆角值都设置为它们值的一半。如下代码：
+    </p>
+    <pre>
+        div{
+            height:100px;/*与width设置一致*/
+            width:100px;
+            background:#9da;
+            border-radius:50px;/*四个圆角值都设置为宽度或高度值的一半*/
+        }
+    </pre>
+
+    <div class="circle-1">
+    </div>
+    <br/><br/><br/><br/><br/><br/>
+    <h1>2、CSS3边框 阴影 box-shadow（一）</h1>
+    <p>box-shadow是向盒子添加阴影。支持添加一个或者多个。</p>
+    <p>
+        语法：<br/>
+        box-shadow: X轴偏移量 Y轴偏移量 [阴影模糊半径] [阴影扩展半径] [阴影颜色] [投影方式];<br/>
+        参数介绍:<br/>
+    <table>
+        <tr>
+            <td>值</td>
+            <td>描述</td>
+        </tr>
+        <tr>
+            <td>X轴偏移量</td>
+            <td>必需。水平阴影的位置。允许负值</td>
+        </tr>
+        <tr>
+            <td>Y轴偏移量</td>
+            <td>必需。垂直阴影的位置。允许负值</td>
+        </tr>
+        <tr>
+            <td>阴影模糊半径</td>
+            <td>可选。模糊距离</td>
+        </tr>
+        <tr>
+            <td>阴影扩展半径</td>
+            <td>可选。阴影的尺寸</td>
+        </tr>
+        <tr>
+            <td>阴影颜色</td>
+            <td>可选。阴影的颜色。省略默认为黑色</td>
+        </tr>
+        <tr>
+            <td>投影方式</td>
+            <td>可选（设置inset时为内部阴影方式，如果省略为外阴影方式）</td>
+        </tr>
+    </table>
+    注：inset可以写在参数的第一个或最后一个，其它位置是无效的。
+    </p>
+    <p>为元素设置外阴影</p>
+    <pre>
+        .box_shadow{
+          box-shadow:4px 2px 6px #333333;
+        }
+    </pre>
+    <div class="boxshadow-outset-2">
+    </div>
+    <br>
+    <p>为元素设置内阴影</p>
+    <pre>
+        .box_shadow{
+          box-shadow:4px 2px 6px #333333 inset;
+        }
+    </pre>
+    <div class="boxshadow-inset-2">
+    </div>
+
+    <br>
+    <p>添加多个阴影：如果添加多个阴影，只需用逗号隔开即可</p>
+    <pre>
+        .box_shadow{
+            box-shadow:4px 2px 6px #f00, -4px -2px 6px #000, 0px 0px 12px 5px #33CC00 inset;
+        }
+    </pre>
+    <div class="boxshadow-multi-2">
+    </div>
+    <br/>
+    <p>阴影模糊半径与阴影扩展半径的区别</p>
+    <p>
+        阴影模糊半径：此参数可选，其值只能是为正值，如果其值为0时，表示阴影不具有模糊效果，其值越大阴影的边缘就越模糊；<br/>
+        阴影扩展半径：此参数可选，其值可以是正负值，如果值为正，则整个阴影都延展扩大，反之值为负值时，则缩小；
+    </p>
+    <p>X轴偏移量和Y轴偏移量值可以设置为负数</p>
+    <p>X轴偏移量为负数：</p>
+    <pre>
+        .boxshadow-outset{
+            width:100px;
+            height:100px;
+            box-shadow:-4px 4px 6px #666;
+        }
+    </pre>
+    <div class="boxshadow-outset-xminus-2"></div>
+    <br/>
+    <p>Y轴偏移量为负数：</p>
+    <pre>
+        .boxshadow-outset{
+            width:100px;
+            height:100px;
+            box-shadow:4px -4px 6px #666;
+        }
+    </pre>
+    <div class="boxshadow-outset-yminus-2"></div>
+    <br/><br/><br/><br/><br/><br/>
+    <h1>3、CSS3边框 为边框应用图片 border-image</h1>
+    <p>详细理解的网址：https://www.imooc.com/code/383</p>
+    <p>顾名思义就是为边框应用背景图片，它和我们常用的background属性比较相似。例如： background:url(xx.jpg) 10px 20px no-repeat;
+        但是又比背景图片复杂一些。</p>
+    <p>语法：border-image:url(border.png) 70 70 70 70 repeat(round(平铺)或stretch(拉伸))</p>
+    <pre>
+        #border-image{
+           background:#F4FFFA;
+           width:210px; height:210px; border:70px solid #ddd;
+           border-image:url(borderimg.png) 70 repeat
+        }
+    </pre>
+
+
+
+</div>
+
+
+
+</body>
+</html>
