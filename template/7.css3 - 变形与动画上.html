@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<div style="width:1200px;margin:0 auto;padding:20px;">
+    <h1>1、旋转 rotate()</h1>
+    <p>
+        旋转rotate()函数通过指定的角度参数使元素相对原点进行旋转。它主要在二维空间内进行操作，设置一个角度值，用来指定旋转的幅度。如果这个值为
+        正值，元素相对原点中心顺时针旋转；如果这个值为负值，元素相对原点中心逆时针旋转。
+    </p>
+    <xmp>
+        <div class="wrapper">
+            <div></div>
+        </div>
+    </xmp>
+    <pre>
+        .wrapper {
+          width: 200px;
+          height: 200px;
+          border: 1px dotted red;
+          margin: 100px auto;
+        }
+        .wrapper div {
+          width: 200px;
+          height: 200px;
+          background: orange;
+          -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+    </pre>
+    <p>效果如下</p>
+    <div class="wrapper" style="width: 200px;height: 200px;border: 1px dotted red;margin: 100px auto;">
+        <div style="width: 200px;height: 200px;background: orange;
+          -webkit-transform: rotate(45deg);transform: rotate(45deg);"></div>
+    </div>
+    <br/><br/><br/><br/><br/><br/>
+    <h1>2、扭曲 skew()</h1>
+    <p>扭曲skew()函数能够让元素倾斜显示。它可以将一个对象以其中心位置围绕着X轴和Y轴按照一定的角度倾斜。这与rotate()函数的旋转不同，
+        rotate()函数只是旋转，而不会改变元素的形状。skew()函数不会旋转，而只会改变元素的形状。</p>
+    <p>Skew()具有三种情况：</p>
+    <p>1、skew(x,y)使元素在水平和垂直方向同时扭曲（X轴和Y轴同时按一定的角度值进行扭曲变形）；</p>
+    <p>第一个参数对应X轴，第二个参数对应Y轴。如果第二个参数未提供，则值为0，也就是Y轴方向上无斜切</p>
+    <p>2、skewX(x)仅使元素在水平方向扭曲变形（X轴扭曲变形）；</p>
+    <p>3、skewY(y)仅使元素在垂直方向扭曲变形（Y轴扭曲变形）</p>
+    <p>案例：</p>
+    <xmp>
+        <div class="wrapper">
+            <div>我变成平形四边形</div>
+        </div>
+    </xmp>
+    <pre>
+        .wrapper {
+          width: 300px;
+          height: 100px;
+          border: 2px dotted red;
+          margin: 30px auto;
+        }
+        .wrapper div {
+          width: 300px;
+          height: 100px;
+          line-height: 100px;
+          text-align: center;
+          color: #fff;
+          background: orange;
+          -webkit-transform: skew(45deg);
+          -moz-transform:skew(45deg)
+          transform:skew(45deg);
+        }
+    </pre>
+    <p>效果如下：</p>
+    <div class="wrapper" style="width: 300px;height: 100px;border: 2px dotted red;margin: 30px auto;">
+        <div style="width: 300px;height: 100px;line-height: 100px;text-align: center;color: #fff;
+          background: orange;-webkit-transform: skew(45deg);-moz-transform:skew(45deg)transform:skew(45deg);">
+            我变成平形四边形</div>
+    </div>
+    <br/><br/><br/><br/><br/><br/>
+    <h1>3、缩放 scale()</h1>
+    <p>缩放 scale()函数 让元素根据中心原点对对象进行缩放。</p>
+    <p>缩放 scale 具有三种情况：</p>
+    <p>1、 scale(X,Y)使元素水平方向和垂直方向同时缩放（也就是X轴和Y轴同时缩放）</p>
+    <pre>
+        div:hover {
+          -webkit-transform: scale(1.5,0.5);
+          -moz-transform:scale(1.5,0.5)
+          transform: scale(1.5,0.5);
+        }
+    </pre>
+    <p>注意：Y是一个可选参数，如果没有设置Y值，则表示X，Y两个方向的缩放倍数是一样的。</p>
+    <p>2、scaleX(x)元素仅水平方向缩放（X轴缩放）</p>
+    <p>3、scaleY(y)元素仅垂直方向缩放（Y轴缩放）</p>
+    <xmp>
+        <div class="wrapper">
+            <div>我将放大1.5倍</div>
+        </div>
+    </xmp>
+    <pre>
+        .wrapper {
+          width: 200px;
+          height: 200px;
+          border:2px dashed red;
+          margin: 100px auto;
+        }
+        .wrapper div {
+          width: 200px;
+          height: 200px;
+          line-height: 200px;
+          background: orange;
+          text-align: center;
+          color: #fff;
+        }
+        .wrapper div:hover {
+          opacity: .5;
+          -webkit-transform: scale(1.5);
+          -moz-transform:scale(1.5)
+          transform: scale(1.5);
+        }
+    </pre>
+    <p>效果如下，鼠标移上去</p>
+    <style>
+        .wrapper-3 div:hover {
+            opacity: .5;
+            -webkit-transform: scale(1.5);
+            -moz-transform:scale(1.5)
+            transform: scale(1.5);
+        }
+    </style>
+    <div class="wrapper-3" style="width: 200px;height: 200px;border:2px dashed red;margin: 100px auto;">
+        <div style="width: 200px;height: 200px;line-height: 200px;background: orange;text-align: center;color: #fff;">
+            我将放大1.5倍</div>
+    </div>
+    <br/><br/><br/><br/><br/><br/>
+    <h1>4、位移 translate()</h1>
+    <p>
+        translate()函数可以将元素向指定的方向移动，类似于position中的relative。或以简单的理解为，使用translate()函数，可以把元素从原来的
+        位置移动，而不影响在X、Y轴上的任何Web组件。
+    </p>
+    <p>translate我们分为三种情况：</p>
+    <p>1、translate(x,y)水平方向和垂直方向同时移动（也就是X轴和Y轴同时移动）</p>
+    <p>2、translateX(x)仅水平方向移动（X轴移动）</p>
+    <p>3、translateY(Y)仅垂直方向移动（Y轴移动）</p>
+    <p>实例演示：通过translate()函数将元素向Y轴下方移动50px,X轴右方移动100px。</p>
+    <xmp>
+        <div class="wrapper">
+            <div>我向右向下移动</div>
+        </div>
+    </xmp>
+    <pre>
+        .wrapper {
+          width: 200px;
+          height: 200px;
+          border: 2px dotted red;
+          margin: 20px auto;
+        }
+        .wrapper div {
+          width: 200px;
+          height: 200px;
+          line-height: 200px;
+          text-align: center;
+          background: orange;
+          color: #fff;
+          -webkit-transform: translate(50px,100px);
+          -moz-transform:translate(50px,100px);
+          transform: translate(50px,100px);
+        }
+    </pre>
+    <p>效果如下</p>
+    <div class="wrapper" style="width: 200px;height: 200px;border: 2px dotted red;margin: 20px auto;">
+        <div style="width: 200px;height: 200px;line-height: 200px;text-align: center;background: orange;
+          color: #fff;-webkit-transform: translate(50px,100px);-moz-transform:translate(50px,100px);
+          transform: translate(50px,100px);">我向右向下移动</div>
+    </div>
+    <br/><br/><br/><br/><br/><br/>
+    <h1>5、矩阵 matrix()</h1>
+    <p>
+        matrix() 是一个含六个值的(a,b,c,d,e,f)变换矩阵，用来指定一个2D变换，相当于直接应用一个[a b c d e f]变换矩阵。
+        就是基于水平方向（X轴）和垂直方向（Y轴）重新定位元素,此属性值使用涉及到数学中的矩阵，我在这里只是简单的说一下CSS3中的transform有
+        这么一个属性值，如果需要深入了解，需要对数学矩阵有一定的知识。
+    </p>
+    <p>示例演示：通过matrix()函数来模拟transform中translate()位移的效果。</p>
+    <xmp>
+        <div class="wrapper">
+            <div></div>
+        </div>
+    </xmp>
+    <pre>
+        .wrapper {
+          width: 300px;
+          height: 200px;
+          border: 2px dotted red;
+          margin: 40px auto;
+        }
+        .wrapper div {
+          width:300px;
+          height: 200px;
+          background: orange;
+          -webkit-transform: matrix(1,0,0,1,50,50);
+          -moz-transform:matrix(1,0,0,1,50,50);
+          transform: matrix(1,0,0,1,50,50);
+        }
+    </pre>
+    <p>效果如下</p>
+    <div class="wrapper" style="width: 300px;height: 200px;border: 2px dotted red;margin: 40px auto;">
+        <div style="width:300px;height: 200px;background: orange;
+          -webkit-transform: matrix(1,0,0,1,50,50);-moz-transform:matrix(1,0,0,1,50,50);transform: matrix(1,0,0,1,50,50);"></div>
+    </div>
+    <br/><br/><br/><br/><br/><br/>
+    <h1>6、原点 transform-origin</h1>
+    <p>任何一个元素都有一个中心点，默认情况之下，其中心点是居于元素X轴和Y轴的50%处</p>
+    <p>
+        在没有重置transform-origin改变元素原点位置的情况下，CSS变形进行的旋转、位移、缩放，扭曲等操作都是以元素自己中心位置进行变形。
+        但很多时候，我们可以通过transform-origin来对元素进行原点位置改变，使元素原点不在元素的中心位置，以达到需要的原点位置。
+    </p>
+    <p>transform-origin取值和元素设置背景中的background-position取值类似，如下所示：</p>
+    <table>
+        <tr>
+            <td>关键词</td>
+            <td>百分比</td>
+        </tr>
+        <tr>
+            <td>top = top center = center top</td>
+            <td>50% 0</td>
+        </tr>
+        <tr>
+            <td>right = right center = center right</td>
+            <td>100%或（100% 50%）</td>
+        </tr>
+        <tr>
+            <td>bottom = bottom center = center bottom</td>
+            <td>50% 100%</td>
+        </tr>
+        <tr>
+            <td>left = left center = center left</td>
+            <td>0或(0 50%)</td>
+        </tr>
+        <tr>
+            <td>center = center center</td>
+            <td>50%或(50% 50%)</td>
+        </tr>
+        <tr>
+            <td>top left = left top</td>
+            <td>0 0</td>
+        </tr>
+        <tr>
+            <td>right top = top right</td>
+            <td>100% 0</td>
+        </tr>
+        <tr>
+            <td>bottom right = right bottom</td>
+            <td>100% 100%</td>
+        </tr>
+        <tr>
+            <td>bottom left = left bottom</td>
+            <td>0 100%</td>
+        </tr>
+    </table>
+    <p>实例展示</p>
+    <p>通过transform-origin改变元素原点到左上角，然后进行顺时旋转45度</p>
+    <xmp>
+        <div class="wrapper">
+            <div>原点在默认位置处</div>
+        </div>
+        <div class="wrapper transform-origin">
+            <div>原点重置到左上角</div>
+        </div>
+    </xmp>
+    <pre>
+        .wrapper {
+          width: 300px;
+          height: 300px;
+          float: left;
+          margin: 100px;
+          border: 2px dotted red;
+          line-height: 300px;
+          text-align: center;
+        }
+        .wrapper div {
+          background: orange;
+          -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+        .transform-origin div {
+          -webkit-transform-origin: left top;
+          transform-origin: left top;
+        }
+    </pre>
+    <div class="wrapper" style="width: 300px;
+          height: 300px;
+          float: left;
+          margin: 100px;
+          border: 2px dotted red;
+          line-height: 300px;
+          text-align: center;">
+        <div style="background: orange;
+          -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);">原点在默认位置处</div>
+    </div>
+    <div class="wrapper transform-origin" style="width: 300px;
+          height: 300px;
+          float: left;
+          margin: 100px;
+          border: 2px dotted red;
+          line-height: 300px;
+          text-align: center;">
+        <div style="background: orange;
+          -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);-webkit-transform-origin: left top;
+          transform-origin: left top;">原点重置到左上角</div>
+    </div>
+    <br/><br/><br/><br/><br/><br/>
+    <h1 style="clear:both;">7、过渡属性 transition-property</h1>
+    <p>
+        早期在Web中要实现动画效果，都是依赖于JavaScript或Flash来完成。但在CSS3中新增加了一个新的模块transition，它可以通过一些简单的CSS事件
+        来触发元素的外观变化，让效果显得更加细腻。简单点说，就是通过鼠标的单击、获得焦点，被点击或对元素任何改变中触发，并平滑地以动画效果改变CSS的属性值。
+    </p>
+    <p>
+        在CSS中创建简单的过渡效果可以从以下几个步骤来实现：<br/>
+        第一，在默认样式中声明元素的初始状态样式；<br/>
+        第二，声明过渡元素最终状态样式，比如悬浮状态；<br/>
+        第三，在默认样式中通过添加过渡函数，添加一些不同的样式。
+    </p>
+    <p>CSS3的过度transition属性是一个复合属性，主要包括以下几个子属性：</p>
+    <p>
+        1.transition-property:指定过渡或动态模拟的css属性<br/>
+        2.transition-duration:指定完成过渡所需的时间<br/>
+        3.transition-timing-function:指定过渡函数<br/>
+        4.transition-delay:指定开始出现的延迟时间
+    </p>
+    <p>先来看transition-property属性</p>
+    <p>
+        transition-property用来指定过渡动画的CSS属性名称，而这个过渡属性只有具备一个中点值的属性（需要产生动画的属性）才能具备过渡效果，其对应
+        具有过渡的CSS属性主要有：
+    </p>
+    <table>
+        <tr style="height:35px;">
+            <td style="width:150px;">background-color</td>
+            <td style="width:150px;">background-position</td>
+            <td style="width:150px;">border-bottom-color</td>
+            <td style="width:150px;">border-bottom-width</td>
+        </tr>
+        <tr style="height:35px;">
+            <td>border-left-color</td>
+            <td>border-left-width</td>
+            <td>border-right-color</td>
+            <td>border-right-width</td>
+        </tr>
+        <tr style="height:35px;">
+            <td>border-spacing</td>
+            <td>border-top-color</td>
+            <td>border-top-width</td>
+            <td>bottom</td>
+        </tr>
+        <tr style="height:35px;">
+            <td>clip</td>
+            <td>color</td>
+            <td>font-size</td>
+            <td>font-weight</td>
+        </tr>
+        <tr style="height:35px;">
+            <td>height</td>
+            <td>left</td>
+            <td>letter-spacing</td>
+            <td>line-height</td>
+        </tr>
+        <tr style="height:35px;">
+            <td>margin-bottom</td>
+            <td>margin-left</td>
+            <td>margin-right</td>
+            <td>margin-top</td>
+        </tr>
+        <tr style="height:35px;">
+            <td>max-height</td>
+            <td>max-width</td>
+            <td>min-height</td>
+            <td>min-width</td>
+        </tr>
+        <tr style="height:35px;">
+            <td>opacity</td>
+            <td>outline-color</td>
+            <td>outline-width</td>
+            <td>padding-bottom</td>
+        </tr>
+        <tr style="height:35px;">
+            <td>padding-left</td>
+            <td>padding-right</td>
+            <td>padding-top</td>
+            <td>right</td>
+        </tr>
+        <tr style="height:35px;">
+            <td>text-indent</td>
+            <td>text-shadow</td>
+            <td>vertical-align</td>
+            <td>visibility</td>
+        </tr>
+        <tr style="height:35px;">
+            <td>width</td>
+            <td>word-spacing</td>
+            <td>z-index</td>
+            <td></td>
+        </tr>
+    </table>
+    <xmp>
+        <div></div>
+    </xmp>
+    <pre>
+        div {
+          width: 200px;
+          height: 200px;
+          background-color:red;
+          margin: 20px auto;
+          -webkit-transition: background-color .5s ease .1s;
+          transition: background-color .5s ease .1s;
+        }
+        div:hover {
+          background-color: orange;
+        }
+    </pre>
+    <p>鼠标移上去看效果：</p>
+    <style>
+        .div7{
+            width: 200px;
+            height: 200px;
+            background-color:red;
+            margin: 20px auto;
+            -webkit-transition: background-color .5s ease .1s;
+            transition: background-color .5s ease .1s;
+        }
+        .div7:hover {
+            background-color: orange;
+        }
+    </style>
+    <div class="div7"></div>
+    <p>特别注意：当“transition-property”属性设置为all时，表示的是所有中点值的属性。<br/>
+
+        用一个简单的例子来说明这个问题：<br/>
+
+        假设你的初始状态设置了样式“width”,“height”,“background”,当你在终始状态都改变了这三个属性，那么all代表的就是“width”、“height”
+        和“background”。如果你的终始状态只改变了“width”和“height”时，那么all代表的就是“width”和“height”。</p>
+    <br/><br/><br/><br/><br/><br/>
+    <h1>8、过渡所需时间 transition-duration</h1>
+    <p>transition-duration属性主要用来设置一个属性过渡到另一个属性所需的时间，也就是从旧属性过渡到新属性花费的时间长度，俗称持续时间。</p>
+    <p>案例演示:</p>
+    <p>在鼠标悬停（hover）状态下，让容器从直角慢慢过渡到圆角，并让整个动画持续0.5s。</p>
+    <xmp>
+        <div></div>
+    </xmp>
+    <pre>
+        div {
+          width: 300px;
+          height: 200px;
+          background-color: orange;
+          margin: 20px auto;
+          -webkit-transition-property: -webkit-border-radius;
+          transition-property: border-radius;
+          -webkit-transition-duration: .5s;
+          transition-duration: .5s;
+          -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+          -webkit-transition-delay: .2s;
+          transition-delay: .2s;
+        }
+        div:hover {
+          border-radius: 20px;
+        }
+    </pre>
+    <p>鼠标移上去看效果：</p>
+    <style>
+        .div8 {
+            width: 300px;
+            height: 200px;
+            background-color: orange;
+            margin: 20px auto;
+            -webkit-transition-property: -webkit-border-radius;
+            transition-property: border-radius;
+            -webkit-transition-duration: .5s;
+            transition-duration: .5s;
+            -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+            -webkit-transition-delay: .2s;
+            transition-delay: .2s;
+        }
+        .div8:hover {
+            border-radius: 20px;
+        }
+    </style>
+    <div class="div8"></div>
+    <br/><br/><br/><br/><br/><br/>
+    <h1>9、过渡函数 transition-timing-function</h1>
+    <p>
+        transition-timing-function属性指的是过渡的“缓动函数”。主要用来指定浏览器的过渡速度，以及过渡期间的操作进展情况，其中要包括以下几种函数：
+    </p>
+    <table>
+        <tr>
+            <td>ease</td>
+            <td>默认值，元素样式从初始状态过渡到终止状态时速度由快到慢，逐渐变慢</td>
+        </tr>
+        <tr>
+            <td>linear</td>
+            <td>元素样式从初始状态过渡到终止状态速度是恒速</td>
+        </tr>
+        <tr>
+            <td>ease-in</td>
+            <td>元素样式从初始状态过渡到终止状态时，速度越来越快，呈一种加速状态。常称这种效果为渐显效果</td>
+        </tr>
+        <tr>
+            <td>ease-out</td>
+            <td>元素样式从初始装填过渡到终止状态时，速度越来越慢，呈一种减速状态。常称这种效果为渐隐效果</td>
+        </tr>
+        <tr>
+            <td>ease-in-out</td>
+            <td>元素样式从初始状态到终止状态时，先加速再减速。常称这种效果为渐显渐隐效果</td>
+        </tr>
+    </table>
+    <p>案例展示：</p>
+    <p>在hover状态下，让容器从一个正方形慢慢过渡到一个圆形，而整个过渡是先加速再减速，也就是运用ease-in-out函数。</p>
+    <xmp>
+        <div></div>
+    </xmp>
+    <pre>
+        div {
+          width: 200px;
+          height: 200px;
+          background: red;
+          margin: 20px auto;
+          -webkit-transition-property: -webkit-border-radius;
+          transition-property: border-radius;
+          -webkit-transition-duration: .5s;
+          transition-duration: .5s;
+          -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+          -webkit-transition-delay: .2s;
+          transition-delay: .2s;
+        }
+        div:hover {
+          border-radius: 100%;
+        }
+    </pre>
+    <p>效果如下：</p>
+    <style>
+        .div9 {
+            width: 200px;
+            height: 200px;
+            background: red;
+            margin: 20px auto;
+            -webkit-transition-property: -webkit-border-radius;
+            transition-property: border-radius;
+            -webkit-transition-duration: .5s;
+            transition-duration: .5s;
+            -webkit-transition-timing-function: ease-in-out;
+            transition-timing-function: ease-in-out;
+            -webkit-transition-delay: .2s;
+            transition-delay: .2s;
+        }
+        .div9:hover {
+            border-radius: 100%;
+        }
+    </style>
+    <div class="div9"></div>
+    <br/><br/><br/><br/><br/><br/>
+    <h1>10、-过渡延迟时间 transition-delay</h1>
+    <p>
+        transition-delay属性和transition-duration属性极其类似，不同的是transition-duration是用来设置过渡动画的持续时间，
+        而transition-delay主要用来指定一个动画开始执行的时间，也就是说当改变元素属性值后多长时间开始执行。
+    </p>
+    <p>
+        有时我们想改变两个或者多个css属性的transition效果时，只要把几个transition的声明串在一起，用逗号（“，”）隔开，然后各自可以有各自不同
+        的延续时间和其时间的速率变换方式。但需要值得注意的一点：第一个时间的值为 transition-duration，第二个为transition-delay。
+    </p>
+    <p>例如：a{ transition: background 0.8s ease-in 0.3,color 0.6s ease-out 0.3;}</p>
+    <p>示例演示：</p>
+    <p>
+        通过transition属性将一个200px *200px的橙色容器，在鼠标悬浮状态时，过渡到一个300px * 300px的红色容器。而且整个过渡0.1s后触发，并
+        且整个过渡持续0.28s。
+    </p>
+    <xmp>
+        <div class="wrapper">
+            <div>鼠标放到我的身上来</div>
+        </div>
+    </xmp>
+    <pre>
+        .wrapper {
+          width: 400px;
+          height: 400px;
+          margin: 20px auto;
+          border: 2px dotted red;
+        }
+        .wrapper div {
+          width: 200px;
+          height: 200px;
+          background-color: orange;
+          -webkit-transition: all .28s ease-in .1s;
+          transition: all .28s ease-in .1s;
+        }
+        .wrapper div:hover {
+          width: 300px;
+          height: 300px;
+          background-color: red;
+        }
+    </pre>
+    <p>效果如下：</p>
+    <style>
+        .wrapper10 {
+            width: 400px;
+            height: 400px;
+            margin: 20px auto;
+            border: 2px dotted red;
+        }
+        .wrapper10 div {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            -webkit-transition: all .28s ease-in .1s;
+            transition: all .28s ease-in .1s;
+        }
+        .wrapper10 div:hover {
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+    </style>
+    <div class="wrapper10">
+        <div>鼠标放到我的身上来</div>
+    </div>
+
+
+
+
+
+</div>
+
+
+
+</body>
+</html>

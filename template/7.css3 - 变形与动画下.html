@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<div style="width:1200px;margin:0 auto;padding:20px;">
+    <h1>1、Keyframes介绍</h1>
+    <p>
+        Keyframes被称为关键帧，其类似于Flash中的关键帧。在CSS3中其主要以“@keyframes”开头，后面紧跟着是动画名称加上一对花括号“{…}”，
+        括号中就是一些不同时间段样式规则。
+    </p>
+    <pre>
+        @keyframes changecolor{
+          0%{
+           background: red;
+          }
+          100%{
+            background: green;
+          }
+        }
+    </pre>
+    <p>
+        在一个“@keyframes”中的样式规则可以由多个百分比构成的，如在“0%”到“100%”之间创建更多个百分比，分别给每个百分比中给需要有动画效果的
+        元素加上不同的样式，从而达到一种在不断变化的效果。
+    </p>
+    <p>
+        经验与技巧：在@keyframes中定义动画名称时，其中0%和100%还可以使用关键词from和to来代表，其中0%对应的是from，100%对应的是to。
+    </p>
+    <p>
+        注意：Chrome 和 Safari 需要前缀 -webkit-；Foxfire 需要前缀 -moz-。
+    </p>
+    <p>案例演示:</p>
+    <p>
+        通过“@keyframes”声明一个名叫“wobble”的动画，从“0%”开始到“100%”结束，同时还经历了一个“40%”和“60%”两个过程。“wobble”动画
+        在“0%”时元素定位到left为100px，背景色为green，然后在“40%”时元素过渡到left为150px,背景色为orange,接着在“60%”时元素过渡到
+        left为75px，背景色为blue，最后“100%”时结束动画，元素又回到起点left为100px处，背景色变为red。
+    </p>
+    <xmp>
+        <div>鼠标放到我身上</div>
+    </xmp>
+    <pre>
+        @keyframes wobble {
+          0% {
+            margin-left: 100px;
+            background:green;
+          }
+          40% {
+            margin-left:150px;
+            background:orange;
+          }
+          60% {
+            margin-left: 75px;
+            background: blue;
+          }
+          100% {
+            margin-left: 100px;
+            background: red;
+          }
+        }
+        div {
+          width: 100px;
+          height: 100px;
+          background:red;
+          color: #fff;
+        }
+        div:hover{
+          animation: wobble 5s ease .1s;
+        }
+    </pre>
+    <p>效果如下：</p>
+    <style>
+        @keyframes wobble {
+            0% {
+                margin-left: 100px;
+                background:green;
+            }
+            40% {
+                margin-left:150px;
+                background:orange;
+            }
+            60% {
+                margin-left: 75px;
+                background: blue;
+            }
+            100% {
+                margin-left: 100px;
+                background: red;
+            }
+        }
+        .div1 {
+            width: 100px;
+            height: 100px;
+            background:red;
+            color: #fff;
+        }
+        .div1:hover{
+            animation: wobble 5s ease .1s;
+        }
+    </style>
+    <div class="div1">鼠标放到我身上</div>
+    <br/><br/><br/><br/><br/><br/>
+    <h1>2、调用动画</h1>
+    <p>
+        animation-name属性主要是用来调用 @keyframes 定义好的动画。需要特别注意: animation-name 调用的动画名需要和“@keyframes”定义的
+        动画名称完全一致（区分大小写），如果不一致将不具有任何动画效果。
+    </p>
+    <p>语法：</p>
+    <p>animation-name: none | IDENT[,none|DENT]*;</p>
+    <p>1、IDENT是由 @keyframes 创建的动画名，上面已经讲过了（animation-name 调用的动画名需要和“@keyframes”定义的动画名称完全一致）；</p>
+
+    <p>2、none为默认值，当值为 none 时，将没有任何动画效果,这可以用于覆盖任何动画。</p>
+
+    <p>注意：需要在 Chrome 和 Safari 上面的基础上加上-webkit-前缀，Firefox加上-moz-。</p>
+    <br/><br/><br/><br/><br/><br/>
+    <h1>3、设置动画播放时间</h1>
+    <p>
+        animation-duration主要用来设置CSS3动画播放时间，其使用方法和transition-duration类似，是用来指定元素播放动画所持续的时间长，也
+        就是完成从0%到100%一次动画所需时间。单位：S秒
+    </p>
+    <p>语法规则：</p>
+    <p>animation-duration: <time>[,<time>]*</p>
+    <p>取值<time>为数值，单位为秒，其默认值为“0”，这意味着动画周期为“0”，也就是没有动画效果（如果值为负值会被视为“0”）。</p>
+    <p>案例演示：</p>
+    <p>制作一个矩形变成圆形的动画，整个动画播放时间持续了10s钟。</p>
+    <xmp>
+        <div>Hover Me</div>
+    </xmp>
+    <pre>
+        @keyframes toradius{
+          from {
+            border-radius: 0;
+          }
+          to {
+            border-radius: 100%;
+          }
+        }
+        div {
+          width: 200px;
+          height: 200px;
+          line-height: 200px;
+          text-align: center;
+          color: #fff;
+          background: green;
+          margin: 20px auto;
+        }
+        div:hover {
+          animation-name: toradius;
+          animation-duration: 10s;
+          animation-timing-function: ease-in-out;
+          animation-delay: .1s;
+        }
+    </pre>
+    <p>鼠标移上去看效果：</p>
+    <style>
+        @keyframes toradius{
+            from {
+                border-radius: 0;
+            }
+            to {
+                border-radius: 100%;
+            }
+        }
+        .div3 {
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            color: #fff;
+            background: green;
+            margin: 20px auto;
+        }
+        .div3:hover {
+            animation-name: toradius;
+            animation-duration: 10s;
+            animation-timing-function: ease-in-out;
+            animation-delay: .1s;
+        }
+    </style>
+    <div class="div3">Hover Me</div>
+    <br/><br/><br/><br/><br/><br/>
+    <h1>4、设置动画播放方式</h1>
+    <p>
+        animation-timing-function属性主要用来设置动画播放方式。主要让元素根据时间的推进来改变属性值的变换速率，简单点说就是动画的播放方式。
+    </p>
+    <p>语法规则：</p>
+    <p>
+        animation-timing-function:ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier(<number>, <number>,
+        <number>, <number>) [, ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier(<number>, <number>,
+            <number>, <number>)]*
+    </p>
+    <p>
+        它和transition中的transition-timing-function一样，具有以下几种变换方式：ease,ease-in,ease-in-out,ease-out,linear
+        和cubic-bezier。对应功如下：
+    </p>
+    <table>
+        <tr>
+            <td>函数</td>
+            <td>功能描述</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>ease</td>
+            <td>默认值，元素样式从初始状态过渡到终止状态时速度由快到慢，逐渐变慢</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>linear</td>
+            <td>元素样式从初始状态过渡到终止状态，速度是恒速</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>ease-in</td>
+            <td>元素样式从初始状态过渡到终止状态时，速度越来越快，呈一种加速状态。常称这种效果为渐显效果</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>ease-out</td>
+            <td>元素样式从初始状态过渡到终止状态时，速度越来越慢，呈一种减速状态。常称这种效果为渐隐效果</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>ease-in-out</td>
+            <td>元素样式从初始状态到终止状态时，先加速再减速。常称这种效果为渐显渐隐效果</td>
+            <td></td>
+        </tr>
+    </table>
+    <p>
+        注：在调用move动画播放中，让元素样式从初始状态到终止状态时，先加速再减速，也就是渐显渐隐效果。
+    </p>
+    <br/><br/><br/><br/><br/><br/>
+    <h1>5、设置动画开始播放的时间</h1>
+    <p>
+        animation-delay属性用来定义动画开始播放的时间，用来触发动画播放的时间点。和transition-delay属性一样，用于定义
+        在浏览器开始执行动画之前等待的时间。
+    </p>
+    <p>语法规则</p>
+    <p>animation-delay:<time>[,<time>]*</p>
+    <p>案例演示</p>
+    <p>浏览器渲染样式之后2S之后触发move动画。</p>
+    <xmp>
+        <div><span></span></div>
+    </xmp>
+    <pre>
+        @keyframes move {
+          0%{
+            transform: translate(0);
+          }
+          15%{
+            transform: translate(100px,180px);
+          }
+          30%{
+            transform: translate(150px,0);
+          }
+          45%{
+            transform: translate(250px,180px);
+          }
+          60%{
+            transform:translate(300px,0);
+          }
+          75%{
+            transform: translate(450px,180px);
+          }
+          100%{
+            transfrom: translate(480px,0);
+          }
+        }
+        div {
+          width: 500px;
+          height: 200px;
+          border: 1px solid red;
+          margin: 20px auto;
+        }
+        div span {
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          background: green;
+          border-radius: 100%;
+          animation-name:move;
+          animation-duration: 10s;
+          animation-timing-function:ease;
+          animation-delay:2s;
+          animation-iteration-count:infinite;
+        }
+    </pre>
+    <p>鼠标以上去查看效果</p>
+    <style>
+        @keyframes move {
+            0%{
+                transform: translate(0);
+            }
+            15%{
+                transform: translate(100px,180px);
+            }
+            30%{
+                transform: translate(150px,0);
+            }
+            45%{
+                transform: translate(250px,180px);
+            }
+            60%{
+                transform:translate(300px,0);
+            }
+            75%{
+                transform: translate(450px,180px);
+            }
+            100%{
+                transfrom: translate(480px,0);
+            }
+        }
+        .div5 {
+            width: 500px;
+            height: 200px;
+            border: 1px solid red;
+            margin: 20px auto;
+        }
+        .div5 span {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: green;
+            border-radius: 100%;
+            animation-name:move;
+            animation-duration: 10s;
+            animation-timing-function:ease;
+            animation-delay:2s;
+            animation-iteration-count:infinite;
+        }
+    </style>
+    <div class="div5"><span></span></div>
+    <br/><br/><br/><br/><br/><br/>
+    <h1>6、设置动画播放次数</h1>
+    <p>
+        animation-iteration-count属性主要用来定义动画的播放次数。
+    </p>
+    <p>语法规则：</p>
+    <p>
+        animation-iteration-count: infinite | <number> [, infinite | <number>]*
+    </p>
+    <p>
+        1、其值通常为整数，但也可以使用带有小数的数字，其默认值为1，这意味着动画将从开始到结束只播放一次。
+    </p>
+    <p>
+        2、如果取值为infinite，动画将会无限次的播放。
+    </p>
+    <p>示例：</p>
+    <p>通过animation-iteration-count属性让动画move只播放5次，代码设置为：</p>
+    <p>animation-iteration-count:5;</p>
+    <p>注意：Chrome或Safari浏览器，需要加入-webkit-前缀！</p>
+    <br/><br/><br/><br/><br/><br/>
+    <h1>7、设置动画播放方向</h1>
+    <p>animation-direction属性主要用来设置动画播放方向，其语法规则如下：</p>
+    <p>animation-direction:normal | alternate [, normal | alternate]*</p>
+    <p>其主要有两个值：normal、alternate</p>
+    <p>
+        1、normal是默认值，如果设置为normal时，动画的每次循环都是向前播放；<br/>
+
+        2、另一个值是alternate，他的作用是，动画播放在第偶数次向前播放，第奇数次向反方向播放。
+    </p>
+    <p>
+        例如：通过animation-direction属性，将move动画播放动画方向设置为alternate，代码为：<br/>
+        animation-direction:alternate;
+    </p>
+    <p>注意：Chrome或Safari浏览器，需要加入-webkit-前缀！</p>
+    <br/><br/><br/><br/><br/><br/>
+    <h1>8、设置动画的播放状态</h1>
+    <p>animation-play-state属性主要用来控制元素动画的播放状态。</p>
+    <p>参数：其主要有两个值：running和paused。</p>
+    <p>
+        其中running是其默认值，主要作用就是类似于音乐播放器一样，可以通过paused将正在播放的动画停下来，也可以通过running将暂停的动画重新
+        播放，这里的重新播放不一定是从元素动画的开始播放，而是从暂停的那个位置开始播放。另外如果暂停了动画的播放，元素的样式将回到最原始设置状态。
+    </p>
+    <p>例如，页面加载时，动画不播放。代码如下：</p>
+    <p>animation-play-state:paused;</p>
+    <br/><br/><br/><br/><br/><br/>
+    <h1>9、设置动画时间外属性</h1>
+    <p>
+        animation-fill-mode属性定义在动画开始之前和结束之后发生的操作。主要具有四个属性值：none、forwards、backwords和both。
+        其四个属性值对应效果如下：
+    </p>
+    <table>
+        <tr>
+            <td>属性</td>
+            <td>效果</td>
+        </tr>
+        <tr>
+            <td>none</td>
+            <td>默认值，表示动画将按预期进行和结束，在动画完成其最后一帧时，动画会反转到初始帧处</td>
+        </tr>
+        <tr>
+            <td>forwards</td>
+            <td>表示动画在结束后继续应用最后的关键帧的位置</td>
+        </tr>
+        <tr>
+            <td>backwards</td>
+            <td>会在向元素应用动画样式时迅速应用动画的初始帧</td>
+        </tr>
+        <tr>
+            <td>both</td>
+            <td>元素动画同时具有forwards和backwards效果</td>
+        </tr>
+    </table>
+    <p>
+        在默认情况之下，动画不会影响它的关键帧之外的属性，使用animation-fill-mode属性可以修改动画的默认行为。简单的说就是告诉动画在第一
+        关键帧上等待动画开始，或者在动画结束时停在最后一个关键帧上而不回到动画的第一帧上。或者同时具有这两个效果。
+    </p>
+    <p>例如：让动画停在最一帧处。代码如下：</p>
+    <p>animation-fill-mode:forwards; </p>
+
+
+
+
+</div>
+</body>
+</html>
