@@ -28,30 +28,201 @@
     </p>
     <table>
         <tr>
-            <td></td>
-            <td></td>
+            <td>属性值</td>
+            <td>取值说明</td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
+            <td>none</td>
+            <td>用户不能拖动元素修改尺寸大小</td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
+            <td>both</td>
+            <td>用户可以拖动元素，同时修改元素的宽度和高度</td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
+            <td>horizontal</td>
+            <td>用户可以拖动元素，仅可以修改元素的宽度，但不能修改元素的高度</td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
+            <td>vertical</td>
+            <td>用户可以拖动元素，仅可以修改元素的高度，但不能修改元素的宽度</td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
+            <td>inherit</td>
+            <td>继承父元素的resize属性值</td>
+        </tr>
+
+    </table>
+    <p>例如：通过resize属性，让文本域可以沿水平方向拖大。代码为</p>
+    <xmp>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+    </xmp>
+    <pre>
+        textarea {
+          -webkit-resize: horizontal;
+          -moz-resize: horizontal;
+          -o-resize: horizontal;
+          -ms-resize: horizontal;
+          resize: horizontal;
+        }
+    </pre>
+    <p>拖动输入框右下角查看效果：</p>
+    <textarea name="" id="" cols="30" rows="10" style="-webkit-resize: horizontal;
+          -moz-resize: horizontal;-o-resize: horizontal;-ms-resize: horizontal;
+          resize: horizontal;"></textarea>
+    <br><br><br><br><br><br>
+    <h1>2、外轮廓属性</h1>
+    <p>
+        外轮廓outline在页面中呈现的效果和边框border呈现的效果极其相似，但和元素边框border完全不同，外轮廓线不占用网页布局空间，
+        不一定是矩形，外轮廓是属于一种动态样式，只有元素获取到焦点或者被激活时呈现。
+    </p>
+    <p>
+        outline属性早在CSS2中就出现了，主要是用来在元素周围绘制一条轮廓线，可以起到突出元素的作用。但是并未得到各主流浏览器的广
+        泛支持，在CSS3中对outline作了一定的扩展，在以前的基础上增加新特性。
+    </p>
+    <p>
+        outline属性的基本语法如下：
+    </p>
+    <p>
+        outline: ［outline-color］ || [outline-style] || [outline-width] || [outline-offset] || inherit
+    </p>
+    <p>
+        从语法中可以看出outline和border边框属性的使用方法极其类似。outline-color相当于border-color、outline-style相当于
+        border-style，而outline-width相当于border-width，只不过CSS3给outline属性增加了一个outline-offset属性
+    </p>
+    <p>其取值说明如下</p>
+    <table>
+        <tr>
+            <td>属性值</td>
+            <td>属性值说明</td>
+        </tr>
+        <tr>
+            <td>outline-color</td>
+            <td>
+                定义轮廓线的颜色，属性值为CSS中定义的颜色值。在实际应用中，可以将此参数省略，省略时此参数的默认值为黑色</td>
+        </tr>
+        <tr>
+            <td>outline-style</td>
+            <td>定义轮廓线的样式，属性为CSS中定义线的样式。在实际应用中，可以将此参数省略，省略时此参数的默认值为none，省略后不对该轮廓线进行任何绘制。</td>
+        </tr>
+        <tr>
+            <td>outline-width</td>
+            <td>
+                定义轮廓线的宽度，属性值可以为一个宽度值。在实际应用中，可以将此参数省略，省略时此参数的默认值为medium，表示绘制中等宽度的轮廓线。
+            </td>
+        </tr>
+        <tr>
+            <td>outline-offset</td>
+            <td>
+                定义轮廓边框的偏移位置的数值，此值可以取负数值。当此参数的值为正数值，表示轮廓边框向外偏离多少个像素；当此参数的值为负数值，表示轮廓边框向内偏移多少个像素。
+            </td>
+        </tr>
+        <tr>
+            <td>inherit</td>
+            <td>元素继承父元素的outline效果。</td>
         </tr>
     </table>
+    <p>案例如下：制作双色边框效果</p>
+    <xmp>
+        <div></div>
+    </xmp>
+    <pre>
+            div {
+              padding: 20px;
+              margin: 30px;
+              outline-style: red solid 2px;
+              border: 2px solid green;
+            }
+        </pre>
+    <p>效果如下：</p>
+    <div style="padding: 20px;margin: 30px;outline-style: red solid 2px;
+              border: 2px solid green;"></div>
+    <br><br><br><br><br><br>
+    <h1>3、CSS生成内容</h1>
+    <p>
+        在Web中插入内容，在CSS2.1时代依靠的是JavaScript来实现。但进入CSS3进代之后我们可以通过CSS3的伪类“:before”，“:after”
+        和CSS3的伪元素“::before”、“::after”来实现，其关键是依靠CSS3中的“content”属性来实现。不过这个属性对于img和input元素不起作用。
+    </p>
+    <p>
+        content配合CSS的伪类或者伪元素，一般可以做以下四件事情
+    </p>
+    <table>
+        <tr>
+            <td>功能</td>
+            <td>功能说明</td>
+        </tr>
+        <tr>
+            <td>none</td>
+            <td>不生成任何内容</td>
+        </tr>
+        <tr>
+            <td>attr</td>
+            <td>插入标签属性值</td>
+        </tr>
+        <tr>
+            <td>url</td>
+            <td>使用指定的绝对或相对地址插入一个外部资源（图像，声频，视频或浏览器支持的其他任何资源）</td>
+        </tr>
+        <tr>
+            <td>string</td>
+            <td>插入字符串</td>
+        </tr>
+    </table>
+    <p>实例展示：</p>
+    <p>
+        在CSS中有一种清除浮动的方法叫“clearfix”。而这个“clearfix”方法就中就使用了“content”，只不过只是在这里插入了一个空格。如下所示：
+    </p>
+    <pre>
+        .clearfix:before,
+
+        .clearfix:after {
+
+               content:””;
+
+               display:table;
+
+        }
+
+        .clearfix:after {
+
+               clear:both;
+
+               overflow:hidden;
+
+        }
+    </pre>
+    <p>
+        上面这个示例是最常见的，也是最简单的，我们再来看一个插入元素属性值的方法。
+    </p>
+    <p>
+        假设我们有一个元素：
+    </p>
+    <xmp>
+        <a href="##" title="我是一个title属性值，我插在你的后面">我是元素</a>
+    </xmp>
+    <p>
+        可以通过”:after”和”content:attr(title)”将元素的”title”值插入到元素内容“我是元素”之后：
+    </p>
+    <pre>
+        a:after {
+
+          content:attr(title);
+
+               color:#f00;
+
+        }
+    </pre>
+    <p>效果如下</p>
+    <style>
+        a.a3:after {
+
+            content:attr(title);
+
+            color:#f00;
+
+        }
+    </style>
+    <a class="a3" href="##" title="我是一个title属性值，我插在你的后面">我是元素</a>
 
 </div>
 </body>

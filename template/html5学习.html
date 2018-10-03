@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<div style="width:1200px;margin:0 auto;padding:20px;">
+    <p>html5语法</p>
+    <p>新增及删除标签</p>
+    <p>新增及废除属性</p>
+    <p>全局属性</p>
+    <p>语义化标签综合案例</p>
+
+    <h1>1、html5语法</h1>
+    <p>沿用了html的语法，更简洁，人性化</p>
+    <p>1.DOCTYPE及字符编码</p>
+    <p>2.大小写都可以</p>
+    <p>3.布尔值</p>
+    <p>html4中</p>
+    <xmp>
+        <input type="checkbox" checked="checked"/>
+    </xmp>
+    <p>html5中</p>
+    <xmp>
+        <input type="checkbox" checked="checked"/>
+    </xmp>
+    <p>4.省略引号</p>
+    <xmp>
+        <input type=radio />
+    </xmp>
+    <p>5.可以进行省略的标签</p>
+    <p>
+        不允许写的结束符的标签: area basebr col command embed hr img input keygen
+        link meta param source track wbr
+    </p>
+    <p>
+        可以省略结束符的标签：li dt dd p rt optgroup option colgroup thread tbody
+        tr td th
+    </p>
+    <p>
+        可以完全省略的标签：html head body colgroup tbody
+    </p>
+    <br><br><br><br><br><br>
+    <h1>2、新增、删除标签</h1>
+    <p>新增如下：</p>
+    <p>1.结构标签</p>
+    <p>2.表单标签</p>
+    <p>3.媒体标签</p>
+    <p>4.其他功能标签</p>
+    <br><br>
+    <p>删除如下：</p>
+    <p>1.可以用css代替的标签</p>
+    <p>2.不在使用frame</p>
+    <p>3.只有个别浏览器支持的标签</p>
+    <p>4.其他不常用的标签</p>
+    <br><br>
+    <p>新增的结构标签如下</p>
+    <table>
+        <tr>
+            <td>section标签</td>
+            <td>
+                表示页面中的一个内容区块，比如章节、页眉、页脚或页面的其他部分，可以和h1、h2...等标签结合起来使用，表示文档结构
+            </td>
+        </tr>
+        <tr>
+            <td>article标签</td>
+            <td>表示页面中一块与上下文不相关的独立内容。比如一篇文章</td>
+        </tr>
+        <tr>
+            <td>aside标签</td>
+            <td>表示article标签内容之外的，与article标签内容相关的辅助信息</td>
+        </tr>
+        <tr>
+            <td>header标签</td>
+            <td>表示页面中一个内容区块或整个页面的标题</td>
+        </tr>
+        <tr>
+            <td>hgroup标签</td>
+            <td>表示对整个页面或页面中的一个内容区块的标题进行组合</td>
+        </tr>
+        <tr>
+            <td>footer标签</td>
+            <td>表示整个页面或页面中一个内容区块的脚注。一般来说，他会包含创作者的姓名、创作日期以及创作者的联系信息</td>
+        </tr>
+        <tr>
+            <td>nav标签</td>
+            <td>表示页面中导航链接的部分</td>
+        </tr>
+        <tr>
+            <td>figure标签</td>
+            <td>表示一段独立的流内容，一般表示文档主体流内容中的一个独立单元，使用figcaption标签为figure标签组添加标题</td>
+        </tr>
+    </table>
+    <p>figure标签实例如下</p>
+    <xmp>
+        <figure>
+            <figcaption>PRC</figcaption>
+            <p>The people's republic of china war born in 1949</p>
+        </figure>
+    </xmp>
+    <p>html4中写法</p>
+    <xmp>
+        <dl>
+            <h2>prc</h2>
+            <p>The people's republic of china war born in 1949</p>
+        </dl>
+    </xmp>
+    <br><br><br>
+    <p>新增的媒体标签如下：</p>
+    <p>》video标签</p>
+    <p>定义视频、像电影片段或其他视频流。例如</p>
+    <xmp>
+        <video src="movie.ogg" controls="controls">video标签</video>
+    </xmp>
+    <p>html4中写法</p>
+    <xmp>
+        <object data="move.gov" type="video/ogg">
+            <param name="src" value="movie.ogv">
+        </object>
+    </xmp>
+    <p>》audio标签</p>
+    <p>定义音频，如音乐或其他音频流。例如：</p>
+    <xmp>
+        <audio src="someaudio.wav">audio标签</audio>
+    </xmp>
+    <p>html4中写法</p>
+    <xmp>
+        <object data="someaudio.wav" type="application/ogg">
+            <param name="src" value="someaudio.wav">
+        </object>
+    </xmp>
+    <p>》embed标签</p>
+    <p>用来嵌入内容（包括各种媒体），格式可以是Midi/Wav/AIFF/AU/MP3/flash等。例如</p>
+    <xmp>
+        <embed src="flash.swf" type="">
+    </xmp>
+    <p>html4中写法</p>
+    <xmp>
+        <object data="flash.swf" type="application/x-shockwave-flash"></object>
+    </xmp>
+    <br><br><br>
+    <p>新增表单空间标签</p>
+    <p>》email</p>
+    <p>必须输入email</p>
+    <p>》url</p>
+    <p>必须输入url地址</p>
+    <p>》number</p>
+    <p>必须输入数值</p>
+    <p>》range</p>
+    <p>必须输入一定范围内数值</p>
+    <p>》Date Pickers(日期选择器)</p>
+    <p>
+        拥有多个可供选取日期和时间的新输入类型：<br>
+        date - 选取日、月、年 <br>
+        month - 选取月、年 <br>
+        week - 选取周和年 <br>
+        time - 选取时间（小时和分钟）<br>
+        datetime - 选取时间、日、月、年（UTC时间）<br>
+        datetime-local - 选取时间、日、月、年（本地时间）
+    </p>
+    <p>》search</p>
+    <p>用于搜索域，域显示为常规的文本域</p>
+    <p>》color</p>
+    <br><br><br>
+    <p>新增的其他标签</p>
+    <p>mark command progress details time(给搜索引擎用的) datalist ruby keygen(加密) rt output wbr(软换行：根据元素的宽度自动判断是否换行) source canvas menu</p>
+    <xmp>
+        <p>"Do not forget to buy "<mark>milk</mark>" today."</p>
+        <progress max="100" value="85"><span>85</span>%</progress>
+        <p>发布日期 <time datetime="2013-10-18T09:00">9:00</time></p>
+        <p>更新日期 <time datetime="2013-10-20T09:00X" pubdate>9:00（pubdate告诉搜索引擎发布时间）</time></p>
+        <p>"如果想学习ajax,那么您必须熟悉xml" <wbr></wbr> "http request对象"</p>
+        <canvas id="myCanvas">
+            <script>
+                var canvas = document.getElementById('myCanvas');
+                var ctx = canvas.getContext('2d');
+                ctx.fillStyle = '#FF0000';
+                ctx.fillRect(0,0,80,100);
+            </script>
+        </canvas>
+        <p><command onclick="alert('hello world')" label="click">Click me!</p>
+        <p>
+            <details open>
+                <summary>MacBook Pro Specification</summary>
+                <ul>
+                    <li>111111</li>
+                    <li>222222</li>
+                    <li>333333</li>
+                    <li>444444</li>
+                </ul>
+            </details>
+        </p>
+        <p>
+            <form action="" oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+                <input type="text" id="myCar" list="cars">
+                <datalist id="cars">
+                    <option value="BMW"></option>
+                    <option value="FORD"></option>
+                    <option value="Volvo"></option>
+                </datalist>
+            </form>
+        </p>
+        <p>
+            <form action="demo_keygen" method="get">
+                "Username:"<lable><input type="text"></lable>
+                "Encryption:"
+                <keygen name="security">
+                    <input type="submit">
+            </form>
+        </p>
+        <p>
+        <form action="" oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+            "0"<input type="range" id="a" value="50">
+            "100+"<input type="number" id="b" value="50">
+            "="
+            <output name="x" for="a b">
+                "139"
+            </output>
+        </form>
+        </p>
+        <p>
+            <menu type="toolbar">
+                <li><input type="checkbox"/>Red</li>
+                <li><input type="checkbox"/>blue</li>
+            </menu>
+        </p>
+    </xmp>
+    <br><br><br>
+    <p>被删除的标签</p>
+    <p>1.能用css代替的标签</p>
+    <p>basefont big center font s strike tt u 这些标签纯粹是为画面战士服务的，html5中提倡把画面展示性功能放在css中统一编辑</p>
+    <p>2.不再使用frame框架</p>
+    <p>frameset frame noframes,html5中不支持frame框架，只支持iframe框架，或者用服务器创建的由多个页面组成的符合页面的形式，删除以上这三个标签</p>
+    <p>3.只有部分浏览器支持的标签</p>
+    <p>applet bgsound blink marquee等标签</p>
+    <p>4.其它被废除的标签</p>
+    <p>
+        rb,使用ruby替代 <br>
+        acronym使用abbr替代 <br>
+        dir使用ul替代 <br>
+        isindex,使用form与input相结合的方式替代 <br>
+        listring使用pre替代 <br>
+        xmp使用code替代 <br>
+        nextid使用guids替代 <br>
+        plaintext使用text/plian(无格式正文)MIME类型替代
+    </p>
+    <br><br><br><br><br><br>
+    <h1>3、新增、删除属性</h1>
+    <p>新增如下：</p>
+    <p>1.表单属性</p>
+    <p>2.链接属性</p>
+    <p>3.其它属性</p>
+    <br><br>
+    <p>删除如下：</p>
+    <p>1.可以用css代替的属性</p>
+    <p>2.多余属性</p>
+    <p>3.其它属性</p>
+    <br><br>
+    <p>新增的属性</p>
+    <h3>表单属性</h3>
+    <p>对input(type=text),select,textarea与button指定autofocus属性。它以指定属性的方式让标签在画面打开时自动获得焦点。</p>
+    <p>对input(type=text),textarea指定placeholder属性，它会对用户的输入进行提示，提示用户可以输入的内容</p>
+    <p>对input、output、select、textarea、button与fieldset指定form属性，它声明属于哪个表单，然后将其放置在页面的任何位置，而不用表单之内</p>
+    <p>对input(type=text)、textarea指定required属性，该属性表示拥护提交时进行检查，检查该标签内必定要有输入内容</p>
+    <p>
+        为input标签增加几个新的属性：autocomplete min max multiple pattern与step。还有list属性与datalist标签配合使用：datalist标签与autocomplete属性配合使用。
+        multiple属性允许上传时一次上传多个文件；pattern属性用于验证输入字段的模式，其实就是正则表达式。step属性规定输入字段的合法数字间隔（假如step="3",则合法数字应该是-3/0/3/6,
+        以此类推），step属性可以与max以及min属性配合使用，以创建合法值的范围
+    </p>
+    <p>为input/button标签增加formaction/formmethod/formnovalidate与formtarget属性，用户重载form标签的action/enctype/method/novalidate与target属性，为fieldset标签
+    增加disabled属性，可以把它的子标签设为disabled状态</p>
+    <p>为input/button/form增加novalidate属性，可以取消提交时进行的有关检查，表单可以被无条件的提交</p>
+    <h3>链接相关属性</h3>
+    <p>为a/area增加media属性，规定目标URL是为什么类型的媒介、设备进行优化的，该属性用于规定目标url是为特殊设备（比如iphone），语音或打印媒介设计的。该属性可接受多个值
+    。只能在href属性存在时使用</p>
+    <p>为area增加hreflang和rel属性，hreflang属性规定在被链接文档中的文本的语言。只有当设置了href属性时，才能使用该属性。<br>
+    注意：该属性是纯咨询性的。rel属性规定当前文档与被链接文档、资源之间的关系。只有当使用href属性时，才能使用rel属性</p>
+    <p>为link增加size属性。size属性规定被链接资源的尺寸。只有当被链接资源是图标时（rel="icon"）,才能使用该属性。该属性可接受多个值。值由空格分割</p>
+    <p>为base标签增加target属性，主要是保持与a标签的一致性</p>
+    <h3>其他属性</h3>
+    <p>为ol增加reversed属性，它指定列表倒叙显示</p>
+    <p>为meta增加charset属性</p>
+    <p>为menu增加type和label属性，label为菜单定义一个标注，type属性定义可以menu以上下文菜单，工具条与列表三种形式出现</p>
+    <p>为style增加scoped属性。他允许我们为文档的指定部分定义样式，而不是整个文档，如果使用“scoped”属性，那么所规定的样式只能应用到style标签的父标签及其子标签</p>
+    <p>
+        为script增减属性，它定义脚本是否异步执行。async属性仅适用于外部脚本（只有在使用src属性时）有多种执行外部脚本的方法：<br>
+        如果async="async":脚本相对于页面的其余部分异步的执行（当页面继续进行解析时，脚本将被执行）<br>
+        如果不适用async且defer="defer":脚本将在页面完成解析时执行 <br>
+        如果既不使用async也不使用defer:在浏览器继续解析页面之前，立即读取并执行脚本
+    </p>
+    <p>
+        为html标签增加manifest,开发离线web应用程序时他与API结合使用，定义一个URL,在这个url上描述文档的缓存信息
+    </p>
+    <p>
+        为iframe增加三个属性：sandbox/seamiess/srcdoc,用于提高页面安全性，防止不信任的web页面执行某些操作
+    </p>
+    <br><br><br>
+    <p>废除的属性</p>
+    <p>html4中一些属性在html5中不再被使用，而是采用其他属性或其他方式进行替代</p>
+    <table>
+        <tr>
+            <td>在html4中使用的属性</td>
+            <td>使用该属性的标签</td>
+            <td>在html5中的替代方案</td>
+        </tr>
+        <tr>
+            <td>rev</td>
+            <td>link/a</td>
+            <td>rel</td>
+        </tr>
+        <tr>
+            <td>charset</td>
+            <td>link/a</td>
+            <td>在被链接的资源中使用http content-type头标签</td>
+        </tr>
+        <tr>
+            <td>shape/coords</td>
+            <td>a</td>
+            <td>使用area标签代替a标签</td>
+        </tr>
+        <tr>
+            <td>longdesc</td>
+            <td>img/iframe</td>
+            <td>使用a标签链接到较长描述</td>
+        </tr>
+        <tr>
+            <td>target</td>
+            <td>link</td>
+            <td>多余属性，被省略</td>
+        </tr>
+        <tr>
+            <td>nohref</td>
+            <td>area</td>
+            <td>多余属性，被省略</td>
+        </tr>
+        <tr>
+            <td>profile</td>
+            <td>head</td>
+            <td>多余属性，被省略</td>
+        </tr>
+        <tr>
+            <td>version</td>
+            <td>html</td>
+            <td>多余属性，被省略</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>img</td>
+            <td>id</td>
+        </tr>
+        <tr>
+            <td>scheme</td>
+            <td>meta</td>
+            <td>只为某个表单域使用scheme</td>
+        </tr>
+        <tr>
+            <td>archive/chlassid/codebose/codetype/declare/standby</td>
+            <td>object</td>
+            <td>使用data与type属性类调用插件，需要使用这些属性来设置参数时，使用param属性</td>
+        </tr>
+        <tr>
+            <td>valuetype/type</td>
+            <td>param</td>
+            <td>使用name与value属性，不声明的MIME类型</td>
+        </tr>
+        <tr>
+            <td>axls/abbr</td>
+            <td>td/th</td>
+            <td>使用以明确简洁的文字开头，后跟详述文字的形式，可以对更详细内容使用title属性，来使单元格的内容变得简短</td>
+        </tr>
+        <tr>
+            <td>scope</td>
+            <td>td</td>
+            <td>再被链接的资源中使用http content-type头标签</td>
+        </tr>
+        <tr>
+            <td>align</td>
+            <td>caption/input/legend/div/h1/h2/h3/h4/h5/h6/p</td>
+            <td>使用css样式表替代</td>
+        </tr>
+        <tr>
+            <td>alink/link/text/vlink/background/bgcolor</td>
+            <td>body</td>
+            <td>使用css样式表替代</td>
+        </tr>
+        <tr>
+            <td>align/bgcolor/border/cellpadding/cellspacing/fame/rules/width</td>
+            <td>table</td>
+            <td>使用css样式表替代</td>
+        </tr>
+        <tr>
+            <td>align/char/charoff/height/nowrap/valign</td>
+            <td>tbody/thead/tfoot</td>
+            <td>使用css样式表替代</td>
+        </tr>
+        <tr>
+            <td>align/bgcolor/char/charoff/height/nowrap/valign/width</td>
+            <td>td/th</td>
+            <td>使用css样式表替代</td>
+        </tr>
+        <tr>
+            <td>align/bgcolor/char/charoff/valign</td>
+            <td>tr</td>
+            <td>使用css样式表替代</td>
+        </tr>
+        <tr>
+            <td>align/char/charoff/valign/width</td>
+            <td>col/colgroup</td>
+            <td>使用css样式表替代</td>
+        </tr>
+        <tr>
+            <td>align/border/hspace/vspace</td>
+            <td>object</td>
+            <td>使用css样式表替代</td>
+        </tr>
+        <tr>
+            <td>clear</td>
+            <td>br</td>
+            <td>使用css样式表替代</td>
+        </tr>
+        <tr>
+            <td>compace/type</td>
+            <td>ol/ul/li</td>
+            <td>使用css样式表替代</td>
+        </tr>
+    </table>
+    <br><br><br><br><br><br>
+    <h1>4、全局属性</h1>
+    <p>1.data-yourvalue</p>
+    <p>定义标签的自定义属性，例如：data-type="comment"</p>
+    <p>2.hidden</p>
+    <p>隐藏标签属性</p>
+    <p>3.spellcheck</p>
+    <p>标错提示属性</p>
+    <p>例如,在文本框中输入错误文本，例如“I li you”</p>
+    <xmp>
+        <textarea name="" id="" cols="30" rows="10" spellcheck="true"></textarea>
+    </xmp>
+    <p>4.tabindex</p>
+    <p>按tab键使光标按指定的输入框顺序进行跳转</p>
+    <p>例如：光标定位到姓名输入框，然后按tab键，光标切换到电话输入框，继续按tab键，切换到邮箱输入框</p>
+    <xmp>
+        姓名：<input type="text" tabindex="1">
+        邮箱：<input type="text" tabindex="3">
+        电话：<input type="text" tabindex="2">
+    </xmp>
+    <p>5.contenteditable</p>
+    <p>使标签内容可以编辑</p>
+    <p>例如：</p>
+    <xmp>
+        <div contenteditable="true">我是可编辑的，点击我进行编辑</div>
+    </xmp>
+    <p>6、designMode</p>
+    <p>使整个页面的文本为可编辑的</p>
+    <p>用法如下</p>
+    <xmp>
+        <script>
+            window.document.designMode = 'on';
+        </script>
+    </xmp>
+</div>
+
+
+
+</body>
+</html>

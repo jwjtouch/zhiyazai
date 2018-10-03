@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>知丫仔-后台登陆</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="img/x-ico">
+    <link rel="stylesheet" href="../../public/static/admin/css/iconfont.css">
+    <link rel="stylesheet" href="../../public/static/admin/css/reset.css">
+    <link rel="stylesheet" href="../../public/static/admin/css/index_login.css">
+    <link rel="stylesheet" href="../../public/static/layui/css/modules/layer/default/layer.css" id="layuicss-layer">
+    <link rel="stylesheet" href="../../public/static/admin/css/moon.css" id="layuicss-themedefaultmooncss">
+</head>
+<body class="minW1200">
+<div class="header">
+    <div class="w1200 auto ovh">
+        <div class="lgLeft l">
+            <a href="javaScript:;" target="_blank"><img src="" alt=""></a>
+            <i></i>
+            <span>知丫仔管理系统</span>
+        </div>
+        <div class="lgRight r">
+            <a href="https://sjz.zhaofang.com/" class="return">返回首页</a>
+        </div>
+    </div>
+</div>
+<div class="body">
+    <div class="content w1200 auto rel">
+        <form action="https://sjz.zhaofang.com/agent/login/index.html" name="form1" validation="">
+            <h3>欢迎登录知丫仔管理系统</h3>
+            <div class="classify">
+                <span><i class="iconfont icon-personal"></i></span>
+                <input type="text" name="account" class="ptW273" data-validate="*:系统账号不能为空" placeholder="请输入系统账号">
+            </div>
+            <div class="classify">
+                <span><i class="iconfont icon-lock"></i></span>
+                <input type="password" name="password" class="ptW273" data-validate="*:登陆密码不能为空" placeholder="请输入登录密码">
+            </div>
+            <div class="classify">
+                <span><i class="iconfont icon-code"></i></span>
+                <input type="text" name="captcode" class="ptW192" data-validate="*:验证码不能为空" placeholder="请输入验证码">
+                <a href="javascript:void(0);" class="captCode">
+                    <img class="capt_code" src="captcha.html" onclick="this.setAttribute(&#39;src&#39;, &#39;https://sjz.zhaofang.com/captcha.html&#39;)">
+                </a>
+            </div>
+            <button type="button" class="subBtn" ajaxreturn="" method="post">登录</button>
+        </form>
+    </div>
+</div>
+<div class="footer">
+    <div class="w1200 auto">
+        Copyright © 2018 zhiyazai.com All rights reserved. Powered by <a href="https://www.zhaofang.com/">知丫仔</a>.
+    </div>
+</div>
+<script src="../../public/static/js/jquery-3.3.1.min.js"></script>
+<script src="../../public/static/layui/lay/modules/layer.js"></script>
+
+<script>
+
+</script>
+
+</body></html>
