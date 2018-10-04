@@ -7,8 +7,9 @@
 .lgRight{}
 .lgRight .return{display: inline-block;line-height:40px;color:#fff;}
 .lgRight .return:hover{text-decoration: underline;}
-.body{height:548px;background:url("../images/loginBg.jpg") center no-repeat;}
+.body{height:548px;}
 .body .content{height:100%;}
+.body .content .login_des{background:url("../images/loginBg.png") center no-repeat;float:left;width:560px;height:100%;}
 .body .content form{position: absolute;top:70px;right:20px;background: #fff;box-shadow:0 0 10px -1px;border-radius: 5px;overflow: hidden;padding:42px 30px 38px 30px;}
 .body .content form h3{height:28px;line-height: 28px;font-style: 24px;font-weight:bold;color:#00a75b;text-align: center;margin-bottom:40px;}
 .classify{border:1px solid #e0e0e0;border-radius: 4px;overflow:hidden;margin-bottom:20px;}
