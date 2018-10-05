@@ -8,7 +8,7 @@
     {load href="/static/admin/css/iconfont.css" /}
     {load href="/static/admin/css/reset.css" /}
     {load href="/static/admin/css/index_login.css" /}
-    {load href="/static/layui/css/modules/layer/default/layer.css" /}
+    {load href="/static/layui/css/layui.css" /}
     {load href="/static/admin/css/moon.css" /}
 </head>
 <body class="minW1200">
@@ -26,24 +26,24 @@
 <div class="body">
     <div class="content w1200 auto rel">
         <div class="login_des"></div>
-        <form action="https://sjz.zhaofang.com/agent/login/index.html" name="form1" validation="">
+        <form class="layui-form" id="login">
             <h3>欢迎登录知丫仔管理系统</h3>
             <div class="classify">
                 <span><i class="iconfont icon-personal"></i></span>
-                <input type="text" name="account" class="ptW273" data-validate="*:系统账号不能为空" placeholder="请输入系统账号">
+                <input type="text" name="account" class="ptW273" lay-verify="required" data-validate="*:系统账号不能为空" placeholder="请输入系统账号">
             </div>
             <div class="classify">
                 <span><i class="iconfont icon-lock"></i></span>
-                <input type="password" name="password" class="ptW273" data-validate="*:登陆密码不能为空" placeholder="请输入登录密码">
+                <input type="password" name="password" class="ptW273" lay-verify="required" data-validate="*:登陆密码不能为空" placeholder="请输入登录密码">
             </div>
             <div class="classify">
                 <span><i class="iconfont icon-code"></i></span>
-                <input type="text" name="captcode" class="ptW192" data-validate="*:验证码不能为空" placeholder="请输入验证码">
+                <input type="text" name="captcode" class="ptW192" lay-verify="required" data-validate="*:验证码不能为空" placeholder="请输入验证码">
                 <a href="javascript:void(0);" class="captCode">
                     <img class="capt_code" src="{:url('login/getcaptcha')}" alt="captcha">
                 </a>
             </div>
-            <button type="button" class="subBtn" ajaxreturn="" method="post">登录</button>
+            <button class="layui-btn subBtn" lay-submit lay-filter="*" >登录</button>
         </form>
     </div>
 </div>
@@ -53,7 +53,7 @@
     </div>
 </div>
 {load href="/static/js/jquery-3.3.1.min.js" /}
-{load href="/static/layui/lay/modules/layer.js" /}
+{load href="/static/layui/layui.js" /}
 <script>
     //验证码
     $(".capt_code").on("click",function(){
@@ -61,5 +61,35 @@
     })
 
 </script>
+<script>
+    layui.use('form', function(){
+        var form = layui.form;
+        //登陆
+        form.on('submit(*)', function(data){
+            $.ajax({
+                type:'post',
+                url:"{:url('login/loginHandle')}",
+                data:$("#login").serialize(),
+                dataType:'json',
+                success:function(data){
+                    switch(data.status){
+                        case 1:
+                            alert(data.message);
+                            window.location.href="{:url('index/index')}";
+                            break;
+                        case 0:
+                        case -1:
+                            alert(data.message);
+                            window.location.back();
+                    }
 
-</body></html>
+                }
+            })
+            return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+        });
+    })
+
+</script>
+
+</body>
+</html>

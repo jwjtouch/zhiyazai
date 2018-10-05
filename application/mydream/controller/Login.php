@@ -3,6 +3,7 @@ namespace app\mydream\controller;
 
 use think\Controller;
 use think\captcha\Captcha;
+use think\facade\Request;//导入请求对象的静态代理
 
 class Login extends Controller
 {
@@ -10,6 +11,14 @@ class Login extends Controller
     {
         //访问地址：http://jwjzhiyazai.com/mydream.php/mydream/Login/index
         return $this->fetch('index',['title'=>'登录页面']);
+    }
+
+    //登陆处理
+    public function loginHandle()
+    {
+        $param = Request::param();
+        dump($param);
+
     }
 
     //TODO 未实现
