@@ -22,8 +22,8 @@ div.error{border-color:#ff0101;}
 .classify input{float:left;padding:13px 14px;height:18px;line-height: 16px;border:none;font-size:16px;}
 .classify input::-webkit-input-placeholder {font-size: 16px;}
 .ptW273{width:245px;}
-.ptW192{width:164px;}
-.classify .captCode{float:left;width:80px;height:44px;border-left:1px solid #e0e0e0;}
+.ptW192{width:150px;}
+.classify .captCode{float:left;width:94px;height:44px;border-left:1px solid #e0e0e0;}
 .classify .captCode img{width:100%;height:100%;background:#f3fbfe;}
 .body .content form .subBtn{width:100%;height: 48px;line-height:48px;border:none;border-radius:5px;color:#fff;font-size:18px;background: #00a75b;}
 .body .content form .subBtn:hover{background:#05834a;}

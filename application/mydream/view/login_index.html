@@ -5,11 +5,11 @@
     <title>知丫仔-后台登陆</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="favicon.ico" type="img/x-ico">
-    <link rel="stylesheet" href="../../public/static/admin/css/iconfont.css">
-    <link rel="stylesheet" href="../../public/static/admin/css/reset.css">
-    <link rel="stylesheet" href="../../public/static/admin/css/index_login.css">
-    <link rel="stylesheet" href="../../public/static/layui/css/modules/layer/default/layer.css" id="layuicss-layer">
-    <link rel="stylesheet" href="../../public/static/admin/css/moon.css" id="layuicss-themedefaultmooncss">
+    {load href="/static/admin/css/iconfont.css" /}
+    {load href="/static/admin/css/reset.css" /}
+    {load href="/static/admin/css/index_login.css" /}
+    {load href="/static/layui/css/modules/layer/default/layer.css" /}
+    {load href="/static/admin/css/moon.css" /}
 </head>
 <body class="minW1200">
 <div class="header">
@@ -40,7 +40,7 @@
                 <span><i class="iconfont icon-code"></i></span>
                 <input type="text" name="captcode" class="ptW192" data-validate="*:验证码不能为空" placeholder="请输入验证码">
                 <a href="javascript:void(0);" class="captCode">
-                    <img class="capt_code" src="captcha.html" onclick="this.setAttribute(&#39;src&#39;, &#39;https://sjz.zhaofang.com/captcha.html&#39;)">
+                    <img class="capt_code" src="{:url('login/getcaptcha')}" alt="captcha">
                 </a>
             </div>
             <button type="button" class="subBtn" ajaxreturn="" method="post">登录</button>
@@ -52,10 +52,13 @@
         Copyright © 2018 zhiyazai.com All rights reserved. Powered by <a href="https://www.zhaofang.com/">知丫仔</a>.
     </div>
 </div>
-<script src="../../public/static/js/jquery-3.3.1.min.js"></script>
-<script src="../../public/static/layui/lay/modules/layer.js"></script>
-
+{load href="/static/js/jquery-3.3.1.min.js" /}
+{load href="/static/layui/lay/modules/layer.js" /}
 <script>
+    //验证码
+    $(".capt_code").on("click",function(){
+        $(this).attr("src","{:url('login/getcaptcha')}");
+    })
 
 </script>
 
