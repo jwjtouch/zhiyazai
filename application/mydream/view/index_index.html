@@ -1,0 +1,14 @@
+{extend name="public_base" /}
+​
+{block name="body"}
+<div class="layui-body">
+    <!-- 内容主体区域 -->
+    <div style="padding: 15px;">
+        <iframe src="{:url('index/main')}" frameborder="0" style="width:100%;min-height:800px;"></iframe>
+    </div>
+</div>
+{/block}
+​
+<!--必须全部继承父模板中的内容，不想显示父模板中的块介绍，中间置空即可-->
+{block name="nav"}
+{/block}

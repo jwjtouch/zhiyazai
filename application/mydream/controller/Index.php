@@ -1,16 +1,18 @@
 <?php
 namespace app\mydream\controller;
 
-class Index
+use think\Controller;
+
+class Index extends Controller
 {
     public function index()
     {
         //访问地址：http://jwjzhiyazai.com/mydream.php/mydream/index/index
-        return '我是mydream的index控制器';
+        return $this->fetch();
     }
 
-    public function hello($name = 'ThinkPHP5')
+    public function main()
     {
-        return 'hello,' . $name;
+        return 'hello';
     }
 }
