@@ -29,3 +29,5 @@ CREATE TABLE `zyz_admin` (
   PRIMARY KEY (`id`),
   KEY `account` (`account`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='管理员表';
+
+alter table zyz_admin add login_time int(10) DEFAULT NULL COMMENT '登陆时间';

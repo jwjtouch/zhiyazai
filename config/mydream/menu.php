@@ -15,50 +15,68 @@
 
 return [
     'index'  =>  [
-        'title' => '',
-        'url' => '',
-        'child' => [
-            'index'  =>   [
+            [
                 'title'      =>  '首页',
                 'url'      =>  'index/hello',
             ],
-        ],
+            [
+                'title'      =>  '所有商品',
+                'url'      =>  '',
+                'child' => [
+                    [
+                        'title' => '列表一',
+                        'url' => 'list/list1',
+                    ],
+                    [
+                        'title' => '列表二',
+                        'url' => 'list/list2',
+                    ],
+                ],
+
+            ],
+            [
+                'title'      =>  '解决方案',
+                'url'      =>  '',
+                'child' => [
+                    [
+                        'title' => '方案一',
+                        'url' => 'list/list3',
+                    ],
+                    [
+                        'title' => '方案二',
+                        'url' => 'list/list4',
+                    ],
+                ],
+
+            ],
+            [
+                'title'      =>  '云市场',
+                'url'      =>  'list/list5',
+            ],
 
     ],
     'user'  =>  [
-        'title' => '',
-        'url' => '',
-        'child' => [
-            'member'  =>   [
+            [
                 'title'      =>  '会员管理',
                 'url'      =>  'member/index',
             ],
-            'admin'  =>  [
+            [
                 'title'      =>  '管理员',
                 'url'      =>  'admin/index',
             ],
-        ],
 
     ],
     'system'    =>  [
-        'title' => '',
-        'url' => '',
-        'child' => [
-            'category'  =>   [
+            [
                 'title'      =>  '栏目管理',
                 'url'      =>  'category/index',
             ],
-        ],
     ],
     'content'   =>  [
-        'title' => '',
-        'url' => '',
-        'child' => [
-            'article'  =>   [
+            [
                 'title'      =>  '文章管理',
                 'url'      =>  'article/index',
             ],
-        ],
     ],
 
 ];

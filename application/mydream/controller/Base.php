@@ -23,8 +23,7 @@ class Base extends Controller
      */
     protected function initialize()
     {
-        //显示分类导航
-        $this->showNav();
+
     }
 
     //防止重复登陆
@@ -43,15 +42,23 @@ class Base extends Controller
         }
     }
 
-    //显示分类导航
-    protected function showNav()
+    //获取栏目对应的左菜单
+    public function getLeftNav()
     {
-        //根据当前控制器判断菜单-true为小写
-        $curcontroller = Request::controller(true);
-        $this->leftMenu = Config::get('menu.'.$curcontroller);
-        //1、查询分类表获取到所有的分类信息
+        if(Request::isAjax()) {
+            $param = Request::param();
+            if(Config::has('menu.'.$param['type'])){
+                $leftMenu = Config::get('menu.'.$param['type']);
+            }else{
+                $leftMenu = array();
+            }
 
-        //2、将分类信息赋值给模板nav.html
+            return ['status'=>1,'message'=>'获取成功','data'=>$leftMenu];
+
+        }else{
+            return ['status'=>-1,'message'=>'请求类型错误'];
+        }
+
 
     }
 }
