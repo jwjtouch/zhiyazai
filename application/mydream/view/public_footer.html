@@ -17,7 +17,28 @@
                 data:{'type':sType},
                 dataType:'json',
                 success:function(data){
-                    console.log(data);
+                    if(data.status==1){
+                        
+                        var sHtml = '';
+                        for(var i=0;data.data.length;i++){
+                            sHtml += '<li class="layui-nav-item"><a href="">'+data.data[i]['title']+'</a>';
+                            if(data.data[i].child != ''){
+                                console.log(data.data[i].child);
+                                sHtml += '<dl class="layui-nav-child">';
+                                    //for(var j=0;data.data[i].child.length;j++){
+                                        //sHtml +=  '<dd><a href="javascript:;">'+data.data[i].child[j].title+'</a></dd>\n';
+                                    //}
+                                sHtml += '</dl>';
+                            }
+                            sHtml += '</li>';
+                            
+                        }
+                        console.log(sHtml);
+                        $("#left-menu").append(sHtml);
+                    }else{
+                        alert("aa")
+                    }
+
 
                 }
             })

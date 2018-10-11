@@ -18,6 +18,7 @@ return [
             [
                 'title'      =>  '首页',
                 'url'      =>  'index/hello',
+                'child'=>'',
             ],
             [
                 'title'      =>  '所有商品',
@@ -26,10 +27,12 @@ return [
                     [
                         'title' => '列表一',
                         'url' => 'list/list1',
+                        'child'=>'',
                     ],
                     [
                         'title' => '列表二',
                         'url' => 'list/list2',
+                        'child'=>'',
                     ],
                 ],
 
@@ -41,10 +44,12 @@ return [
                     [
                         'title' => '方案一',
                         'url' => 'list/list3',
+                        'child'=>'',
                     ],
                     [
                         'title' => '方案二',
                         'url' => 'list/list4',
+                        'child'=>'',
                     ],
                 ],
 
@@ -52,6 +57,7 @@ return [
             [
                 'title'      =>  '云市场',
                 'url'      =>  'list/list5',
+                'child'=>'',
             ],
 
     ],
@@ -59,10 +65,12 @@ return [
             [
                 'title'      =>  '会员管理',
                 'url'      =>  'member/index',
+                'child'=>'',
             ],
             [
                 'title'      =>  '管理员',
                 'url'      =>  'admin/index',
+                'child'=>'',
             ],
 
     ],
@@ -70,12 +78,14 @@ return [
             [
                 'title'      =>  '栏目管理',
                 'url'      =>  'category/index',
+                'child'=>'',
             ],
     ],
     'content'   =>  [
             [
                 'title'      =>  '文章管理',
                 'url'      =>  'article/index',
+                'child'=>'',
             ],
     ],
 
