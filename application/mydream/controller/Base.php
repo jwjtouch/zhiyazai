@@ -53,9 +53,9 @@ class Base extends Controller
                 $leftMenu = array();
             }
 
-            return json(['status'=>1,'message'=>'获取成功','data'=>$leftMenu]);
+            return ['status'=>1,'message'=>'获取成功','data'=>$leftMenu];
         }else{
-            return json(['status'=>-1,'message'=>'请求类型错误']);
+            return ['status'=>-1,'message'=>'请求类型错误'];
         }
 
 
