@@ -1,6 +1,6 @@
 <div class="layui-footer">
     <!-- 底部固定区域 -->
-    © layui.com - 底部固定区域
+    © zhiyazai.com - 底部固定区域
 </div>
 </div>
 {load href="/static/js/jquery-3.3.1.min.js" /}
@@ -9,46 +9,16 @@
     //JavaScript代码区域
     layui.use('element', function(){
         var element = layui.element;
+        //右边默认加载地址
+        var sIframeHref = '/mydream.php/mydream/'+$("#left-menu .layui-this a").attr("rel")+'.html';
+        $("#iframewrap").attr("src",sIframeHref);
 
-        // $("#top-menu a").on("click",function(){
-        //     var sType = $(this).attr("rel");
-        //     $.ajax({
-        //         type:'post',
-        //         url:"{:url('Base/getLeftNav')}",
-        //         data:{'type':sType},
-        //         dataType:'json',
-        //         success:function(data){
-        //             data = eval(data);
-        //             if(data.status==1){
-        //                 var sHtml = '';
-        //                 for(var i=0;i < data.data.length;i++){
-        //                     sHtml += '<li class="layui-nav-item layui-nav-itemed"><a href="javascript:;">'+data.data[i].title;
-        //                     if(data.data[i].child != ''){
-        //                         sHtml += '<span class="layui-nav-more"></span>';
-        //                     }
-        //                     sHtml += '</a>';
-        //                     if(data.data[i].child != ''){
-        //                         console.log(data.data[i].child);
-        //                         sHtml += '<dl class="layui-nav-child">';
-        //                             for(var j=0;j<data.data[i].child.length;j++){
-        //                                 sHtml +=  '<dd><a href="javascript:;">'+data.data[i].child[j].title+'</a></dd>\n';
-        //                             }
-        //                         sHtml += '</dl>';
-        //                     }
-        //                     sHtml += '</li>';
-        //
-        //                 }
-        //                 $("#left-menu").append(sHtml);
-        //             }else{
-        //                 alert(data.message);
-        //             }
-        //
-        //
-        //         }
-        //     })
-        //
-        // })
-
+        $("#left-menu a").on("click",function(){
+            if($(this).attr("rel") != ''){
+                var sIframeHref = '/mydream.php/mydream/'+$(this).attr("rel")+'.html';
+                $("#iframewrap").attr("src",sIframeHref);
+            }
+        })
 
     });
 </script>

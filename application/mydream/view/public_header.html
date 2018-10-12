@@ -12,10 +12,18 @@
         <div class="layui-logo">知丫仔</div>
         <!-- 头部区域（可配合layui已有的水平导航） -->
         <ul class="layui-nav layui-layout-left" id="top-menu">
-            <li class="layui-nav-item layui-this"><a href="{:url('index/index')}" rel="index">首页</a></li>
-            <li class="layui-nav-item"><a href="{:url('article/index')}" rel="content">文章</a></li>
-            <li class="layui-nav-item"><a href="{:url('user/index')}" rel="user">用户</a></li>
-            <li class="layui-nav-item"><a href="{:url('system/index')}" rel="system">系统</a></li>
+            <li class="layui-nav-item {if $curTopNav == 'index'}layui-this{/if}">
+                <a href="{:url('index/index',['type'=>'index'])}" >首页</a>
+            </li>
+            <li class="layui-nav-item {if $curTopNav == 'article'}layui-this{/if}">
+                <a href="{:url('index/index',['type'=>'article'])}" >文章</a>
+            </li>
+            <li class="layui-nav-item {if $curTopNav == 'user'}layui-this{/if}">
+                <a href="{:url('index/index',['type'=>'user'])}" >用户</a>
+            </li>
+            <li class="layui-nav-item {if $curTopNav == 'system'}layui-this{/if}">
+                <a href="{:url('index/index',['type'=>'system'])}" >系统</a>
+            </li>
             <!--
             <li class="layui-nav-item">
                 <a href="javascript:;">其它系统</a>
@@ -31,7 +39,7 @@
             <li class="layui-nav-item">
                 <a href="javascript:;">
                     <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
-                    贤心
+                    知丫仔
                 </a>
                 <dl class="layui-nav-child">
                     <dd><a href="">基本资料</a></dd>
@@ -46,27 +54,18 @@
         <div class="layui-side-scroll">
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
             <ul class="layui-nav layui-nav-tree"  lay-filter="test" id="left-menu">
-
-                <li class="layui-nav-item layui-nav-itemed">
-                    <a class="" href="javascript:;">所有商品</a>
-                    <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">列表一</a></dd>
-                        <dd><a href="javascript:;">列表二</a></dd>
-                        <dd><a href="javascript:;">列表三</a></dd>
-                        <dd><a href="">超链接</a></dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item">
-                    <a href="javascript:;">解决方案</a>
-                    <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">列表一</a></dd>
-                        <dd><a href="javascript:;">列表二</a></dd>
-                        <dd><a href="">超链接</a></dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item"><a href="">云市场</a></li>
-                <li class="layui-nav-item"><a href="">发布商品</a></li>
-
+                {volist name="leftNav" id="vo" key="k"}
+                    <li class="layui-nav-item {if $vo.show == '1'}layui-this{/if} {if ($k == 1) and ($vo.child != '')}layui-nav-itemed{/if}">
+                        <a href="javascript:;" rel="{$vo.url}">{$vo.title}</a>
+                        {if ($vo.child != '')}
+                        <dl class="layui-nav-child">
+                            {volist name="vo.child" id="vo1"}
+                            <dd class="{if $vo1.show == '1'}layui-this{/if}" ><a href="javascript:;" rel="{$vo1.url}">{$vo1.title}</a></dd>
+                            {/volist}
+                        </dl>
+                        {/if}
+                    </li>
+                {/volist}
             </ul>
         </div>
     </div>

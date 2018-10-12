@@ -43,21 +43,15 @@ class Base extends Controller
     }
 
     //获取栏目对应的左菜单
-    public function getLeftNav()
+    public function getLeftNav($type)
     {
-        if(Request::isAjax()) {
-            $param = Request::param();
-            if(Config::has('menu.'.$param['type'])){
-                $leftMenu = Config::get('menu.'.$param['type']);
+            if(Config::has('menu.'.$type)){
+                $leftMenu = Config::get('menu.'.$type);
             }else{
                 $leftMenu = array();
             }
 
-            return ['status'=>1,'message'=>'获取成功','data'=>$leftMenu];
-        }else{
-            return ['status'=>-1,'message'=>'请求类型错误'];
-        }
-
+            return $leftMenu;
 
     }
 }

@@ -17,21 +17,25 @@ return [
     'index'  =>  [
             [
                 'title'      =>  '首页',
-                'url'      =>  'index/hello',
+                'url'      =>  'index/main',
+                'show' => '1',
                 'child'=>'',
             ],
             [
                 'title'      =>  '所有商品',
                 'url'      =>  '',
+                'show' => '0',
                 'child' => [
                     [
                         'title' => '列表一',
                         'url' => 'list/list1',
+                        'show' => '0',
                         'child'=>'',
                     ],
                     [
                         'title' => '列表二',
                         'url' => 'list/list2',
+                        'show' => '0',
                         'child'=>'',
                     ],
                 ],
@@ -40,15 +44,18 @@ return [
             [
                 'title'      =>  '解决方案',
                 'url'      =>  '',
+                'show' => '0',
                 'child' => [
                     [
                         'title' => '方案一',
                         'url' => 'list/list3',
+                        'show' => '0',
                         'child'=>'',
                     ],
                     [
                         'title' => '方案二',
                         'url' => 'list/list4',
+                        'show' => '0',
                         'child'=>'',
                     ],
                 ],
@@ -57,6 +64,7 @@ return [
             [
                 'title'      =>  '云市场',
                 'url'      =>  'list/list5',
+                'show' => '0',
                 'child'=>'',
             ],
 
@@ -65,11 +73,13 @@ return [
             [
                 'title'      =>  '会员管理',
                 'url'      =>  'member/index',
+                'show' => '1',
                 'child'=>'',
             ],
             [
                 'title'      =>  '管理员',
                 'url'      =>  'admin/index',
+                'show' => '0',
                 'child'=>'',
             ],
 
@@ -78,13 +88,15 @@ return [
             [
                 'title'      =>  '栏目管理',
                 'url'      =>  'category/index',
+                'show' => '1',
                 'child'=>'',
             ],
     ],
-    'content'   =>  [
+    'article'   =>  [
             [
                 'title'      =>  '文章管理',
                 'url'      =>  'article/index',
+                'show' => '1',
                 'child'=>'',
             ],
     ],

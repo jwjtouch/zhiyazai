@@ -75,7 +75,7 @@
                     switch(data.status){
                         case 1:
                             alert(data.message);
-                            window.location.href="{:url('index/index')}";
+                            window.location.href="{:url('index/index',['type'=>'index'])}";
                             break;
                         case 0:
                         case -1:
