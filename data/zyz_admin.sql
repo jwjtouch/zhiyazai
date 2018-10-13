@@ -31,3 +31,17 @@ CREATE TABLE `zyz_admin` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='管理员表';
 
 alter table zyz_admin add login_time int(10) DEFAULT NULL COMMENT '登陆时间';
+
+
+
+
+
+CREATE TABLE `zyz_statistics` (
+  `id` int(10) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `tablename` varchar(30) DEFAULT '' COMMENT '表名',
+  `quantity` mediumint(7) DEFAULT '1' COMMENT '数量',
+  `type` tinyint(1) DEFAULT '0' COMMENT '类型',
+  `create_time` int(10) DEFAULT NULL COMMENT '添加时间',
+  `update_time` int(10) DEFAULT NULL COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='统计表';

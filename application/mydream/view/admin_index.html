@@ -13,20 +13,11 @@
     <button class="layui-btn add-admin">添加管理员</button>
 </div>
 
-<table class="layui-table" lay-data="{url:'admin/index', page:true, id:'idTest'}" lay-filter="demo">
-    <thead>
-    <tr>
-        <th lay-data="{type:'checkbox', fixed: 'left'}"></th>
-        <th lay-data="{field:'id', width:80, sort: true, fixed: true}">ID</th>
-        <th lay-data="{field:'name', width:80}">用户名</th>
-        <th lay-data="{field:'account', width:80, sort: true}">账号</th>
-        <th lay-data="{field:'create_time', width:80}">创建时间</th>
-        <th lay-data="{field:'login_time', width:160}">登录时间</th>
-        <th lay-data="{fixed: 'right', width:178, align:'center', toolbar: '#barDemo'}"></th>
-    </tr>
-    </thead>
-</table>
+<table id="demo" lay-filter="test"></table>
 
+<!--
+<th lay-data="{fixed: 'right', width:178, align:'center', toolbar: '#barDemo'}"></th>
+-->
 <script type="text/html" id="barDemo">
     <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
     <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
@@ -39,6 +30,22 @@
 <script>
     layui.use('table', function(){
         var table = layui.table;
+
+        //第一个实例
+        table.render({
+            elem: '#demo',
+            height: 312,
+            url: 'getDatas',
+            page: true,
+            cols: [[ //表头
+              {field: 'id', title: 'ID', width:80, sort: true, fixed: 'left'},
+              {field: 'name', title: '用户名', width:80},
+              {field: 'account', title: '账号', width:80, sort: true},
+              {field: 'create_time', title: '创建时间', width:80},
+              {field: 'login_time', title: '登录时间', width: 177}
+            ]]
+        });
+
         //监听表格复选框选择
         table.on('checkbox(demo)', function(obj){
             console.log(obj)

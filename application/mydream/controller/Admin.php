@@ -16,6 +16,33 @@ class Admin extends Base
         return $this->fetch();
     }
 
+    //获取列表页数据
+    public function getDatas()
+    {
+        if(Request::isAjax()){
+            $where = [];
+            $param = Request::param();
+
+            //分页
+            $page = $param['page'];
+            $limit = $param['limit'];
+            $startlimit = ($page-1)*$limit;
+
+            $admin = AdminModel::where($where)
+            ->limit($startlimit,$limit)
+            ->field('id,name,account,create_time,login_time')
+            ->order('id desc')
+            ->select();
+
+            return ['code'=>0,'msg'=>'','count'=>1000,'data'=>$admin]; 
+
+        }else{
+            return ['status'=>-1,'message'=>'请求类型错误'];
+        }
+        
+        
+    }
+
     //添加管理员
     public function add()
     {
