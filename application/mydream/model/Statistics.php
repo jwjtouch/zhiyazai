@@ -21,5 +21,11 @@ class Statistics extends Model
     protected $createTime = 'create_time';
     protected $updateTime = 'update_time';
 
+    public function addStatistics(){
+
+    }
+
+
+    
 
 }
