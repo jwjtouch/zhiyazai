@@ -20,11 +20,13 @@
  */
 
 return [
-        [   
-            'title' => '管理员总数量',
-            'tablename' => 'admin',
-            'type' =>  '0',
-            'status' =>  '1',
+        'admin' => [//控制器（小写）
+            'addhandle' => [  //方法名（小写）
+                'title' => '管理员总数量',
+                'tablename' => 'admin',
+                'type' =>  '0',
+                'status' =>  '1',
+            ],
         ],
-       
+               
 ];

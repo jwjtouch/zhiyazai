@@ -5,6 +5,7 @@ use think\Controller;
 use app\mydream\controller\Base;
 use think\facade\Request;//导入请求对象的静态代理
 use app\mydream\model\Admin as AdminModel;
+use app\mydream\model\Statistics as StatisticsModel;//统计模型
 
 class Admin extends Base
 {	
@@ -77,6 +78,7 @@ class Admin extends Base
 
                 $adminmes = AdminModel::create($param);
                 if($adminmes->id > 0){
+                    StatisticsModel::addStatistics(Request::controller(true),Request::action(true));
                     return ['status'=>1,'message'=>'添加成功'];
                 }else{
                     return ['status'=>-1,'message'=>'添加失败'];

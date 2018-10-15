@@ -8,6 +8,7 @@
 namespace app\mydream\model;
 
 use think\Model;
+use think\facade\Config;
 
 class Statistics extends Model
 {
@@ -20,11 +21,6 @@ class Statistics extends Model
     //如果想关闭某个时间戳字段，将值设置为false即可：$create_time = false;
     protected $createTime = 'create_time';
     protected $updateTime = 'update_time';
-
-    public function addStatistics(){
-
-    }
-
 
     
 
