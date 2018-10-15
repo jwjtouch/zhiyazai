@@ -21,8 +21,14 @@
 
 return [
         'admin' => [//控制器（小写）
-            'addhandle' => [  //方法名（小写）
-                'title' => '管理员总数量',
+            'inc' => [//增加操作
+                'title' => '增加管理员总数量',
+                'tablename' => 'admin',
+                'type' =>  '0',
+                'status' =>  '1',
+            ],
+            'get' => [//增加操作
+                'title' => '获取管理员总数量',
                 'tablename' => 'admin',
                 'type' =>  '0',
                 'status' =>  '1',

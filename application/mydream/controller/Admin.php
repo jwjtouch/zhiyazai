@@ -5,7 +5,7 @@ use think\Controller;
 use app\mydream\controller\Base;
 use think\facade\Request;//导入请求对象的静态代理
 use app\mydream\model\Admin as AdminModel;
-use app\mydream\model\Statistics as StatisticsModel;//统计模型
+use app\common\logic\StatisticsLogic;//统计模型
 
 class Admin extends Base
 {	
@@ -35,7 +35,12 @@ class Admin extends Base
             ->order('id desc')
             ->select();
 
-            return ['code'=>0,'msg'=>'','count'=>1000,'data'=>$admin]; 
+            //获取计数统计
+            $statisticslogic = new StatisticsLogic();
+            $statistics = $statisticslogic->distribute(Request::controller(true),'get');
+            $count = $statistics['status'] == 1 ? $statistics['message']['quantity'] : 0;
+
+            return ['code'=>0,'msg'=>'','count'=>$count,'data'=>$admin];
 
         }else{
             return ['status'=>-1,'message'=>'请求类型错误'];
@@ -78,7 +83,10 @@ class Admin extends Base
 
                 $adminmes = AdminModel::create($param);
                 if($adminmes->id > 0){
-                    StatisticsModel::addStatistics(Request::controller(true),Request::action(true));
+                    //更新计数统计
+                    $statisticslogic = new StatisticsLogic();
+                    $statisticslogic->distribute(Request::controller(true),'inc');
+
                     return ['status'=>1,'message'=>'添加成功'];
                 }else{
                     return ['status'=>-1,'message'=>'添加失败'];
