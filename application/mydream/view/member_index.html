@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>管理员列表 - 知丫仔</title>
+    <title>会员列表 - 知丫仔</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -10,7 +10,7 @@
 </head>
 <body>
 <div class="layui-btn-group">
-    <button class="layui-btn add-admin">添加管理员</button>
+    <button class="layui-btn add-member">添加会员</button>
 </div>
 
 <table id="demo" lay-filter="demo"></table>
@@ -65,13 +65,13 @@
                    // obj.del();
                     $.ajax({
                         type:'post',
-                        url:"{:url('admin/delete')}",
+                        url:"{:url('member/delete')}",
                         data:{'id':data.id},
                         dataType:'json',
                         success:function(data){
                             switch(data.status){
                                 case 1:
-                                    window.location.href="{:url('admin/index')}";
+                                    window.location.href="{:url('member/index')}";
                                     break;
                                 case 0:
                                 case -1:
@@ -93,8 +93,8 @@
 
 
         //跳转到添加用户页面
-        $(".add-admin").on("click",function(){
-            window.location.href = "{:url('admin/add')}";
+        $(".add-member").on("click",function(){
+            window.location.href = "{:url('member/add')}";
         })
     });
 </script>

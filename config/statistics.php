@@ -40,5 +40,25 @@ return [
                 'status' =>  '1',
             ],
         ],
+        'member' => [//控制器（小写）
+            'inc' => [//增加操作
+                'title' => '增加会员总数量',
+                'tablename' => 'member',
+                'type' =>  '0',
+                'status' =>  '1',
+            ],
+            'dec' => [//减少操作
+                'title' => '减少会员总数量',
+                'tablename' => 'member',
+                'type' =>  '0',
+                'status' =>  '1',
+            ],
+            'get' => [//获取操作
+                'title' => '获取会员总数量',
+                'tablename' => 'member',
+                'type' =>  '0',
+                'status' =>  '1',
+            ],
+        ],
                
 ];

@@ -4,10 +4,10 @@ namespace app\mydream\controller;
 use think\Controller;
 use app\mydream\controller\Base;
 use think\facade\Request;//导入请求对象的静态代理
-use app\mydream\model\Admin as AdminModel;
+use app\common\model\Member as MemberModel;
 use app\facade\StatisticsLogic;//统计代理类
 
-class Admin extends Base
+class Member extends Base
 {	
 
     //列表页
@@ -29,7 +29,7 @@ class Admin extends Base
             $limit = $param['limit'];
             $startlimit = ($page-1)*$limit;
 
-            $admin = AdminModel::where($where)
+            $member = MemberModel::where($where)
             ->limit($startlimit,$limit)
             ->field('id,name,account,create_time,login_time')
             ->order('id desc')
@@ -39,7 +39,7 @@ class Admin extends Base
             $statistics = StatisticsLogic::distribute(Request::controller(true),'get');
             $count = $statistics['status'] == 1 ? $statistics['message']['quantity'] : 0;
 
-            return ['status'=>1,'message'=>'成功获取数据','count'=>$count,'data'=>$admin];
+            return ['status'=>1,'message'=>'成功获取数据','count'=>$count,'data'=>$member];
 
         }else{
             return ['status'=>-1,'message'=>'请求类型错误'];
@@ -62,7 +62,7 @@ class Admin extends Base
             $param = Request::param();
 
             //验证器检测
-            $rule = 'app\common\validate\Admin.register';//自定义的验证场景规则
+            $rule = 'app\common\validate\Member.register';//自定义的验证场景规则
             $res = $this->validate($param,$rule);//
             if($res !== true){
                 return ['status'=>-1,'message'=>$res];
@@ -71,7 +71,7 @@ class Admin extends Base
                 //检测账号和密码是否正确
                 $account = trim($param['account']);
                 $pwd = trim($param['pwd']);
-                $result = AdminModel::where('account',$account)->find();
+                $result = MemberModel::where('account',$account)->find();
 
                 if($result){
                     return ['status'=>-1,'message'=>'该用户已存在'];
@@ -80,8 +80,8 @@ class Admin extends Base
                 $param['salt'] = substr(md5(uniqid('zhiyazai')), 0, 8);
                 $param['pwd'] = md5($pwd.$param['salt']);
 
-                $adminmes = AdminModel::create($param);
-                if($adminmes->id > 0){
+                $membermes = MemberModel::create($param);
+                if($membermes->id > 0){
                     //更新计数统计
                     StatisticsLogic::distribute(Request::controller(true),'inc');
 
@@ -103,9 +103,9 @@ class Admin extends Base
     {
         $param = Request::param();
 
-        $admin = AdminModel::get($param['id']);
+        $member = MemberModel::get($param['id']);
 
-        $this->assign('admin',$admin);
+        $this->assign('member',$member);
         return $this->fetch();
     }
 
@@ -117,7 +117,7 @@ class Admin extends Base
             $param = Request::param();
 
             //验证器检测
-            $rule = 'app\common\validate\Admin.edit';//自定义的验证场景规则
+            $rule = 'app\common\validate\Member.edit';//自定义的验证场景规则
             $res = $this->validate($param,$rule);//
             if($res !== true){
                 return ['status'=>-1,'message'=>$res];
@@ -127,7 +127,7 @@ class Admin extends Base
                 $account = trim($param['account']);
                 $pwd = trim($param['pwd']);
                 $id = $param['id'];
-                $result = AdminModel::where([
+                $result = MemberModel::where([
                     ['account','=',$account],
                     ['id','<>',$id]
                 ])->find();
@@ -145,8 +145,8 @@ class Admin extends Base
 
 
 
-                $adminmes = AdminModel::update($param);
-                if($adminmes->id > 0){
+                $membermes = MemberModel::update($param);
+                if($membermes->id > 0){
                     return ['status'=>1,'message'=>'修改成功'];
                 }else{
                     return ['status'=>-1,'message'=>'修改失败'];
@@ -166,9 +166,9 @@ class Admin extends Base
         if(Request::isAjax()){
             $param = Request::param();
 
-            $admin = AdminModel::get($param['id']);
-            if($admin->id>0){
-                if($admin->delete()>0){
+            $member = MemberModel::get($param['id']);
+            if($member->id>0){
+                if($member->delete()>0){
                     //更新计数统计
                     StatisticsLogic::distribute(Request::controller(true),'dec');
                     return ['status'=>1,'message'=>'删除成功'];

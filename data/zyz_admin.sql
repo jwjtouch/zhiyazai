@@ -33,6 +33,19 @@ CREATE TABLE `zyz_admin` (
 alter table zyz_admin add login_time int(10) DEFAULT NULL COMMENT '登陆时间';
 
 
+CREATE TABLE `zyz_member` (
+  `id` int(10) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `name` varchar(30) DEFAULT '' COMMENT '姓名',
+  `account` varchar(30) DEFAULT '' COMMENT '账号',
+  `pwd` varchar(50) DEFAULT '' COMMENT '密码',
+  `salt` varchar(10) DEFAULT '' COMMENT '密码盐',
+  `status` tinyint(1) DEFAULT '1' COMMENT '0锁定1正常',
+  `create_time` int(10) DEFAULT NULL COMMENT '添加时间',
+  `update_time` int(10) DEFAULT NULL COMMENT '更新时间',
+  `login_time` int(10) DEFAULT NULL COMMENT '登录时间',
+  PRIMARY KEY (`id`),
+  KEY `account` (`account`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='会员表';
 
 
 
