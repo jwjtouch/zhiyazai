@@ -27,7 +27,13 @@ return [
                 'type' =>  '0',
                 'status' =>  '1',
             ],
-            'get' => [//增加操作
+            'dec' => [//减少操作
+                'title' => '减少管理员总数量',
+                'tablename' => 'admin',
+                'type' =>  '0',
+                'status' =>  '1',
+            ],
+            'get' => [//获取操作
                 'title' => '获取管理员总数量',
                 'tablename' => 'admin',
                 'type' =>  '0',

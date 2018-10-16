@@ -21,5 +21,10 @@ class Admin extends Model
     protected $createTime = 'create_time';
     protected $updateTime = 'update_time';
 
+    //通过获取器获取时间格式格式的登录时间
+    public function getLoginTimeAttr($value)
+    {
+        return $value == ''? '' : date("Y-m-d H:i:s",$value);
+    }
 
 }

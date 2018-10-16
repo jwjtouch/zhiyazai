@@ -31,7 +31,7 @@ class StatisticsLogic extends Model
                 if ($operate == 'inc') {
                     $result = $this->addStatistics($config[$operate], $type);
                 } elseif ($operate == 'dec') {
-
+                    $result = $this->delStatistics($config[$operate], $type);
                 } elseif ($operate == 'get'){
                     $result = $this->getStatistics($config[$operate], $type);
                 }else {
@@ -74,7 +74,7 @@ class StatisticsLogic extends Model
 
 
     /**
-    * 添加或更新计数统计
+    * 增加计数统计
     * $controller 控制器名称
     * $action 方法名
     * $type 类型-默认为0
@@ -118,7 +118,43 @@ class StatisticsLogic extends Model
 
     }
 
+    /**
+     * 增加计数统计
+     * $controller 控制器名称
+     * $action 方法名
+     * $type 类型-默认为0
+     */
+    protected function delStatistics($config,$type=0)
+    {
+        //获取表名和类型
+        $tablename = $config['tablename'];
+        $type = $config['type'];
 
+        $statistics = StatisticsModel::where([
+            'tablename'=>$tablename,
+            'type'=>$type
+        ])->find();
+
+        if($statistics){//更新数量
+            if($statistics->quantity > 0){
+                $statistics->quantity  = ['dec', 1];
+                if($statistics->save()){
+                    $result = ['status'=>1,'message'=>'更新成功'];
+                }else{
+                    $result = ['status'=>0,'message'=>'更新失败'];
+                }
+            }else{
+                $result = ['status'=>0,'message'=>'数据非大于0，不用更新'];
+            }
+
+
+        }else{//不存在
+            $result = ['status'=>0,'message'=>'数据非大于0，不用更新'];
+        }
+
+        return $result;
+
+    }
     
 
 }
