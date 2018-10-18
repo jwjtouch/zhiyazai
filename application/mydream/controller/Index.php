@@ -41,4 +41,11 @@ class Index extends Base
         return $this->fetch();
     }
 
+
+    //TODO 上传富文本图片
+    public function richPic()
+    {
+
+    }
+
 }

@@ -15,9 +15,8 @@ layui.define('wangeditor',function(exports){
     //     'bgcolor'
     // ];
 
-    wang.config.uploadImgUrl = '/upload';
-
+    wang.config.uploadImgUrl = '/mydream.php/mydream/index/richPic';//上传路径
+    wang.config.uploadImgFileName = 'rich'; //上传文件名
     wang.create();
-    wang.$txt.html('<p>用 JS 设置的内容</p>')
 	exports('app',null);
 });
