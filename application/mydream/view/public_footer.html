@@ -13,14 +13,41 @@
         var sIframeHref = '/mydream.php/mydream/'+$("#left-menu .layui-this a").attr("rel")+'.html';
         $("#iframewrap").attr("src",sIframeHref);
 
+        //自适应高度
+        $("#iframewrap").css("height", '');
+        setIframeHeight();
+
         $("#left-menu a").on("click",function(){
             if($(this).attr("rel") != ''){
                 var sIframeHref = '/mydream.php/mydream/'+$(this).attr("rel")+'.html';
                 $("#iframewrap").attr("src",sIframeHref);
+
+                //自适应高度
+                $("#iframewrap").css("height", '');
+                setIframeHeight();
             }
         })
 
+         //设置iframe高度函数
+        function setIframeHeight() {
+            var iframe = document.getElementById('iframewrap');
+            var height = window.parent.document.documentElement.scrollHeight - 165;//获取父页面高度减去差值
+            if(document.all) { //判读ie w3c
+                iframe.attachEvent("onload", function() { //ie 判断加载 
+                    var temph = iframe.contentWindow.document.documentElement.scrollHeight;
+                    iframe.height = temph > 500 ? temph : height;//给与一个界限
+                });
+            } else {
+                var ifr = $("#ifr", parent.document);
+                iframe.onload = function() { //w3c判断加载
+                    var temph = iframe.contentDocument.body.scrollHeight;
+                    iframe.height = temph > 500 ? temph : height;//给与一个界限
+                }
+            }
+        }
+
     });
+
 </script>
 </body>
 </html>
