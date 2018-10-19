@@ -21,5 +21,10 @@ class Category extends Model
     protected $createTime = 'create_time';
     protected $updateTime = 'update_time';
 
-
+    //通过获取器获取栏目状态
+    public function getStatusAttr($value)
+    {
+        $status = [1=>'开启',0=>'关闭'];
+        return $status[$value];
+    }
 }

@@ -26,4 +26,6 @@ layui.define('wangeditor',function(exports){
 
     wang.create();
 	exports('app',null);
+
+
 });

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>treeGrid</title>
     {load href="/static/layui/css/layui.css" /}
+    {load href="/static/js/jquery-3.3.1.min.js" /}
     {load href="/static/layui/layui.js" /}
 </head>
 <style>
@@ -47,21 +48,10 @@
 <body>
 <div style="height: 100%">
     <div class="dHead">
-        <a class="layui-btn layui-btn-primary layui-btn-xs layui-btn-xstree"  onclick="window.location.href='index.html';">刷新</a>
-        <a class="layui-btn layui-btn-primary layui-btn-xs layui-btn-xstree"  onclick="reload()">reload</a>
-        <a class="layui-btn layui-btn-primary layui-btn-xs layui-btn-xstree"  onclick="query()">query</a>
-        <a class="layui-btn layui-btn-primary layui-btn-xs layui-btn-xstree"  onclick="add(null);">新增一行</a>
-        <a class="layui-btn layui-btn-primary layui-btn-xs layui-btn-xstree"  onclick="openorclose();">隐藏或打开香蕉节点</a>
-        <a class="layui-btn layui-btn-primary layui-btn-xs layui-btn-xstree"  onclick="getCheckData();">获取选中行数据</a>
-        <a class="layui-btn layui-btn-primary layui-btn-xs layui-btn-xstree"  onclick="getCheckLength();">获取选中数目</a>
-        <a class="layui-btn layui-btn-primary layui-btn-xs layui-btn-xstree"  onclick="print();">打印缓存对象</a>
+
+        <a class="layui-btn layui-btn-primary layui-btn-xs layui-btn-xstree"  onclick="window.location.href='add';">添加顶级栏目</a>
         <a class="layui-btn layui-btn-primary layui-btn-xs layui-btn-xstree"  onclick="openAll();">展开或折叠全部</a>
-        <a class="layui-btn layui-btn-primary layui-btn-xs layui-btn-xstree"  onclick="radioStatus();">获取单选数据</a>
-        <a class="layui-btn layui-btn-primary layui-btn-xs layui-btn-xstree"  onclick="test();">test</a>
-        <br>
-        <br>
-        <b>此服务器配置不是一般低</b>，请您耐心等待，如长时间无法加载，可以手动刷新一次（一机多用，所以宽带和内存有限的问题导致资源无法及时加载成功）。
-        <img src="/static/images/1_open.png" onerror="src='/static/images/1_close.png'" alt="">
+
     </div>
     <div class="dBody">
         <table class="layui-hidden" id="treeTable" lay-filter="treeTable"></table>
@@ -86,8 +76,8 @@
             ,cellMinWidth: 100
             ,idField:'id'//必須字段
             ,treeId:'id'//树形id字段名称
-            ,treeUpId:'pId'//树形父id字段名称
-            ,treeShowName:'name'//以树形式显示的字段
+            ,treeUpId:'pid'//树形父id字段名称
+            ,treeShowName:'title'//以树形式显示的字段
             ,heightRemove:[".dHead",10]//不计算的高度,表格设定的是固定高度，此项不生效
             ,height:'100%'
             ,isFilter:false
@@ -96,18 +86,18 @@
             ,loading:true
             ,method:'post'
             ,cols: [[
-                {type:'numbers'}
-                ,{type:'radio'}
-                ,{type:'checkbox',sort:true}
-                ,{field:'name', width:300, title: '水果名称',edit:'text',sort:true}
-                ,{field:'id',width:100, title: 'id',sort:true}
-                ,{field:'pId', title: 'pid',sort:true}
-                ,{width:100,title: '操作', align:'center'/*toolbar: '#barDemo'*/
+                 {field:'id',width:80,title: '编号'}
+                ,{field:'title', width:300, title: '栏目名称',edit:'text',sort:true}
+                ,{field:'rank',width:80, title: '排序',sort:true}
+                ,{field:'pid', width:80,title: 'pid',sort:true}
+                ,{field:'status', title: '状态',sort:true}
+                ,{width:260,title: '操作', align:'center'/*toolbar: '#barDemo'*/
                     ,templet: function(d){
                         var html='';
-                        var addBtn='<a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="add">添加</a>';
+                        var addBtn='<a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="add">添加下级栏目</a>';
+                        var editBtn='<a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="edit">编辑</a>';
                         var delBtn='<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>';
-                        return addBtn+delBtn;
+                        return addBtn+editBtn+delBtn;
                     }
                 }
             ]]
@@ -128,14 +118,35 @@
                 del(obj);
             }else if(obj.event==="add"){
                 add(obj);
+            }else if(obj.event==="edit"){
+                edit(obj);
             }
         });
     });
 
     function del(obj) {
-        layer.confirm("你确定删除数据吗？如果存在下级节点则一并删除，此操作不能撤销！", {icon: 3, title:'提示'},
+        layer.confirm("你确定删除数据吗？如果存在下级节点，此操作不允许！", {icon: 3, title:'提示'},
             function(index){
-                obj.del();
+
+                $.ajax({
+                    type:'post',
+                    url:"{:url('category/delete')}",
+                    data:{'id':obj.data.id},
+                    dataType:'json',
+                    success:function(data){
+                        switch(data.status){
+                            case 1:
+                                obj.del();
+                                break;
+                            case 0:
+                            case -1:
+                                alert(data.message);
+                                window.location.back();
+                        }
+
+                    }
+                })
+
                 layer.close(index);
             },function (index) {
                layer.close(index);
@@ -143,31 +154,20 @@
         );
     }
 
-
-    var i=1000000;
     //添加
     function add(pObj) {
         var pdata=pObj?pObj.data:null;
-        var param={};
-        param.name='水果'+Math.random();
-        param.id=++i;
-        param.pId=pdata?pdata.id:null;
-        treeGrid.addRow(tableId,pdata?pdata[treeGrid.config.indexName]+1:0,param);
+
+        var pid=pdata?pdata.id:null;
+        window.location.href = "add/id/"+pid;
     }
 
-    function print() {
-        console.log(treeGrid.cache[tableId]);
-        var loadIndex=layer.msg("对象已打印，按F12，在控制台查看！", {
-            time:3000
-            ,offset: 'auto'//顶部
-            ,shade: 0
-        });
-    }
-    
-    function openorclose() {
-        var map=treeGrid.getDataMap(tableId);
-        var o= map['102'];
-        treeGrid.treeNodeOpen(tableId,o,!o[treeGrid.config.cols.isOpen]);
+    //编辑
+    function edit(pObj) {
+        var pdata=pObj?pObj.data:null;
+
+        var id=pdata?pdata.id:null;
+        window.location.href = "edit/id/"+id;
     }
 
 
@@ -176,54 +176,7 @@
         treeGrid.treeOpenAll(tableId,!treedata[0][treeGrid.config.cols.isOpen]);
     }
 
-    function getCheckData() {
-        var checkStatus = treeGrid.checkStatus(tableId)
-            ,data = checkStatus.data;
-        layer.alert(JSON.stringify(data));
-    }
-    function radioStatus() {
-        var data = treeGrid.radioStatus(tableId)
-        layer.alert(JSON.stringify(data));
-    }
-    function getCheckLength() {
-        var checkStatus = treeGrid.checkStatus(tableId)
-            ,data = checkStatus.data;
-        layer.msg('选中了：'+ data.length + ' 个');
-    }
 
-    function reload() {
-        treeGrid.reload(tableId,{
-            page:{
-                curr:1
-            }
-        });
-    }
-    function query() {
-        treeGrid.query(tableId,{
-            where:{
-                name:'sdfsdfsdf'
-            }
-        });
-    }
-    
-    function test() {
-        console.log(treeGrid.cache[tableId],treeGrid.getClass(tableId));
-
-
-        /*var map=treeGrid.getDataMap(tableId);
-        var o= map['102'];
-        o.name="更新";
-        treeGrid.updateRow(tableId,o);*/
-    }
-</script>
-<script>
-    var _hmt = _hmt || [];
-    (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?e2af8415b6ffbaeb52de4d080cb4ba85";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
 </script>
 </body>
 </html>

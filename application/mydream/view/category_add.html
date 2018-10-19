@@ -18,6 +18,14 @@
     </span>
     <hr>
     <form class="layui-form" action="" id="addform">
+        {if isset($category)}
+        <div class="layui-form-item">
+            <label class="layui-form-label">上级栏目</label>
+            <div class="layui-input-block" style="line-height:36px;color:red;">
+                {$category.title}
+            </div>
+        </div>
+        {/if}
         <div class="layui-form-item">
             <label class="layui-form-label">栏目名称</label>
             <div class="layui-input-block">
@@ -58,6 +66,7 @@
         </div>
         <div class="layui-form-item">
             <div class="layui-input-block">
+                <input type="hidden" name="pid" value="{if isset($category)}{$category.id}{else/}0{/if}">
                 <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
             </div>
