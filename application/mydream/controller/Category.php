@@ -20,6 +20,217 @@ class Category extends Base
     //获取列表页数据
     public function getDatas()
     {
+        $data = array(
+                'msg'=>'',
+                'code'=>'0',
+                'data'=>[
+                    [
+                        "id"=>"113", 
+                        "pId"=>0,  
+                        "name"=>"植物(自定义图标)",
+                        "lay_icon_open"=>"/static/images/1_open.png",
+                        "lay_icon_close"=>"/static/images/1_close.png"
+                    ],
+                    [
+                        "id"=>"114", 
+                        "pId"=>"113",  
+                        "name"=>"大叶榕(自定义图标)",
+                        "lay_icon"=>"/img/4.png"
+                    ],
+                    [
+                        "id"=>"112", 
+                        "pId"=>null,  
+                        "name"=>"动物(默认单选)",
+                        "lay_is_radio"=>true
+                    ],
+                    [
+                        "id"=>"115", 
+                        "pId"=>"112",  
+                        "name"=>"大笨象"
+                    ],
+                    [
+                        "id"=>"1", 
+                        "pId"=>null,  
+                        "name"=>"水果"
+                    ],
+                    [
+                        "id"=>"101", 
+                        "pId"=>"1",
+                        "name"=>"苹果",
+                        "lay_is_open"=>false
+                    ],
+                    [
+                        "id"=>"102", 
+                        "pId"=>"1", 
+                        "name"=>"香蕉"
+                    ],
+                    [
+                        "id"=>"103", 
+                        "pId"=>"1", 
+                        "name"=>"梨"
+                    ],
+                    [
+                        "id"=>"104", 
+                        "pId"=>"101", 
+                        "name"=>"红富士苹果"
+                    ],
+                    [
+                        "id"=>"105", 
+                        "pId"=>"101", 
+                        "name"=>"红星苹果"
+                    ],
+                    [
+                        "id"=>"106", 
+                        "pId"=>"101", 
+                        "name"=>"嘎拉"
+                    ],
+                    [
+                        "id"=>"107", 
+                        "pId"=>"101", 
+                        "name"=>"桑萨"
+                    ],
+                    [
+                        "id"=>"108", 
+                        "pId"=>"102", 
+                        "name"=>"千层蕉（禁止多选）",
+                        "lay_che_disabled"=>true
+                    ],
+                    [
+                        "id"=>"109", 
+                        "pId"=>"102", 
+                        "name"=>"仙人蕉",
+                        "lay_is_checked"=>true
+                    ],
+                    [
+                        "id"=>"110", 
+                        "pId"=>"102", 
+                        "name"=>"吕宋蕉(禁止单选)",
+                        "lay_is_checked"=>true,
+                        "lay_rad_disabled"=>true
+                    ],
+                    [
+                        "id"=>"111", 
+                        "pId"=>"1", 
+                        "name"=>"大西瓜",
+                        "lay_is_open"=>false
+                    ],
+                    [
+                        "id"=>"1000", 
+                        "pId"=>"111", 
+                        "name"=>"大西瓜[1000]"
+                    ],
+                                        [
+                        "id"=>"1001", 
+                        "pId"=>"111", 
+                        "name"=>"大西瓜[1001]"
+                    ],
+                                        [
+                        "id"=>"1002", 
+                        "pId"=>"111", 
+                        "name"=>"大西瓜[1002]"
+                    ],
+                                        [
+                        "id"=>"1003", 
+                        "pId"=>"111", 
+                        "name"=>"大西瓜[1003]"
+                    ],
+                                        [
+                        "id"=>"1000", 
+                        "pId"=>"111", 
+                        "name"=>"大西瓜[1000]"
+                    ],
+                                        [
+                        "id"=>"1004", 
+                        "pId"=>"111", 
+                        "name"=>"大西瓜[1004]"
+                    ],
+                                        [
+                        "id"=>"1005", 
+                        "pId"=>"111", 
+                        "name"=>"大西瓜[1005]"
+                    ],
+                                        [
+                        "id"=>"1006", 
+                        "pId"=>"111", 
+                        "name"=>"大西瓜[1006]"
+                    ],
+                                        [
+                        "id"=>"1007", 
+                        "pId"=>"111", 
+                        "name"=>"大西瓜[1007]"
+                    ],
+                                        [
+                        "id"=>"1008", 
+                        "pId"=>"111", 
+                        "name"=>"大西瓜[1008]"
+                    ],
+                                        [
+                        "id"=>"1009", 
+                        "pId"=>"111", 
+                        "name"=>"大西瓜[1009]"
+                    ],
+                                        [
+                        "id"=>"1010", 
+                        "pId"=>"111", 
+                        "name"=>"大西瓜[1010]"
+                    ],
+                                        [
+                        "id"=>"1011", 
+                        "pId"=>"111", 
+                        "name"=>"大西瓜[1011]"
+                    ],
+                                        [
+                        "id"=>"1012", 
+                        "pId"=>"111", 
+                        "name"=>"大西瓜[1012]"
+                    ],
+                                        [
+                        "id"=>"1013", 
+                        "pId"=>"111", 
+                        "name"=>"大西瓜[1013]"
+                    ],
+                                        [
+                        "id"=>"1014", 
+                        "pId"=>"111", 
+                        "name"=>"大西瓜[1014]"
+                    ],
+                                        [
+                        "id"=>"1015", 
+                        "pId"=>"111", 
+                        "name"=>"大西瓜[1015]"
+                    ],
+                                        [
+                        "id"=>"1016", 
+                        "pId"=>"111", 
+                        "name"=>"大西瓜[1016]"
+                    ],
+                                        [
+                        "id"=>"1017", 
+                        "pId"=>"111", 
+                        "name"=>"大西瓜[1017]"
+                    ],
+                                        [
+                        "id"=>"1018", 
+                        "pId"=>"111", 
+                        "name"=>"大西瓜[1018]"
+                    ],
+                                        [
+                        "id"=>"1019", 
+                        "pId"=>"111", 
+                        "name"=>"大西瓜[1019]"
+                    ],
+                                        [
+                        "id"=>"1020", 
+                        "pId"=>"111", 
+                        "name"=>"大西瓜[1020]"
+                    ],
+                ],
+                 "count"=> 37,
+                "is"=>true,
+                "tip"=> "操作成功！"
+                
+            );
+return $data;
         if(Request::isAjax()){
             $where = [];
             $param = Request::param();
@@ -29,9 +240,9 @@ class Category extends Base
             $limit = $param['limit'];
             $startlimit = ($page-1)*$limit;
 
-            $admin = AdminModel::where($where)
+            $admin = CategoryModel::where($where)
             ->limit($startlimit,$limit)
-            ->field('id,name,account,create_time,login_time')
+            ->field('id,title,keyword,description,pid,status,create_time,update_time')
             ->order('id desc')
             ->select();
 
@@ -62,26 +273,14 @@ class Category extends Base
             $param = Request::param();
 
             //验证器检测
-            $rule = 'app\common\validate\Admin.register';//自定义的验证场景规则
+            $rule = 'app\common\validate\Category';//自定义的验证场景规则
             $res = $this->validate($param,$rule);//
             if($res !== true){
                 return ['status'=>-1,'message'=>$res];
             }else{
 
-                //检测账号和密码是否正确
-                $account = trim($param['account']);
-                $pwd = trim($param['pwd']);
-                $result = AdminModel::where('account',$account)->find();
-
-                if($result){
-                    return ['status'=>-1,'message'=>'该用户已存在'];
-                }
-
-                $param['salt'] = substr(md5(uniqid('zhiyazai')), 0, 8);
-                $param['pwd'] = md5($pwd.$param['salt']);
-
-                $adminmes = AdminModel::create($param);
-                if($adminmes->id > 0){
+                $categorymes = CategoryModel::create($param);
+                if($categorymes->id > 0){
                     //更新计数统计
                     StatisticsLogic::distribute(Request::controller(true),'inc');
 
@@ -103,7 +302,7 @@ class Category extends Base
     {
         $param = Request::param();
 
-        $admin = AdminModel::get($param['id']);
+        $admin = CategoryModel::get($param['id']);
 
         $this->assign('admin',$admin);
         return $this->fetch();

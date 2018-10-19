@@ -60,5 +60,25 @@ return [
                 'status' =>  '1',
             ],
         ],
+        'category' => [//控制器（小写）
+            'inc' => [//增加操作
+                'title' => '增加栏目总数量',
+                'tablename' => 'category',
+                'type' =>  '0',
+                'status' =>  '1',
+            ],
+            'dec' => [//减少操作
+                'title' => '减少栏目总数量',
+                'tablename' => 'category',
+                'type' =>  '0',
+                'status' =>  '1',
+            ],
+            'get' => [//获取操作
+                'title' => '获取栏目总数量',
+                'tablename' => 'category',
+                'type' =>  '0',
+                'status' =>  '1',
+            ],
+        ],
                
 ];

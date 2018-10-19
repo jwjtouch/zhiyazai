@@ -17,6 +17,13 @@ layui.define('wangeditor',function(exports){
 
     wang.config.uploadImgUrl = '/mydream.php/mydream/index/richPic';//上传路径
     wang.config.uploadImgFileName = 'rich'; //上传文件名
+
+    //配置自定义参数（举例）
+    wang.config.uploadParams = {
+        richtoken: '3793bc6af6d4b76cbc5fd3f0b731f90c',
+        richuser: 'zhiyazai'
+    };
+
     wang.create();
 	exports('app',null);
 });

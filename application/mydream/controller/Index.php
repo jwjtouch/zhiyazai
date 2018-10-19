@@ -45,6 +45,19 @@ class Index extends Base
     //TODO 上传富文本图片
     public function richPic()
     {
+        $file = request()->file('rich');
+        if(request()->richtoken == config('custom.rich.token') && request()->richuser == config('custom.rich.user')){
+            // 移动到框架应用根目录/uploads/ 目录下
+            $uploadPath = 'uploads/rich';
+            $info = $file->move($uploadPath);
+            if($info){
+                exit('/'.$uploadPath.'/'.str_replace("\\","/",$info->getSaveName()));
+            }else{
+                exit('error|上传失败');
+            }
+        }else{
+            exit('error|身份验证失败');
+        }
 
     }
 
