@@ -27,4 +27,6 @@ class Category extends Model
         $status = [1=>'开启',0=>'关闭'];
         return $status[$value];
     }
+
+
 }

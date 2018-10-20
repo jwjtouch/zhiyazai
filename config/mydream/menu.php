@@ -15,12 +15,7 @@
 
 return [
     'index'  =>  [
-            [
-                'title'      =>  '首页',
-                'url'      =>  'index/main',
-                'show' => '1',
-                'child'=>'',
-            ],
+
             [
                 'title'      =>  '所有商品',
                 'url'      =>  '',
@@ -29,7 +24,7 @@ return [
                     [
                         'title' => '列表一',
                         'url' => 'list/list1',
-                        'show' => '0',
+                        'show' => '1',
                         'child'=>'',
                     ],
                     [
@@ -41,6 +36,12 @@ return [
                 ],
 
             ],
+        [
+            'title'      =>  '首页',
+            'url'      =>  'index/main',
+            'show' => '0',
+            'child'=>'',
+        ],
             [
                 'title'      =>  '解决方案',
                 'url'      =>  '',
