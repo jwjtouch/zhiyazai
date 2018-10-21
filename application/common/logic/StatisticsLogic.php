@@ -21,18 +21,18 @@ class StatisticsLogic extends Model
      * 分发操作
      * $controller 控制器名称
      * $operate 操作类型 inc添加 dec减少 get获取
-     * $type 类型-默认为0
+     * $type 类型-默认为0,article的统计type为所属栏目的id
      */
     public function distribute($controller,$operate,$type=0)
     {
         if(Config::has('statistics.'.$controller)){
             $config = Config::get('statistics.'.$controller);
             if(array_key_exists($operate,$config) && $config[$operate]['status'] == 1) {
-                if ($operate == 'inc') {
+                if (strstr($operate,'inc')) {
                     $result = $this->addStatistics($config[$operate], $type);
-                } elseif ($operate == 'dec') {
+                } elseif (strstr($operate,'dec')) {
                     $result = $this->delStatistics($config[$operate], $type);
-                } elseif ($operate == 'get'){
+                } elseif (strstr($operate,'get')){
                     $result = $this->getStatistics($config[$operate], $type);
                 }else {
                     $result = ['status' => 0, 'message' => '不存在的操作类型'];

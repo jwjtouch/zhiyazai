@@ -65,6 +65,23 @@ CREATE TABLE `zyz_category` (
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='栏目表';
 
 
+CREATE TABLE `zyz_article` (
+  `id` smallint(4) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `title` varchar(60) DEFAULT '' COMMENT '标题',
+  `keyword` varchar(255) DEFAULT '' COMMENT '关键字',
+  `description` varchar(500) DEFAULT '' COMMENT '描述',
+  `content` text DEFAULT '' COMMENT '内容',
+  `rank` smallint(5) DEFAULT '0' COMMENT '排序',
+  `status` tinyint(1) DEFAULT '0' COMMENT '0锁定1正常',
+  `cate_id` smallint(4) DEFAULT '0' COMMENT '栏目id',
+  `admin_id` smallint(4) DEFAULT '0' COMMENT '发布人id',
+  `create_time` int(10) DEFAULT NULL COMMENT '添加时间',
+  `update_time` int(10) DEFAULT NULL COMMENT '更新时间',
+  PRIMARY KEY (`id`),
+  KEY `title` (`title`)
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='文章表';
+
+
 
 CREATE TABLE `zyz_statistics` (
   `id` int(10) NOT NULL AUTO_INCREMENT COMMENT 'id',

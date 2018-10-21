@@ -4,10 +4,9 @@ namespace app\mydream\controller;
 use think\Controller;
 use app\mydream\controller\Base;
 use think\facade\Request;//导入请求对象的静态代理
-use app\common\model\Category as CategoryModel;
 use app\common\model\Article as ArticleModel;
 use app\facade\StatisticsLogic;//统计代理类
-use app\facade\CategoryLogic;//栏目代理类
+
 
 class Article extends Base
 {	
@@ -15,30 +14,43 @@ class Article extends Base
     //列表页
     public function index()
     {
-        $result = CategoryLogic::getCateTree($pid=0,$type=0,$field='id,title,pid');
-        p($result);
-        //return $this->fetch();
+        $cateid = '';
+        if(Request::isGet()){
+            $param = Request::param();
+            if(isset($param['cate_id'])){
+                $cate_id = $param['cate_id'];
+            }else{
+                $this->assign('empty','请求参数错误');
+            }
+        }else{
+            $this->assign('empty','请求类型错误');
+        }
+
+        $this->assign('cate_id',$cate_id);
+        return $this->fetch();
     }
 
     //获取列表页数据
     public function getDatas()
     {
         if(Request::isAjax()){
-        $where = [];
+            $param = Request::param();
 
-        $category = CategoryModel::where($where)
-        ->field('id,title,pid,rank,status')
-        ->order('rank desc,id desc')
-        ->select();
+            $where[] = ['cate_id','=',$param['cate_id']];
 
-        //获取计数统计
-        $statistics = StatisticsLogic::distribute(Request::controller(true),'get');
-        $count = $statistics['status'] == 1 ? $statistics['message']['quantity'] : 0;
+            $article = ArticleModel::where($where)
+            ->field('id,title,admin_id,create_time,update_time,rank,status')
+            ->order('rank desc,id desc')
+            ->select();
 
-        return ['code'=>0,'msg'=>'','count'=>$count,'is'=>true,'tip'=>'操作成功','data'=>$category];
+            //获取计数统计
+            $statistics = StatisticsLogic::distribute(Request::controller(true),'getcateid'.$param['cate_id'],$param['cate_id']);
+            $count = $statistics['status'] == 1 ? $statistics['message']['quantity'] : 0;
+
+            return ['status'=>1,'message'=>'成功获取数据','count'=>$count,'data'=>$article];
 
         }else{
-            return ['code'=>-1,'msg'=>'请求类型错误'];
+            return ['status'=>-1,'message'=>'请求类型错误'];
         }
 
 
@@ -46,36 +58,39 @@ class Article extends Base
 
 
 
-    //添加管理员
+    //添加文章
     public function add()
     {
         $param = Request::param();
 
-        if(isset($param['id'])){
-            $category = CategoryModel::get($param['id']);
-            $this->assign('category',$category);
+        if(isset($param['cate_id'])){
+            $this->assign('cate_id',$param['cate_id']);
+        }else{
+            $this->assign('empty','请求参数错误');
         }
         return $this->fetch();
     }
 
-    //添加管理员处理程序
+    //添加文章处理程序
     public function addHandle()
     {
         if(Request::isAjax()){
             $param = Request::param();
 
             //验证器检测
-            $rule = 'app\common\validate\Category';//自定义的验证场景规则
+            $rule = 'app\common\validate\Article';//自定义的验证场景规则
             $res = $this->validate($param,$rule);//
             if($res !== true){
                 return ['status'=>-1,'message'=>$res];
             }else{
-
-                $categorymes = CategoryModel::create($param);
-                if($categorymes->id > 0){
-                    //更新计数统计
-                    StatisticsLogic::distribute(Request::controller(true),'inc');
-
+                //TODO 管理员id
+                //$param['admin_id'] = '';
+                $article = ArticleModel::create($param);
+                if($article->id > 0){
+                    //更新文章总数计数统计
+                    StatisticsLogic::distribute(Request::controller(true),'inctotal');
+                    //更新该栏目计数统计
+                    StatisticsLogic::distribute(Request::controller(true),'inccateid'.$param['cate_id'],$param['cate_id']);
                     return ['status'=>1,'message'=>'添加成功'];
                 }else{
                     return ['status'=>-1,'message'=>'添加失败'];
@@ -93,10 +108,14 @@ class Article extends Base
     public function edit()
     {
         $param = Request::param();
+        if(isset($param['id'])){
+            $article = ArticleModel::get($param['id']);
+        }else{
+            $this->assign('empty','请求参数错误');
+        }
 
-        $category = CategoryModel::get($param['id']);
 
-        $this->assign('category',$category);
+        $this->assign('article',$article);
         return $this->fetch();
     }
 
@@ -107,13 +126,15 @@ class Article extends Base
             $param = Request::param();
 
             //验证器检测
-            $rule = 'app\common\validate\Category';//自定义的验证场景规则
+            $rule = 'app\common\validate\Article';//自定义的验证场景规则
             $res = $this->validate($param,$rule);//
             if($res !== true){
                 return ['status'=>-1,'message'=>$res];
             }else{
-
-                $category = CategoryModel::update($param);
+                if(!isset($param['status'])){
+                    $param['status'] = 0;
+                }
+                $category = ArticleModel::update($param);
                 if($category->id > 0){
                     return ['status'=>1,'message'=>'修改成功'];
                 }else{
@@ -134,22 +155,18 @@ class Article extends Base
         if(Request::isAjax()){
             $param = Request::param();
 
-            $category = CategoryModel::get($param['id']);
-            if($category->id>0){
-                //TODO 有下级栏目则不允许删除
-                if(CategoryModel::where('pid',$param['id'])->find()){
-                    return ['status'=>-1,'message'=>'存在下级节点，不允许删除'];
-                }else{
-                    //TODO 该栏目下有文章则不允许删除
+            $article = ArticleModel::get($param['id']);
+            if($article->id>0){
+                    if($article->delete()>0){
+                        //更新文章总数计数统计
+                        StatisticsLogic::distribute(Request::controller(true),'dectotal');
+                        //更新该栏目计数统计
+                        StatisticsLogic::distribute(Request::controller(true),'deccateid'.$article['cate_id'],$article['cate_id']);
 
-                    if($category->delete()>0){
-                        //更新计数统计
-                        StatisticsLogic::distribute(Request::controller(true),'dec');
                         return ['status'=>1,'message'=>'删除成功'];
                     }else{
                         return ['status'=>-1,'message'=>'删除失败'];
                     }
-                }
 
             }else{
                 return ['status'=>-1,'message'=>'不存在该项数据'];

@@ -13,7 +13,7 @@ use think\Controller;
 use think\facade\Session;
 use think\facade\Request;//导入请求对象的静态代理
 use think\facade\Config;
-use app\common\model\Category as CategoryModel;
+use app\facade\CategoryLogic;//栏目代理类
 
 class Base extends Controller
 {
@@ -50,13 +50,11 @@ class Base extends Controller
                 $leftMenu = Config::get('menu.'.$type);
             }else{
                 if($type == 'article'){
-                    $category = CategoryModel::where([])
-                        ->field('id,title,pid,rank,status')
-                        ->order('rank desc,id desc')
-                        ->select();
-                    $category = getTree($category);
+                    $leftMenu = CategoryLogic::getCateTree($pid=0,$type=0,$field='id,title,pid');
+                }else{
+                    $leftMenu = array();
                 }
-                $leftMenu = array();
+
             }
 
             return $leftMenu;

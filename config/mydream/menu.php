@@ -93,13 +93,5 @@ return [
                 'child'=>'',
             ],
     ],
-    'article'   =>  [
-            [
-                'title'      =>  '文章管理',
-                'url'      =>  'article/index',
-                'show' => '1',
-                'child'=>'',
-            ],
-    ],
 
 ];

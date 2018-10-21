@@ -80,5 +80,44 @@ return [
                 'status' =>  '1',
             ],
         ],
+        'article' => [//控制器（小写）
+            'inctotal' => [//增加操作
+                'title' => '增加文章总数量',
+                'tablename' => 'article',
+                'type' =>  '0',
+                'status' =>  '1',
+            ],
+            'dectotal' => [//减少操作
+                'title' => '减少文章总数量',
+                'tablename' => 'article',
+                'type' =>  '0',
+                'status' =>  '1',
+            ],
+            'gettotal' => [//获取操作
+                'title' => '获取文章总数量',
+                'tablename' => 'article',
+                'type' =>  '0',
+                'status' =>  '1',
+            ],
+            //各个文章栏目的统计操作
+            'inccateid3' => [//增加操作
+                'title' => '增加文章总数量',
+                'tablename' => 'article',
+                'type' =>  '3',
+                'status' =>  '1',
+            ],
+            'deccateid3' => [//减少操作
+                'title' => '减少文章总数量',
+                'tablename' => 'article',
+                'type' =>  '3',
+                'status' =>  '1',
+            ],
+            'getcateid3' => [//获取操作
+                'title' => '获取文章总数量',
+                'tablename' => 'article',
+                'type' =>  '3',
+                'status' =>  '1',
+            ],
+        ],
                
 ];

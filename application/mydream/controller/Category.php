@@ -109,7 +109,9 @@ class Category extends Base
             if($res !== true){
                 return ['status'=>-1,'message'=>$res];
             }else{
-
+                if(!isset($param['status'])){
+                    $param['status'] = 0;
+                }
                 $category = CategoryModel::update($param);
                 if($category->id > 0){
                     return ['status'=>1,'message'=>'修改成功'];
