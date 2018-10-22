@@ -1,25 +1,22 @@
 <?php
-namespace app\mydream\controller;
+namespace app\index\controller;
 
 use think\Controller;
-use think\captcha\Captcha;
 use think\facade\Request;//导入请求对象的静态代理
 use think\facade\Session;//导入缓存对象的静态代理
-use app\mydream\model\Admin as AdminModel;
 
 class Login extends Controller
 {
-    //访问地址：http://jwjzhiyazai.com/mydream.php/mydream/Login/index
+    //访问地址：http://jwjzhiyazai.com/index.php/index/Login/index
     public function index()
     {
-        if(Session::has('admin_id')){
-            $this->redirect('index/index', ['type' => 'index']);
-        }else{
-            return $this->fetch('index',['title'=>'登录页面']);
-        }
+//        if(Session::has('admin_id')){
+//            $this->redirect('index/index', ['type' => 'index']);
+//        }else{
+//            return $this->fetch('index',['title'=>'登录页面']);
+//        }
 
-
-
+        return $this->fetch('index',['title'=>'登录页面']);
     }
 
     //登陆处理

@@ -24,22 +24,15 @@ class Base extends Controller
      */
     protected function initialize()
     {
-
-    }
-
-    //防止重复登陆
-    public function logined()
-    {
-    	if(Session::has('user_id')){
-    		$this->error('客官，您已经登陆了','index/index');
-    	}
+        $this->isLogin();
     }
 
     //检查是否未登录，放在需要登录的方法的最前面，例如发布文章
     protected function isLogin()
     {
-        if(!Session::has('user_id')){
-            $this->error('客官，您是不是忘记登录啦','user/login');
+        if(!Session::has('admin_id')){
+            //$this->error('客官，您是不是忘记登录啦','login/index');
+            $this->redirect('login/index');
         }
     }
 

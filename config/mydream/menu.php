@@ -15,57 +15,10 @@
 
 return [
     'index'  =>  [
-
             [
-                'title'      =>  '所有商品',
-                'url'      =>  '',
-                'show' => '0',
-                'child' => [
-                    [
-                        'title' => '列表一',
-                        'url' => 'list/list1',
-                        'show' => '1',
-                        'child'=>'',
-                    ],
-                    [
-                        'title' => '列表二',
-                        'url' => 'list/list2',
-                        'show' => '0',
-                        'child'=>'',
-                    ],
-                ],
-
-            ],
-        [
-            'title'      =>  '首页',
-            'url'      =>  'index/main',
-            'show' => '0',
-            'child'=>'',
-        ],
-            [
-                'title'      =>  '解决方案',
-                'url'      =>  '',
-                'show' => '0',
-                'child' => [
-                    [
-                        'title' => '方案一',
-                        'url' => 'list/list3',
-                        'show' => '0',
-                        'child'=>'',
-                    ],
-                    [
-                        'title' => '方案二',
-                        'url' => 'list/list4',
-                        'show' => '0',
-                        'child'=>'',
-                    ],
-                ],
-
-            ],
-            [
-                'title'      =>  '云市场',
-                'url'      =>  'list/list5',
-                'show' => '0',
+                'title'      =>  '首页',
+                'url'      =>  'index/main',
+                'show' => '1',
                 'child'=>'',
             ],
 

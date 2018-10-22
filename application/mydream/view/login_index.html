@@ -80,6 +80,7 @@
                         case 0:
                         case -1:
                             alert(data.message);
+                            $(".capt_code").attr("src","{:url('login/getcaptcha')}");
                             window.location.back();
                     }
 
