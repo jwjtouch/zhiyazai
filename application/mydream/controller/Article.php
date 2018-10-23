@@ -84,7 +84,7 @@ class Article extends Base
                 return ['status'=>-1,'message'=>$res];
             }else{
                 //TODO 管理员id
-                //$param['admin_id'] = '';
+                $param['admin_id'] = session('admin_id');
                 $article = ArticleModel::create($param);
                 if($article->id > 0){
                     //更新文章总数计数统计

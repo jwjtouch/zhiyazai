@@ -25,7 +25,7 @@ class Category extends Base
 
         $category = CategoryModel::where($where)
         ->field('id,title,pid,rank,status')
-        ->order('rank desc,id desc')
+        ->order('rank asc,id desc')
         ->select();
 
         //获取计数统计

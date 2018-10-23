@@ -50,14 +50,14 @@ CREATE TABLE `zyz_member` (
 
 
 CREATE TABLE `zyz_category` (
-  `id` smallint(4) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `id` smallint(5) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `title` varchar(60) DEFAULT '' COMMENT '名称',
   `keyword` varchar(255) DEFAULT '' COMMENT '关键字',
   `description` varchar(500) DEFAULT '' COMMENT '描述',
   `content` text DEFAULT '' COMMENT '内容',
-  `rank` tinyint(3) DEFAULT '0' COMMENT '排序',
+  `rank` smallint(5) DEFAULT '0' COMMENT '排序',
   `status` tinyint(1) DEFAULT '0' COMMENT '0锁定1正常',
-  `pid` smallint(4) DEFAULT '0' COMMENT '父id',
+  `pid` smallint(5) DEFAULT '0' COMMENT '父id',
   `create_time` int(10) DEFAULT NULL COMMENT '添加时间',
   `update_time` int(10) DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`),
