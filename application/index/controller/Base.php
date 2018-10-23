@@ -35,11 +35,16 @@ class Base extends Controller
         }
     }
 
-    //获取栏目菜单
-    public function getCate($type)
+    /****
+     * @param $type 0全部栏目 1开启的栏目 2 关闭的栏目
+     * @param $pid 顶级栏目pid
+     * @param $deep 深度，要获取的栏目层级
+     * @return mixed
+     */
+    public function getCate($type,$pid,$deep)
     {
 
-            $category = CategoryLogic::getCateTree($pid=0,$type=1,$field='id,title,pid');
+            $category = CategoryLogic::getCateTree($pid,$type,$field='id,title,pid',$sort = 'rank asc,id asc',$deep);
 
             return $category;
 
