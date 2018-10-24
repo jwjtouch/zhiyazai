@@ -28,5 +28,10 @@ class Category extends Model
         return $status[$value];
     }
 
+    //获取栏目下的所有文章
+    public function article()
+    {
+        return $this->hasMany('Article','cate_id','id')->field('id,title');
+    }
 
 }

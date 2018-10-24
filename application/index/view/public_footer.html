@@ -3,6 +3,16 @@
 <script src="/static/bootstrap/js/bootstrap.min.js"></script>
 <script src="/static/js/index.js?t=123"></script>
 <script>
-
+    $(function(){
+    	var sUrl = '/index.php/index/article/detail/id/'+$(".hasarticle").eq(0).attr("rel"); 
+         $("#iframewrap").attr("src",sUrl);
+        $(".left-menu a").on("click",function(){
+            _rel = $(this).attr("rel");
+            if(_rel && _rel != "undefined"){
+                var sUrl = '/index.php/index/article/detail/id/'+_rel; 
+                $("#iframewrap").attr("src",sUrl);
+            }
+        });
+    })
 </script>
 </html>

@@ -44,11 +44,11 @@ class CategoryLogic extends Model
                 ->select()
                 ->toArray();
         }else if($deep == 2){
-            $map1[] = ['pid','=','0'];
-            $map2[] = ['pid','IN',function ($query) {
-                $query->table('zyz_category')->where('pid', 0)->field('id');
+            $map1[] = ['pid','=',$pid];
+            $map2[] = ['pid','IN',function ($query) use ($pid){
+                $query->table('zyz_category')->where('pid',$pid)->field('id');
             }];
-            $category = db('category')
+            $category = db('zyz_category')
                 ->whereOr([$map1,$map2])
                 ->where($map)
                 ->select();
@@ -62,11 +62,10 @@ class CategoryLogic extends Model
     }
 
     /***
-     * 生成目录树
+     * 生成目录树-组合多维数组
      * $array数据
      * $pid 根节点pid
      */
-    //组合多维数组
     public static function unlimitedForLayer($arrdata,$name='child',$pid=0)
     {
         $arr = array();
@@ -93,5 +92,21 @@ class CategoryLogic extends Model
         return $arr;
     }
 
+    /***
+    * 获取指定栏目的顶级栏目
+    * 指定栏目的cate_id
+    **/
+    public function getTopCate($cate_id)
+    {
 
+        $map[] = ['id','=',$cate_id];
+        $curCate = CategoryModel::where($map)
+                ->find();
+
+        if($curCate['pid'] == 0){
+            return $curCate;
+        }else{
+            return $this->getTopCate($curCate['pid']);
+        }
+    }
 }

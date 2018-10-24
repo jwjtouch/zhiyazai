@@ -24,7 +24,7 @@ class Base extends Controller
      */
     protected function initialize()
     {
-        //$this->isLogin();
+        $this->isLogin();
     }
 
     //检查是否未登录，放在需要登录的方法的最前面，例如发布文章
@@ -49,4 +49,6 @@ class Base extends Controller
             return $category;
 
     }
+
+
 }

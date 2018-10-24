@@ -42,14 +42,14 @@
                 <div class="form-group">
                     <div class="col-sm-1"></div>
                     <div class="col-sm-10">
-                        <input type="email" class="form-control bdb" id="inputEmail3" placeholder="请输入用户名">
+                        <input type="text" name="account" class="form-control bdb" id="inputEmail3" placeholder="请输入用户名">
                     </div>
                     <div class="col-sm-1"></div>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-1"></div>
                     <div class="col-sm-10">
-                        <input type="password" class="form-control bdb" id="inputPassword3" placeholder="请输入密码">
+                        <input type="password" name="pwd" class="form-control bdb" id="inputPassword3" placeholder="请输入密码">
                     </div>
                     <div class="col-sm-1"></div>
                 </div>
@@ -64,7 +64,7 @@
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-1 col-sm-10">
-                        <button type="submit" class="btn btn-info btn-block">登录</button>
+                        <button type="submit" id="submit" class="btn btn-info btn-block">登录</button>
                     </div>
                 </div>
             </form>
@@ -79,6 +79,30 @@
 {load href="/static/jquery.min.js" /}
 {load href="/static/bootstrap/js/bootstrap.min.js" /}
 <script>
+$(function(){
+            //登陆
+        $("#submit").on('click', function(){
+            $.ajax({
+                type:'post',
+                url:"{:url('login/loginHandle')}",
+                data:$("#login").serialize(),
+                dataType:'json',
+                success:function(data){
+                    switch(data.status){
+                        case 1:
+                            alert(data.message);
+                            window.location.href="{:url('index/index')}";
+                            break;
+                        case 0:
+                        case -1:
+                            alert(data.message);
+                            window.location.back();
+                    }
 
+                }
+            })
+            return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+        });
+})
 </script>
 </html>

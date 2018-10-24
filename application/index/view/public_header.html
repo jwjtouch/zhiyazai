@@ -24,19 +24,27 @@
             　   <a href="##" class="navbar-brand">知丫仔</a>
         </div>
         <ul class="nav navbar-nav">
-
+            <li class="{if !isset($topCateId)}active{/if}"><a href="{:url('index/index')}">首页</a></li>
             {volist name="$category" id="c"}
-                <li class="{if ($i == 1)}active {/if} {if $c.child != ''} dropdown{/if}">
-                    <a href="##" {if $c.child != ''}data-toggle="dropdown" class="dropdown-toggle"{/if}>{$c.title}{if $c.child != ''}<span class="caret"></span>{/if}</a>
+                <li class="{if isset($topCateId) and $topCateId == $c.id}active {/if} {if $c.child != ''} dropdown{/if}">
+                    <a href="{if $c.child == ''}{:url('category/index',['cate_id'=>$c['id']])}{else/}#{/if}" {if $c.child != ''}data-toggle="dropdown" class="dropdown-toggle"{/if}>{$c.title}{if $c.child != ''}<span class="caret"></span>{/if}</a>
                     {if $c.child != ''}
                     <ul class="dropdown-menu">
                         {volist name="c.child" id="c1"}
-                        <li><a href="##">{$c1.title}</a></li>
+                        <li><a href="{:url('category/index',['cate_id'=>$c1['id']])}">{$c1.title}</a></li>
                         {/volist}
                     </ul>
                     {/if}
                 </li>
             {/volist}
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{$Think.session.member_name} <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="{:url('login/logout')}">退出</a></li>
+          </ul>
+        </li>
         </ul>
     </div>
 </div>

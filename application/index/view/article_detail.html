@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="{$article.keyword}">
+    <meta name="description" content="{$article.description}">
+    <title>{$article.title} - 知丫仔</title>
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/common.css">
+    <style>
+        .white{color:#ffffff !important;}
+        .navbar-fixed-top{height:50px;line-height:50px;}
+        .navbar-fixed-bottom{height:50px;line-height:50px;}
+        .left-menu{margin-left:-30px;}
+        .left-menu ul{padding-left:30px;}
+        #menubtn{position:absolute;cursor:pointer;float:left;z-index:10;}
+        .title{text-align:center;}
+    </style>
+</head>
+
+<body>
+<div class="container" >
+    <div class="row">
+        <div class="col-md-12" id="article-wrap">
+            <section id="article">
+                <article>
+                    <h3 class="title">{$article.title}</h3>
+                    {$article.content|raw}
+                </article>
+            </section>
+        </div>
+    </div>
+</div>
+</body>
+<script src="/static/js/jquery-3.3.1.min.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+<script src="/static/js/index.js?t=123"></script>
+<script>
+$(function(){
+    $("#iframewrap",window.parent.document).css("height",$(document).height()+120);
+})
+</script>
+</html>
