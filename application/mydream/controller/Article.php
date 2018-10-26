@@ -37,10 +37,14 @@ class Article extends Base
             $param = Request::param();
 
             $where[] = ['cate_id','=',$param['cate_id']];
+            $page = $param['page'];
+            $limit = $param['limit'];
+            $startlimit = ($page-1)*$limit;
 
             $article = ArticleModel::where($where)
             ->field('id,title,admin_id,create_time,update_time,rank,status')
             ->order('rank desc,id desc')
+            ->limit($startlimit,$limit)
             ->select();
 
             //获取计数统计
@@ -85,10 +89,14 @@ class Article extends Base
             }else{
                 //TODO 管理员id
                 $param['admin_id'] = session('admin_id');
+                $param['title'] = trim($param['title']);
+                $param['keyword'] = trim($param['keyword']);
+                $param['description'] = trim($param['description']);
+
                 $article = ArticleModel::create($param);
                 if($article->id > 0){
                     //更新文章总数计数统计
-                    StatisticsLogic::distribute(Request::controller(true),'inctotal');
+                    StatisticsLogic::distribute(Request::controller(true),'inc');
                     //更新该栏目计数统计
                     StatisticsLogic::distribute(Request::controller(true),'inccateid'.$param['cate_id'],$param['cate_id']);
                     return ['status'=>1,'message'=>'添加成功'];
@@ -134,6 +142,10 @@ class Article extends Base
                 if(!isset($param['status'])){
                     $param['status'] = 0;
                 }
+                $param['title'] = trim($param['title']);
+                $param['keyword'] = trim($param['keyword']);
+                $param['description'] = trim($param['description']);
+
                 $category = ArticleModel::update($param);
                 if($category->id > 0){
                     return ['status'=>1,'message'=>'修改成功'];
@@ -159,7 +171,7 @@ class Article extends Base
             if($article->id>0){
                     if($article->delete()>0){
                         //更新文章总数计数统计
-                        StatisticsLogic::distribute(Request::controller(true),'dectotal');
+                        StatisticsLogic::distribute(Request::controller(true),'dec');
                         //更新该栏目计数统计
                         StatisticsLogic::distribute(Request::controller(true),'deccateid'.$article['cate_id'],$article['cate_id']);
 

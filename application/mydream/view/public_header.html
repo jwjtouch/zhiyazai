@@ -65,7 +65,7 @@
                                 {if ($vo1.child != '')}
                                 <dl class="layui-nav-child">
                                     {foreach $vo1.child as $key2=>$vo2 }
-                                    <dd><a href="javascript:;" rel="{$vo2.url}">{$vo2.title}</a></dd>
+                                    <dd class="{if $vo2.show == '1'}layui-this{/if}"><a href="javascript:;" rel="{$vo2.url}">{$vo2.title}</a></dd>
                                     {/foreach}
                                 </dl>
                                 {/if}

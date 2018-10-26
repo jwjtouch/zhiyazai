@@ -37,6 +37,23 @@ class StatisticsLogic extends Model
                 }else {
                     $result = ['status' => 0, 'message' => '不存在的操作类型'];
                 }
+            }else if($controller == 'article' && strstr($operate,'cateid') && $type != 0){
+                //文章特殊处理
+                $config =  [//增加操作
+                'title' => '文章数量',
+                'tablename' => 'article',
+                'type' =>  $type,
+                'status' =>  '1',
+                ];
+                if (strstr($operate,'inc')) {
+                    $result = $this->addStatistics($config, $type);
+                } elseif (strstr($operate,'dec')) {
+                    $result = $this->delStatistics($config, $type);
+                } elseif (strstr($operate,'get')){
+                    $result = $this->getStatistics($config, $type);
+                }else {
+                    $result = ['status' => 0, 'message' => '不存在的操作类型'];
+                }
             }else{
                 $result = ['status'=>0,'message'=>'未开启数据统计'];
             }

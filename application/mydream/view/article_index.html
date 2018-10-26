@@ -31,7 +31,13 @@
 
 {load href="/static/js/jquery-3.3.1.min.js" /}
 {load href="/static/layui/layui.js" /}
-
+<script>
+    layui.use('element', function(){
+        var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+        //监听导航点击
+        $("#iframewrap",window.parent.document).css("height",800);
+    });
+</script>
 <script>
     layui.use('table', function(){
         var table = layui.table;
@@ -39,10 +45,11 @@
         //第一个实例
         table.render({
             elem: '#demo',
-            height: 312,
+            height: 700,
             url: '/mydream.php/mydream/article/getDatas',
             where: {cate_id: {$cate_id}},
             page: true,
+            limit:15,
             response: {
                 statusName: 'status' //规定数据状态的字段名称，默认：code
                 ,statusCode: 1 //规定成功的状态码，默认：0

@@ -88,7 +88,7 @@
     layui.use('element', function(){
         var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
         //监听导航点击
-        $("#iframewrap",window.parent.document).css("height",$(document).height()+120);
+        $("#iframewrap",window.parent.document).css("height",1000);
     });
 </script>
 <script>
@@ -106,7 +106,7 @@
                 success:function(data){
                     switch(data.status){
                         case 1:
-                            alert(data.message);
+                            //alert(data.message);
                             window.location.href="/mydream.php/mydream/article/index/cate_id/{$cate_id}";
                             break;
                         case 0:
