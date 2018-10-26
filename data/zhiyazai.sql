@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 本地连接
+Source Server         : 本地链接
 Source Server Version : 50505
 Source Host           : localhost:3306
 Source Database       : zhiyazai
@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2018-10-26 20:00:06
+Date: 2018-10-27 00:26:44
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -35,7 +35,7 @@ CREATE TABLE `zyz_admin` (
 -- ----------------------------
 -- Records of zyz_admin
 -- ----------------------------
-INSERT INTO `zyz_admin` VALUES ('1', '管理员', 'admin', 'e10adc3949ba59abbe56e057f20f883e', '1538744362', '1538744362', '', '1540551337');
+INSERT INTO `zyz_admin` VALUES ('1', '管理员', 'admin', 'e10adc3949ba59abbe56e057f20f883e', '1538744362', '1538744362', '', '1540564868');
 INSERT INTO `zyz_admin` VALUES ('2', '知丫仔', 'zhiyazai', '4a97261e864e850acd0b2366301b4dba', '1539343698', '1539343698', '607dc9b7', '1539343780');
 
 -- ----------------------------
@@ -47,16 +47,16 @@ CREATE TABLE `zyz_article` (
   `title` varchar(60) DEFAULT '' COMMENT '标题',
   `keyword` varchar(255) DEFAULT '' COMMENT '关键字',
   `description` varchar(500) DEFAULT '' COMMENT '描述',
-  `content` text COMMENT '内容',
-  `rank` smallint(5) DEFAULT '0' COMMENT '排序',
-  `status` tinyint(1) DEFAULT '0' COMMENT '0锁定1正常',
-  `cate_id` smallint(4) DEFAULT '0' COMMENT '栏目id',
-  `admin_id` smallint(4) DEFAULT '0' COMMENT '发布人id',
+  `content` text DEFAULT NULL COMMENT '内容',
+  `rank` smallint(5) DEFAULT 0 COMMENT '排序',
+  `status` tinyint(1) DEFAULT 0 COMMENT '0锁定1正常',
+  `cate_id` smallint(4) DEFAULT 0 COMMENT '栏目id',
+  `admin_id` smallint(4) DEFAULT 0 COMMENT '发布人id',
   `create_time` int(10) DEFAULT NULL COMMENT '添加时间',
   `update_time` int(10) DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`),
   KEY `title` (`title`)
-) ENGINE=MyISAM AUTO_INCREMENT=342 DEFAULT CHARSET=utf8 COMMENT='文章表';
+) ENGINE=MyISAM AUTO_INCREMENT=547 DEFAULT CHARSET=utf8 COMMENT='文章表';
 
 -- ----------------------------
 -- Records of zyz_article
@@ -396,6 +396,210 @@ INSERT INTO `zyz_article` VALUES ('338', '验证码类', '验证码类', '验证
 INSERT INTO `zyz_article` VALUES ('339', '图像处理类', '图像处理类', '图像处理类', '', '0', '1', '60', '1', '1540555126', '1540555126');
 INSERT INTO `zyz_article` VALUES ('340', '文件上传类', '文件上传类', '文件上传类', '', '0', '1', '60', '1', '1540555136', '1540555136');
 INSERT INTO `zyz_article` VALUES ('341', '数据验证类', '数据验证类', '数据验证类', '', '0', '1', '60', '1', '1540555144', '1540555144');
+INSERT INTO `zyz_article` VALUES ('342', '网上商城项目功能战士', '网上商城项目功能战士', '网上商城项目功能战士', '', '0', '1', '61', '1', '1540565025', '1540565025');
+INSERT INTO `zyz_article` VALUES ('343', '项目的模块划分', '项目的模块划分', '项目的模块划分', '', '0', '1', '61', '1', '1540565040', '1540565040');
+INSERT INTO `zyz_article` VALUES ('344', '项目的结构编写', '项目的结构编写', '项目的结构编写', '', '0', '1', '61', '1', '1540565051', '1540565051');
+INSERT INTO `zyz_article` VALUES ('345', '项目的重要模块分析讲解', '项目的重要模块分析讲解', '项目的重要模块分析讲解', '', '0', '1', '61', '1', '1540565074', '1540565074');
+INSERT INTO `zyz_article` VALUES ('346', '项目中的一些常见问题实现与解决', '项目中的一些常见问题实现与解决', '项目中的一些常见问题实现与解决', '', '0', '1', '61', '1', '1540565090', '1540565090');
+INSERT INTO `zyz_article` VALUES ('347', 'Cookie概述', 'Cookie概述', 'Cookie概述', '', '0', '1', '62', '1', '1540565104', '1540565104');
+INSERT INTO `zyz_article` VALUES ('348', '向客户端电脑中设置Cookie', '向客户端电脑中设置Cookie', '向客户端电脑中设置Cookie', '', '0', '1', '62', '1', '1540565113', '1540565113');
+INSERT INTO `zyz_article` VALUES ('349', '在PHP脚本中读取Cookie的资料内容', '在PHP脚本中读取Cookie的资料内容', '在PHP脚本中读取Cookie的资料内容', '', '0', '1', '62', '1', '1540565123', '1540565123');
+INSERT INTO `zyz_article` VALUES ('350', '数组形态的Cookie应用', '数组形态的Cookie应用', '数组形态的Cookie应用', '', '0', '1', '62', '1', '1540565133', '1540565133');
+INSERT INTO `zyz_article` VALUES ('351', '删除Cookie', '删除Cookie', '删除Cookie', '', '0', '1', '62', '1', '1540565142', '1540565142');
+INSERT INTO `zyz_article` VALUES ('352', '基于Cookie的用户登陆模块', '基于Cookie的用户登陆模块', '基于Cookie的用户登陆模块', '', '0', '1', '62', '1', '1540565151', '1540565151');
+INSERT INTO `zyz_article` VALUES ('353', 'Session概述', 'Session概述', 'Session概述', '', '0', '1', '63', '1', '1540565161', '1540565161');
+INSERT INTO `zyz_article` VALUES ('354', '配置Session', '配置Session', '配置Session', '', '0', '1', '63', '1', '1540565179', '1540565179');
+INSERT INTO `zyz_article` VALUES ('355', 'Session的声明与使用', 'Session的声明与使用', 'Session的声明与使用', '', '0', '1', '63', '1', '1540565191', '1540565191');
+INSERT INTO `zyz_article` VALUES ('356', '注册一个会话变量和读取Session', '注册一个会话变量和读取Session', '注册一个会话变量和读取Session', '', '0', '1', '63', '1', '1540565201', '1540565201');
+INSERT INTO `zyz_article` VALUES ('357', '注销变量与销毁Session', '注销变量与销毁Session', '注销变量与销毁Session', '', '0', '1', '63', '1', '1540565209', '1540565209');
+INSERT INTO `zyz_article` VALUES ('358', '传递Session ID', '传递Session ID', '传递Session ID', '', '0', '1', '63', '1', '1540565217', '1540565217');
+INSERT INTO `zyz_article` VALUES ('359', '用户登陆和注册及跟踪实现', '用户登陆和注册及跟踪实现', '用户登陆和注册及跟踪实现', '', '0', '1', '63', '1', '1540565226', '1540565226');
+INSERT INTO `zyz_article` VALUES ('360', '后台登陆', '后台登陆', '后台登陆', '', '0', '1', '64', '1', '1540565241', '1540565241');
+INSERT INTO `zyz_article` VALUES ('361', '权限判断', '权限判断', '权限判断', '', '0', '1', '64', '1', '1540565249', '1540565249');
+INSERT INTO `zyz_article` VALUES ('362', '用户浏览', '用户浏览', '用户浏览', '', '0', '1', '64', '1', '1540565258', '1540565258');
+INSERT INTO `zyz_article` VALUES ('363', '详情显示', '详情显示', '详情显示', '', '0', '1', '64', '1', '1540565273', '1540565273');
+INSERT INTO `zyz_article` VALUES ('364', '修改状态', '修改状态', '修改状态', '', '0', '1', '64', '1', '1540565280', '1540565280');
+INSERT INTO `zyz_article` VALUES ('365', '搜索分页', '搜索分页', '搜索分页', '', '0', '1', '64', '1', '1540565290', '1540565290');
+INSERT INTO `zyz_article` VALUES ('366', '浏览分类', '浏览分类', '浏览分类', '', '0', '1', '65', '1', '1540565301', '1540565301');
+INSERT INTO `zyz_article` VALUES ('367', '添加类别', '添加类别', '添加类别', '', '0', '1', '65', '1', '1540565309', '1540565309');
+INSERT INTO `zyz_article` VALUES ('368', '修改类别', '修改类别', '修改类别', '', '0', '1', '65', '1', '1540565317', '1540565317');
+INSERT INTO `zyz_article` VALUES ('369', '删除分类', '删除分类', '删除分类', '', '0', '1', '65', '1', '1540565325', '1540565325');
+INSERT INTO `zyz_article` VALUES ('370', '添加商品并上传商品图片', '添加商品并上传商品图片', '添加商品并上传商品图片', '', '0', '1', '66', '1', '1540566127', '1540566127');
+INSERT INTO `zyz_article` VALUES ('371', '浏览商品', '浏览商品', '浏览商品', '', '0', '1', '66', '1', '1540566147', '1540566147');
+INSERT INTO `zyz_article` VALUES ('372', '修改状态', '修改状态', '修改状态', '', '0', '1', '66', '1', '1540566205', '1540566205');
+INSERT INTO `zyz_article` VALUES ('373', '删除商品', '删除商品', '删除商品', '', '0', '1', '66', '1', '1540566214', '1540566214');
+INSERT INTO `zyz_article` VALUES ('374', '修改商品', '修改商品', '修改商品', '', '0', '1', '66', '1', '1540566224', '1540566224');
+INSERT INTO `zyz_article` VALUES ('375', '商品详情', '商品详情', '商品详情', '', '0', '1', '66', '1', '1540566233', '1540566233');
+INSERT INTO `zyz_article` VALUES ('376', '搜索分页', '搜索分页', '搜索分页', '', '0', '1', '66', '1', '1540566249', '1540566249');
+INSERT INTO `zyz_article` VALUES ('377', '浏览订单', '浏览订单', '浏览订单', '', '0', '1', '67', '1', '1540566270', '1540566270');
+INSERT INTO `zyz_article` VALUES ('378', '处理订单', '处理订单', '处理订单', '', '0', '1', '67', '1', '1540566278', '1540566278');
+INSERT INTO `zyz_article` VALUES ('379', '订单详情', '订单详情', '订单详情', '', '0', '1', '67', '1', '1540566287', '1540566287');
+INSERT INTO `zyz_article` VALUES ('380', '搜索分页', '搜索分页', '搜索分页', '', '0', '1', '67', '1', '1540566297', '1540566297');
+INSERT INTO `zyz_article` VALUES ('381', '会员注册（带验证）', '会员注册（带验证）', '会员注册（带验证）', '', '0', '1', '68', '1', '1540566311', '1540566311');
+INSERT INTO `zyz_article` VALUES ('382', '会员登陆', '会员登陆', '会员登陆', '', '0', '1', '68', '1', '1540566322', '1540566322');
+INSERT INTO `zyz_article` VALUES ('383', '个人信息', '个人信息', '个人信息', '', '0', '1', '68', '1', '1540566331', '1540566331');
+INSERT INTO `zyz_article` VALUES ('384', '购物及订单记录', '购物及订单记录', '购物及订单记录', '', '0', '1', '68', '1', '1540566339', '1540566339');
+INSERT INTO `zyz_article` VALUES ('385', '商城首页', '商城首页', '商城首页', '', '0', '1', '69', '1', '1540566353', '1540566353');
+INSERT INTO `zyz_article` VALUES ('386', '商品列表', '商品列表', '商品列表', '', '0', '1', '69', '1', '1540566361', '1540566361');
+INSERT INTO `zyz_article` VALUES ('387', '商品详情', '商品详情', '商品详情', '', '0', '1', '69', '1', '1540566369', '1540566369');
+INSERT INTO `zyz_article` VALUES ('388', '商品搜索', '商品搜索', '商品搜索', '', '0', '1', '69', '1', '1540566377', '1540566377');
+INSERT INTO `zyz_article` VALUES ('389', '商品评论', '商品评论', '商品评论', '', '0', '1', '69', '1', '1540566388', '1540566388');
+INSERT INTO `zyz_article` VALUES ('390', '购物添加', '购物添加', '购物添加', '', '0', '1', '70', '1', '1540566427', '1540566427');
+INSERT INTO `zyz_article` VALUES ('391', '浏览购物', '浏览购物', '浏览购物', '', '0', '1', '70', '1', '1540566436', '1540566436');
+INSERT INTO `zyz_article` VALUES ('392', '删除购物', '删除购物', '删除购物', '', '0', '1', '70', '1', '1540566443', '1540566443');
+INSERT INTO `zyz_article` VALUES ('393', '修改数量', '修改数量', '修改数量', '', '0', '1', '70', '1', '1540566450', '1540566450');
+INSERT INTO `zyz_article` VALUES ('394', '生成订单', '生成订单', '生成订单', '', '0', '1', '70', '1', '1540566458', '1540566458');
+INSERT INTO `zyz_article` VALUES ('395', '下单操作', '下单操作', '下单操作', '', '0', '1', '70', '1', '1540566471', '1540566471');
+INSERT INTO `zyz_article` VALUES ('396', '前后台的界面设计', '前后台的界面设计', '前后台的界面设计', '', '0', '1', '71', '1', '1540566485', '1540566485');
+INSERT INTO `zyz_article` VALUES ('397', '使用标准化页面布局', '使用标准化页面布局', '使用标准化页面布局', '', '0', '1', '71', '1', '1540566495', '1540566495');
+INSERT INTO `zyz_article` VALUES ('398', 'SEO的优化', 'SEO的优化', 'SEO的优化', '', '0', '1', '71', '1', '1540566505', '1540566505');
+INSERT INTO `zyz_article` VALUES ('399', '颜色搭配和图片的使用', '颜色搭配和图片的使用', '颜色搭配和图片的使用', '', '0', '1', '71', '1', '1540566514', '1540566514');
+INSERT INTO `zyz_article` VALUES ('400', '用户体验设计', '用户体验设计', '用户体验设计', '', '0', '1', '71', '1', '1540566522', '1540566522');
+INSERT INTO `zyz_article` VALUES ('401', '评论管理', '评论管理', '评论管理', '', '0', '1', '72', '1', '1540566531', '1540566531');
+INSERT INTO `zyz_article` VALUES ('402', '积分管理', '积分管理', '积分管理', '', '0', '1', '72', '1', '1540566538', '1540566538');
+INSERT INTO `zyz_article` VALUES ('403', '统计管理', '统计管理', '统计管理', '', '0', '1', '72', '1', '1540566546', '1540566546');
+INSERT INTO `zyz_article` VALUES ('404', 'python简史', 'python简史', 'python简史', '', '1', '1', '120', '1', '1540569203', '1540569203');
+INSERT INTO `zyz_article` VALUES ('405', 'python应用场景', 'python应用场景', 'python应用场景', '', '2', '1', '120', '1', '1540569211', '1540569211');
+INSERT INTO `zyz_article` VALUES ('406', 'python当前发展', 'python当前发展', 'python当前发展', '', '3', '1', '120', '1', '1540569220', '1540569220');
+INSERT INTO `zyz_article` VALUES ('407', '变量类型', '变量类型', '变量类型', '', '1', '1', '121', '1', '1540569236', '1540569236');
+INSERT INTO `zyz_article` VALUES ('408', '分支语句', '分支语句分支语句', '分支语句', '', '2', '1', '121', '1', '1540569249', '1540569249');
+INSERT INTO `zyz_article` VALUES ('409', '循环语句', '循环语句', '循环语句', '', '3', '1', '121', '1', '1540569259', '1540569259');
+INSERT INTO `zyz_article` VALUES ('410', '函数初步', '函数初步', '函数初步', '', '1', '1', '122', '1', '1540569283', '1540569292');
+INSERT INTO `zyz_article` VALUES ('411', '细说参数', '细说参数', '细说参数', '', '2', '1', '122', '1', '1540569304', '1540569304');
+INSERT INTO `zyz_article` VALUES ('412', '变量作用域', '变量作用域', '变量作用域', '', '3', '1', '122', '1', '1540569314', '1540569314');
+INSERT INTO `zyz_article` VALUES ('413', '递归调用', '递归调用', '递归调用', '', '4', '1', '122', '1', '1540569325', '1540569325');
+INSERT INTO `zyz_article` VALUES ('414', 'OOP基础', 'OOP基础', 'OOP基础', '', '1', '1', '123', '1', '1540569346', '1540569346');
+INSERT INTO `zyz_article` VALUES ('415', '公有私有问题继承', '公有私有问题继承', '公有私有问题继承', '', '2', '1', '123', '1', '1540569355', '1540569355');
+INSERT INTO `zyz_article` VALUES ('416', '组合&Mixin', '组合&Mixin', '组合&Mixin', '', '3', '1', '123', '1', '1540569364', '1540569364');
+INSERT INTO `zyz_article` VALUES ('417', '列表（list）', '列表（list）', '列表（list）', '', '1', '1', '125', '1', '1540569375', '1540569375');
+INSERT INTO `zyz_article` VALUES ('418', '元组（tuple）', '元组（tuple）', '元组（tuple）', '', '2', '1', '125', '1', '1540569385', '1540569385');
+INSERT INTO `zyz_article` VALUES ('419', '字典（dict）', '字典（dict）', '字典（dict）', '', '3', '1', '125', '1', '1540569395', '1540569395');
+INSERT INTO `zyz_article` VALUES ('420', '集合（set）', '集合（set）', '集合（set）', '', '4', '1', '125', '1', '1540569404', '1540569404');
+INSERT INTO `zyz_article` VALUES ('421', '异常概述', '异常概述', '异常概述', '', '1', '1', '126', '1', '1540569416', '1540569416');
+INSERT INTO `zyz_article` VALUES ('422', 'try/except', 'try/except', 'try/except', '', '2', '1', '126', '1', '1540569429', '1540569429');
+INSERT INTO `zyz_article` VALUES ('423', 'Finally', 'Finally', 'Finally', '', '3', '1', '126', '1', '1540569438', '1540569438');
+INSERT INTO `zyz_article` VALUES ('424', 'Raise', 'Raise', 'Raise', '', '4', '1', '126', '1', '1540569448', '1540569448');
+INSERT INTO `zyz_article` VALUES ('425', 'with', 'with', 'with', '', '5', '1', '126', '1', '1540569459', '1540569459');
+INSERT INTO `zyz_article` VALUES ('426', '计算器', '计算器', '计算器', '', '1', '1', '127', '1', '1540569469', '1540569469');
+INSERT INTO `zyz_article` VALUES ('427', '随机抽奖', '随机抽奖', '随机抽奖', '', '2', '1', '127', '1', '1540569478', '1540569478');
+INSERT INTO `zyz_article` VALUES ('428', '压缩软件', '压缩软件', '压缩软件', '', '3', '1', '127', '1', '1540569487', '1540569487');
+INSERT INTO `zyz_article` VALUES ('429', '猜数字', '猜数字', '猜数字', '', '4', '1', '127', '1', '1540569496', '1540569496');
+INSERT INTO `zyz_article` VALUES ('430', 'python基础教程（第二版 修订版），Magnus Lie Hteland著，人民邮电出版社', 'python基础教程（第二版 修订版），Magnus Lie Hteland著，人民邮电出版社', 'python基础教程（第二版 修订版），Magnus Lie Hteland著，人民邮电出版社', '', '1', '1', '128', '1', '1540569517', '1540569517');
+INSERT INTO `zyz_article` VALUES ('431', '零基础入门学习 python 小甲鱼', '零基础入门学习 python 小甲鱼', '零基础入门学习 python 小甲鱼', '', '2', '1', '128', '1', '1540569528', '1540569528');
+INSERT INTO `zyz_article` VALUES ('432', 'Head First Python (中文版)', 'Head First Python (中文版)', 'Head First Python (中文版)', '', '3', '1', '128', '1', '1540569538', '1540569538');
+INSERT INTO `zyz_article` VALUES ('433', 'Linux系统运维', 'Linux系统运维', 'Linux系统运维', '', '1', '1', '129', '1', '1540569554', '1540569554');
+INSERT INTO `zyz_article` VALUES ('434', 'Python图形界面（GUI）开发', 'Python图形界面（GUI）开发', 'Python图形界面（GUI）开发', '', '2', '1', '129', '1', '1540569567', '1540569567');
+INSERT INTO `zyz_article` VALUES ('435', 'qt或者tkinter任选', 'qt或者tkinter任选', 'qt或者tkinter任选', '', '3', '1', '129', '1', '1540569587', '1540569587');
+INSERT INTO `zyz_article` VALUES ('436', '模块基本使用', '模块基本使用', '模块基本使用', '', '1', '1', '130', '1', '1540569609', '1540569609');
+INSERT INTO `zyz_article` VALUES ('437', '搜索路径问题', '搜索路径问题', '搜索路径问题', '', '2', '1', '130', '1', '1540569618', '1540569618');
+INSERT INTO `zyz_article` VALUES ('438', 'DIY自己的模块', 'DIY自己的模块', 'DIY自己的模块', '', '3', '1', '130', '1', '1540569631', '1540569631');
+INSERT INTO `zyz_article` VALUES ('439', '调试技术简介', '调试技术简介', '调试技术简介', '', '1', '1', '131', '1', '1540569641', '1540569641');
+INSERT INTO `zyz_article` VALUES ('440', 'Pdb调试', 'Pdb调试', 'Pdb调试', '', '1', '1', '131', '1', '1540569650', '1540569650');
+INSERT INTO `zyz_article` VALUES ('441', 'Pycharm中的调试', 'Pycharm中的调试', 'Pycharm中的调试', '', '3', '1', '131', '1', '1540569660', '1540569660');
+INSERT INTO `zyz_article` VALUES ('442', '魔法函数概述', '魔法函数概述', '魔法函数概述', '', '1', '1', '132', '1', '1540569671', '1540569671');
+INSERT INTO `zyz_article` VALUES ('443', '构造类魔法函数', '构造类魔法函数', '构造类魔法函数', '', '2', '1', '132', '1', '1540569680', '1540569680');
+INSERT INTO `zyz_article` VALUES ('444', '运算类魔法函数', '运算类魔法函数', '运算类魔法函数', '', '3', '1', '132', '1', '1540569689', '1540569689');
+INSERT INTO `zyz_article` VALUES ('445', '多线程/进程简介', '多线程/进程简介', '多线程/进程简介', '', '1', '1', '133', '1', '1540569699', '1540569699');
+INSERT INTO `zyz_article` VALUES ('446', 'Python的多线程', 'Python的多线程', 'Python的多线程', '', '2', '1', '133', '1', '1540569708', '1540569708');
+INSERT INTO `zyz_article` VALUES ('447', 'Python的多进程', 'Python的多进程', 'Python的多进程', '', '3', '1', '133', '1', '1540569722', '1540569722');
+INSERT INTO `zyz_article` VALUES ('448', 'Socket编程', 'Socket编程', 'Socket编程', '', '1', '1', '134', '1', '1540569733', '1540569733');
+INSERT INTO `zyz_article` VALUES ('449', 'Mail处理', 'Mail处理', 'Mail处理', '', '2', '1', '134', '1', '1540569744', '1540569744');
+INSERT INTO `zyz_article` VALUES ('450', '文件（file）处理', '文件（file）处理', '文件（file）处理', '', '1', '1', '135', '1', '1540569754', '1540569754');
+INSERT INTO `zyz_article` VALUES ('451', 'XML编程', 'XML编程', 'XML编程', '', '2', '1', '135', '1', '1540569769', '1540569769');
+INSERT INTO `zyz_article` VALUES ('452', 'Pickle模块', 'Pickle模块', 'Pickle模块', '', '3', '1', '135', '1', '1540569778', '1540569778');
+INSERT INTO `zyz_article` VALUES ('453', 'commands', 'commands', 'commands', '', '1', '1', '136', '1', '1540569790', '1540569790');
+INSERT INTO `zyz_article` VALUES ('454', 'sys模块', 'sys模块', 'sys模块', '', '2', '1', '136', '1', '1540569801', '1540569801');
+INSERT INTO `zyz_article` VALUES ('455', 'os模块', 'os模块', 'os模块', '', '3', '1', '136', '1', '1540569811', '1540569811');
+INSERT INTO `zyz_article` VALUES ('456', 'time', 'time', 'time', '', '4', '1', '136', '1', '1540569822', '1540569822');
+INSERT INTO `zyz_article` VALUES ('457', 'random', 'random', 'random', '', '5', '1', '136', '1', '1540569833', '1540569833');
+INSERT INTO `zyz_article` VALUES ('458', '飞机大战（OOP，GUI）', '飞机大战（OOP，GUI）', '飞机大战（OOP，GUI）', '', '1', '1', '137', '1', '1540569854', '1540569854');
+INSERT INTO `zyz_article` VALUES ('459', 'WebServer模拟（HTTP协议）', 'WebServer模拟（HTTP协议）', 'WebServer模拟（HTTP协议）', '', '2', '1', '137', '1', '1540569866', '1540569866');
+INSERT INTO `zyz_article` VALUES ('460', '多线程下载器（多线程，Net）', '多线程下载器（多线程，Net）', '多线程下载器（多线程，Net）', '', '3', '1', '137', '1', '1540569876', '1540569876');
+INSERT INTO `zyz_article` VALUES ('461', '自动邮件发送软件（Net编程）', '自动邮件发送软件（Net编程）', '自动邮件发送软件（Net编程）', '', '4', '1', '137', '1', '1540569888', '1540569888');
+INSERT INTO `zyz_article` VALUES ('462', '聊天室（Net编程）', '聊天室（Net编程）', '聊天室（Net编程）', '', '5', '1', '137', '1', '1540569897', '1540569897');
+INSERT INTO `zyz_article` VALUES ('463', '虚拟币套利工具（API的使用）', '虚拟币套利工具（API的使用）', '虚拟币套利工具（API的使用）', '', '6', '1', '137', '1', '1540569909', '1540569909');
+INSERT INTO `zyz_article` VALUES ('464', 'Python网络编程基础，John Goerzen著，电子工业出版社', 'Python网络编程基础，John Goerzen著，电子工业出版社', 'Python网络编程基础，John Goerzen著，电子工业出版社', '', '1', '1', '138', '1', '1540569923', '1540569923');
+INSERT INTO `zyz_article` VALUES ('465', 'Pygame', 'Pygame', 'Pygame', '', '1', '1', '139', '1', '1540569936', '1540569936');
+INSERT INTO `zyz_article` VALUES ('466', '微信公众号开发-AP使用', '微信公众号开发-AP使用', '微信公众号开发-AP使用', '', '2', '1', '139', '1', '1540569945', '1540569945');
+INSERT INTO `zyz_article` VALUES ('467', 'Shelve模块', 'Shelve模块', 'Shelve模块', '', '3', '1', '139', '1', '1540569955', '1540569955');
+INSERT INTO `zyz_article` VALUES ('468', 'JSON格式', 'JSON格式', 'JSON格式', '', '4', '1', '139', '1', '1540569963', '1540569963');
+INSERT INTO `zyz_article` VALUES ('469', '多线程 - 协程', '多线程 - 协程', '多线程 - 协程', '', '5', '1', '139', '1', '1540569973', '1540569973');
+INSERT INTO `zyz_article` VALUES ('470', '多线程 - gevent', '多线程 - gevent', '多线程 - gevent', '', '6', '1', '139', '1', '1540569984', '1540569984');
+INSERT INTO `zyz_article` VALUES ('471', '介绍python编码的常用代码规范', '介绍python编码的常用代码规范', '介绍python编码的常用代码规范', '', '1', '1', '140', '1', '1540570134', '1540570134');
+INSERT INTO `zyz_article` VALUES ('472', '常见数据结构', '常见数据结构', '常见数据结构', '', '1', '1', '141', '1', '1540570145', '1540570145');
+INSERT INTO `zyz_article` VALUES ('473', '散列（Hash）表', '散列（Hash）表', '散列（Hash）表', '', '2', '1', '141', '1', '1540570156', '1540570156');
+INSERT INTO `zyz_article` VALUES ('474', '常见查找算法', '常见查找算法', '常见查找算法', '', '3', '1', '141', '1', '1540570165', '1540570165');
+INSERT INTO `zyz_article` VALUES ('475', '单例模式', '单例模式', '单例模式', '', '1', '1', '142', '1', '1540570176', '1540570176');
+INSERT INTO `zyz_article` VALUES ('476', '策略模式', '策略模式', '策略模式', '', '2', '1', '142', '1', '1540570184', '1540570184');
+INSERT INTO `zyz_article` VALUES ('477', '观察者模式', '观察者模式', '观察者模式', '', '3', '1', '142', '1', '1540570193', '1540570193');
+INSERT INTO `zyz_article` VALUES ('478', '版本控制原理', '版本控制原理', '版本控制原理', '', '1', '1', '143', '1', '1540570203', '1540570203');
+INSERT INTO `zyz_article` VALUES ('479', 'Git版本控制', 'Git版本控制', 'Git版本控制', '', '2', '1', '143', '1', '1540570214', '1540570214');
+INSERT INTO `zyz_article` VALUES ('480', 'mysql简介', 'mysql简介', 'mysql简介', '', '1', '1', '145', '1', '1540570233', '1540570233');
+INSERT INTO `zyz_article` VALUES ('481', 'mysql常用操作', 'mysql常用操作', 'mysql常用操作', '', '2', '1', '145', '1', '1540570242', '1540570242');
+INSERT INTO `zyz_article` VALUES ('482', '事务处理', '事务处理', '事务处理', '', '3', '1', '145', '1', '1540570275', '1540570275');
+INSERT INTO `zyz_article` VALUES ('483', '常见约束', '常见约束', '常见约束', '', '4', '1', '145', '1', '1540570285', '1540570285');
+INSERT INTO `zyz_article` VALUES ('484', 'python中的mysql', 'python中的mysql', 'python中的mysql', '', '5', '1', '145', '1', '1540570300', '1540570300');
+INSERT INTO `zyz_article` VALUES ('485', 'NoSQL简述', 'NoSQL简述', 'NoSQL简述', '', '1', '1', '146', '1', '1540570311', '1540570311');
+INSERT INTO `zyz_article` VALUES ('486', 'MongoDB常用操作', 'MongoDB常用操作', 'MongoDB常用操作', '', '2', '1', '146', '1', '1540570320', '1540570342');
+INSERT INTO `zyz_article` VALUES ('487', 'Pymongo', 'Pymongo', 'Pymongo', '', '3', '1', '146', '1', '1540570331', '1540570331');
+INSERT INTO `zyz_article` VALUES ('488', 'reids概述', 'reids概述', 'reids概述', '', '1', '1', '147', '1', '1540570361', '1540570361');
+INSERT INTO `zyz_article` VALUES ('489', 'redis常用操作', 'redis常用操作', 'redis常用操作', '', '2', '1', '147', '1', '1540570375', '1540570375');
+INSERT INTO `zyz_article` VALUES ('490', 'ajax工作原理', 'ajax工作原理', 'ajax工作原理', '', '1', '1', '151', '1', '1540570398', '1540570398');
+INSERT INTO `zyz_article` VALUES ('491', 'ajax对象使用', 'ajax对象使用', 'ajax对象使用', '', '2', '1', '151', '1', '1540570406', '1540570406');
+INSERT INTO `zyz_article` VALUES ('492', 'ajax异步请求', 'ajax异步请求', 'ajax异步请求', '', '3', '1', '151', '1', '1540570417', '1540570417');
+INSERT INTO `zyz_article` VALUES ('493', 'jquery概述', 'jquery概述', 'jquery概述', '', '1', '1', '152', '1', '1540570429', '1540570429');
+INSERT INTO `zyz_article` VALUES ('494', 'jquery基本使用', 'jquery基本使用', 'jquery基本使用', '', '2', '1', '152', '1', '1540570437', '1540570437');
+INSERT INTO `zyz_article` VALUES ('495', 'jquery对象', 'jquery对象', 'jquery对象', '', '3', '1', '152', '1', '1540570448', '1540570448');
+INSERT INTO `zyz_article` VALUES ('496', '商城界面模拟', '商城界面模拟', '商城界面模拟', '', '1', '1', '153', '1', '1540570470', '1540570470');
+INSERT INTO `zyz_article` VALUES ('497', 'bootstrap官方教程', 'bootstrap官方教程', 'bootstrap官方教程', '', '1', '1', '154', '1', '1540570481', '1540570481');
+INSERT INTO `zyz_article` VALUES ('499', '数据结构与算法 Python语言描述 ，裘宗燕 著，机械工业出版社', '数据结构与算法 Python语言描述 ，裘宗燕 著，机械工业出版社', '数据结构与算法 Python语言描述 ，裘宗燕 著，机械工业出版社', '', '2', '1', '154', '1', '1540570518', '1540570518');
+INSERT INTO `zyz_article` VALUES ('500', '精通Python设计模式，Sakis Kasampalis 著，人民邮电出版社', '精通Python设计模式，Sakis Kasampalis 著，人民邮电出版社', '精通Python设计模式，Sakis Kasampalis 著，人民邮电出版社', '', '3', '1', '154', '1', '1540570528', '1540570528');
+INSERT INTO `zyz_article` VALUES ('501', 'Memcached', 'Memcached', 'Memcached', '', '1', '1', '155', '1', '1540570540', '1540570540');
+INSERT INTO `zyz_article` VALUES ('502', 'Bootstrap', 'Bootstrap', 'Bootstrap', '', '2', '1', '155', '1', '1540570548', '1540570548');
+INSERT INTO `zyz_article` VALUES ('503', '其他常见设计模式', '其他常见设计模式', '其他常见设计模式', '', '3', '1', '155', '1', '1540570558', '1540570558');
+INSERT INTO `zyz_article` VALUES ('504', 'django的路由模块', 'django的路由模块', 'django的路由模块', '', '1', '1', '156', '1', '1540570574', '1540570574');
+INSERT INTO `zyz_article` VALUES ('505', 'django中的view', 'django中的view', 'django中的view', '', '2', '1', '156', '1', '1540570587', '1540570587');
+INSERT INTO `zyz_article` VALUES ('506', 'orm在django中的应用', 'orm在django中的应用', 'orm在django中的应用', '', '3', '1', '156', '1', '1540570604', '1540570604');
+INSERT INTO `zyz_article` VALUES ('507', '模板系统介绍', '模板系统介绍', '模板系统介绍', '', '4', '1', '156', '1', '1540570613', '1540570613');
+INSERT INTO `zyz_article` VALUES ('508', 'Django常用安全控制', 'Django常用安全控制', 'Django常用安全控制', '', '5', '1', '156', '1', '1540570624', '1540570624');
+INSERT INTO `zyz_article` VALUES ('509', 'RESTful编程技术', 'RESTful编程技术', 'RESTful编程技术', '', '6', '1', '156', '1', '1540570634', '1540570634');
+INSERT INTO `zyz_article` VALUES ('510', 'Tornado的路由', 'Tornado的路由', 'Tornado的路由', '', '1', '1', '157', '1', '1540570646', '1540570646');
+INSERT INTO `zyz_article` VALUES ('511', 'Tornado使用的模板系统', 'Tornado使用的模板系统', 'Tornado使用的模板系统', '', '2', '1', '157', '1', '1540570656', '1540570656');
+INSERT INTO `zyz_article` VALUES ('512', 'Views模块', 'Views模块', 'Views模块', '', '3', '1', '157', '1', '1540570666', '1540570666');
+INSERT INTO `zyz_article` VALUES ('513', 'Tornado对数据库的支持', 'Tornado对数据库的支持', 'Tornado对数据库的支持', '', '4', '1', '157', '1', '1540570676', '1540570676');
+INSERT INTO `zyz_article` VALUES ('514', 'Tornado的异步处理', 'Tornado的异步处理', 'Tornado的异步处理', '', '5', '1', '157', '1', '1540570685', '1540570685');
+INSERT INTO `zyz_article` VALUES ('515', '在线商城', '在线商城', '在线商城', '', '1', '1', '158', '1', '1540570695', '1540570695');
+INSERT INTO `zyz_article` VALUES ('516', '开源在线服务系统', '开源在线服务系统', '开源在线服务系统', '', '2', '1', '158', '1', '1540570703', '1540570703');
+INSERT INTO `zyz_article` VALUES ('517', 'Tornado Web后台处理', 'Tornado Web后台处理', 'Tornado Web后台处理', '', '3', '1', '158', '1', '1540570713', '1540570713');
+INSERT INTO `zyz_article` VALUES ('518', 'python新手使用django架站的16堂课，何敏煌 著，清华大学出版社', 'python新手使用django架站的16堂课，何敏煌 著，清华大学出版社', 'python新手使用django架站的16堂课，何敏煌 著，清华大学出版社', '', '1', '1', '159', '1', '1540570729', '1540570729');
+INSERT INTO `zyz_article` VALUES ('519', 'Django官方文档', 'Django官方文档', 'Django官方文档', '', '2', '1', '159', '1', '1540570739', '1540570739');
+INSERT INTO `zyz_article` VALUES ('520', 'Flask官方文档', 'Flask官方文档', 'Flask官方文档', '', '3', '1', '159', '1', '1540570748', '1540570748');
+INSERT INTO `zyz_article` VALUES ('521', 'Python高效开发实战：Django,Tornado,Flask,Twisted，刘长龙 著，电子工业出版社', 'Python高效开发实战：Django,Tornado,Flask,Twisted，刘长龙 著，电子工业出版社', 'Python高效开发实战：Django,Tornado,Flask,Twisted，刘长龙 著，电子工业出版社', '', '4', '1', '159', '1', '1540570758', '1540570758');
+INSERT INTO `zyz_article` VALUES ('522', 'Python web开发实战，董伟明 著，电子工业出版社', 'Python web开发实战，董伟明 著，电子工业出版社', 'Python web开发实战，董伟明 著，电子工业出版社', '', '5', '1', '159', '1', '1540570769', '1540570782');
+INSERT INTO `zyz_article` VALUES ('523', 'Flask框架', 'Flask框架', 'Flask框架', '', '1', '1', '160', '1', '1540570793', '1540570793');
+INSERT INTO `zyz_article` VALUES ('524', 'RESTful开发', 'RESTful开发', 'RESTful开发', '', '2', '1', '160', '1', '1540570803', '1540570803');
+INSERT INTO `zyz_article` VALUES ('525', 'Celery使用', 'Celery使用', 'Celery使用', '', '3', '1', '160', '1', '1540570813', '1540570813');
+INSERT INTO `zyz_article` VALUES ('526', '爬虫原理', '爬虫原理', '爬虫原理', '', '1', '1', '161', '1', '1540570831', '1540570831');
+INSERT INTO `zyz_article` VALUES ('527', 'Urllib爬取技术', 'Urllib爬取技术', 'Urllib爬取技术', '', '2', '1', '161', '1', '1540570844', '1540570844');
+INSERT INTO `zyz_article` VALUES ('528', 'Requests爬取技术', 'Requests爬取技术', 'Requests爬取技术', '', '3', '1', '161', '1', '1540570854', '1540570854');
+INSERT INTO `zyz_article` VALUES ('529', 'Scrapy框架', 'Scrapy框架', 'Scrapy框架', '', '4', '1', '161', '1', '1540570864', '1540570864');
+INSERT INTO `zyz_article` VALUES ('530', '数据科学简介', '数据科学简介', '数据科学简介', '', '1', '1', '162', '1', '1540570876', '1540570876');
+INSERT INTO `zyz_article` VALUES ('531', '数据操作工具使用', '数据操作工具使用', '数据操作工具使用', '', '2', '1', '162', '1', '1540570884', '1540570884');
+INSERT INTO `zyz_article` VALUES ('532', '数据呈现工具使用', '数据呈现工具使用', '数据呈现工具使用', '', '3', '1', '162', '1', '1540570893', '1540570893');
+INSERT INTO `zyz_article` VALUES ('533', '基本数据分析算法', '基本数据分析算法', '基本数据分析算法', '', '4', '1', '162', '1', '1540570904', '1540570904');
+INSERT INTO `zyz_article` VALUES ('534', '人工智能简介', '人工智能简介', '人工智能简介', '', '1', '1', '163', '1', '1540570914', '1540570914');
+INSERT INTO `zyz_article` VALUES ('535', 'Tensoflow使用', 'Tensoflow使用', 'Tensoflow使用', '', '2', '1', '163', '1', '1540570923', '1540570923');
+INSERT INTO `zyz_article` VALUES ('536', 'AI算法', 'AI算法', 'AI算法', '', '3', '1', '163', '1', '1540570943', '1540570943');
+INSERT INTO `zyz_article` VALUES ('537', '知识图片绘制（某创业项目）', '知识图片绘制（某创业项目）', '知识图片绘制（某创业项目）', '', '1', '1', '164', '1', '1540570956', '1540570956');
+INSERT INTO `zyz_article` VALUES ('538', '跨境电商BI数据分析', '跨境电商BI数据分析', '跨境电商BI数据分析', '', '2', '1', '164', '1', '1540570966', '1540570966');
+INSERT INTO `zyz_article` VALUES ('539', '手写笔记识别', '手写笔记识别', '手写笔记识别', '', '3', '1', '164', '1', '1540570977', '1540570977');
+INSERT INTO `zyz_article` VALUES ('540', '元器件识别系统哦', '元器件识别系统哦', '元器件识别系统哦', '', '4', '1', '164', '1', '1540570987', '1540570987');
+INSERT INTO `zyz_article` VALUES ('541', '爬虫爬取互联网数据', '爬虫爬取互联网数据', '爬虫爬取互联网数据', '', '5', '1', '164', '1', '1540570999', '1540570999');
+INSERT INTO `zyz_article` VALUES ('542', '利用python进行数据分析，Wes McKinney 著，机械工业出版社', '利用python进行数据分析，Wes McKinney 著，机械工业出版社', '利用python进行数据分析，Wes McKinney 著，机械工业出版社', '', '1', '1', '165', '1', '1540571009', '1540571009');
+INSERT INTO `zyz_article` VALUES ('543', '深入浅出数据分析，Michael Milton 著，电子工业出版社', '深入浅出数据分析，Michael Milton 著，电子工业出版社', '深入浅出数据分析，Michael Milton 著，电子工业出版社', '', '2', '1', '165', '1', '1540571020', '1540571020');
+INSERT INTO `zyz_article` VALUES ('544', 'Tensoflow官方文档中文翻译版', 'Tensoflow官方文档中文翻译版', 'Tensoflow官方文档中文翻译版', '', '3', '1', '165', '1', '1540571028', '1540571028');
+INSERT INTO `zyz_article` VALUES ('545', 'python网络数据采集，Ryan Mitchell著，人民邮电出版社', 'python网络数据采集，Ryan Mitchell著，人民邮电出版社', 'python网络数据采集，Ryan Mitchell著，人民邮电出版社', '', '4', '1', '165', '1', '1540571039', '1540571039');
+INSERT INTO `zyz_article` VALUES ('546', '用python写网络爬虫，Richard Lawson著，人民邮电出版社', '用python写网络爬虫，Richard Lawson著，人民邮电出版社', '用python写网络爬虫，Richard Lawson著，人民邮电出版社', '', '5', '1', '165', '1', '1540571050', '1540571050');
 
 -- ----------------------------
 -- Table structure for zyz_category
@@ -406,22 +610,22 @@ CREATE TABLE `zyz_category` (
   `title` varchar(60) DEFAULT '' COMMENT '名称',
   `keyword` varchar(255) DEFAULT '' COMMENT '关键字',
   `description` varchar(500) DEFAULT '' COMMENT '描述',
-  `content` text COMMENT '内容',
-  `rank` smallint(5) DEFAULT '0' COMMENT '排序',
-  `status` tinyint(1) DEFAULT '0' COMMENT '0锁定1正常',
-  `pid` smallint(5) DEFAULT '0' COMMENT '父id',
+  `content` text DEFAULT NULL COMMENT '内容',
+  `rank` smallint(5) DEFAULT 0 COMMENT '排序',
+  `status` tinyint(1) DEFAULT 0 COMMENT '0锁定1正常',
+  `pid` smallint(5) DEFAULT 0 COMMENT '父id',
   `create_time` int(10) DEFAULT NULL COMMENT '添加时间',
   `update_time` int(10) DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`),
   KEY `title` (`title`)
-) ENGINE=MyISAM AUTO_INCREMENT=115 DEFAULT CHARSET=utf8 COMMENT='栏目表';
+) ENGINE=MyISAM AUTO_INCREMENT=166 DEFAULT CHARSET=utf8 COMMENT='栏目表';
 
 -- ----------------------------
 -- Records of zyz_category
 -- ----------------------------
 INSERT INTO `zyz_category` VALUES ('1', '前端课程', '前端课程', '前端课程', '<p>前端课程</p><p><br></p>', '0', '1', '0', '1540272933', '1540272933');
 INSERT INTO `zyz_category` VALUES ('2', 'PHP课程', 'PHP课程', 'PHP课程', '<p>PHP课程</p><p><br></p>', '1', '1', '0', '1540272962', '1540272962');
-INSERT INTO `zyz_category` VALUES ('3', 'Python课程', 'Python课程', 'Python课程', '<p>Python课程</p><p><br></p>', '2', '1', '0', '1540272984', '1540272984');
+INSERT INTO `zyz_category` VALUES ('3', 'Python课程', 'Python课程', 'Python课程', '<p>Python课程</p><p><br></p>', '3', '1', '0', '1540272984', '1540569182');
 INSERT INTO `zyz_category` VALUES ('4', '编程笔记', '编程笔记', '编程笔记', '<p>编程笔记</p><p><br></p>', '4', '1', '0', '1540273010', '1540273010');
 INSERT INTO `zyz_category` VALUES ('5', '数学笔记', '数学笔记', '数学笔记', '<p>数学笔记</p><p><br></p>', '5', '1', '0', '1540273033', '1540273033');
 INSERT INTO `zyz_category` VALUES ('6', '万花筒', '万花筒', '万花筒', '<p>万花筒</p><p><br></p>', '6', '1', '0', '1540273050', '1540273050');
@@ -532,6 +736,56 @@ INSERT INTO `zyz_category` VALUES ('111', 'Angular', 'Angular', 'Angular', '', '
 INSERT INTO `zyz_category` VALUES ('112', 'React.js', 'React.js', 'React.js', '', '10', '1', '7', '1540525127', '1540525127');
 INSERT INTO `zyz_category` VALUES ('113', '微信小程序+微信JS-SDK', '微信小程序+微信JS-SDK', '微信小程序+微信JS-SDK', '', '11', '1', '7', '1540525150', '1540525150');
 INSERT INTO `zyz_category` VALUES ('114', '项目实战考核', '项目实战考核', '项目实战考核', '<p>vue.js 、angular  、react 、微信小程序项目。实战项目：可开发商城类、论坛类、音乐播放类、视频播放类、小说阅读类、天气查询、物流快递查询类、汇率查询等APP应用</p><p><br></p>', '12', '1', '7', '1540525169', '1540532031');
+INSERT INTO `zyz_category` VALUES ('115', 'python基础', 'python基础', 'python基础', '', '1', '1', '3', '1540567010', '1540567010');
+INSERT INTO `zyz_category` VALUES ('116', 'Python高级特性', 'Python高级特性', 'Python高级特性', '', '2', '1', '3', '1540567037', '1540567060');
+INSERT INTO `zyz_category` VALUES ('117', '软件核心算法&全栈技术', '软件核心算法&全栈技术', '软件核心算法&全栈技术', '', '3', '1', '3', '1540567086', '1540567086');
+INSERT INTO `zyz_category` VALUES ('118', 'WEB框架', 'WEB框架', 'WEB框架', '', '4', '1', '3', '1540567112', '1540567112');
+INSERT INTO `zyz_category` VALUES ('119', '大数据&人工智能', '大数据&人工智能', '大数据&人工智能', '', '5', '1', '3', '1540567142', '1540567142');
+INSERT INTO `zyz_category` VALUES ('120', 'python概述', 'python概述', 'python概述', '', '1', '1', '115', '1540567190', '1540567190');
+INSERT INTO `zyz_category` VALUES ('121', '语法基础', '语法基础', '语法基础', '', '2', '1', '115', '1540567307', '1540567307');
+INSERT INTO `zyz_category` VALUES ('122', '函数', '函数', '函数', '', '3', '1', '115', '1540567328', '1540567328');
+INSERT INTO `zyz_category` VALUES ('123', '面向对象编程OOP', '面向对象编程OOP', '面向对象编程OOP', '', '4', '1', '115', '1540567348', '1540567348');
+INSERT INTO `zyz_category` VALUES ('126', '异常处理', '异常处理', '异常处理', '', '6', '1', '115', '1540567493', '1540567493');
+INSERT INTO `zyz_category` VALUES ('125', '数据结构初步', '数据结构初步', '数据结构初步', '', '5', '1', '115', '1540567395', '1540567477');
+INSERT INTO `zyz_category` VALUES ('127', '项目案例', '项目案例', '项目案例', '', '7', '1', '115', '1540567511', '1540567511');
+INSERT INTO `zyz_category` VALUES ('128', '参考资料', '参考资料', '参考资料', '<p></p><ul><li>python基础教程（第二版 修订版），Magnus Lie Hteland著，人民邮电出版社</li><li>零基础入门学习 python 小甲鱼</li><li>Head First Python (中文版)</li></ul><p><br></p>', '8', '1', '115', '1540567545', '1540567545');
+INSERT INTO `zyz_category` VALUES ('129', '扩展课程', '扩展课程', '扩展课程', '', '9', '1', '115', '1540567573', '1540567573');
+INSERT INTO `zyz_category` VALUES ('130', 'python模块', 'python模块', 'python模块', '', '1', '1', '116', '1540567596', '1540567596');
+INSERT INTO `zyz_category` VALUES ('131', '调试技术', '调试技术', '调试技术', '', '2', '1', '116', '1540567608', '1540567608');
+INSERT INTO `zyz_category` VALUES ('132', '魔法函数', '魔法函数', '魔法函数', '', '3', '1', '116', '1540567622', '1540567622');
+INSERT INTO `zyz_category` VALUES ('133', '多线程', '多线程', '多线程', '', '4', '1', '116', '1540567634', '1540567634');
+INSERT INTO `zyz_category` VALUES ('134', 'Net', 'Net', 'Net', '', '5', '1', '116', '1540567646', '1540567646');
+INSERT INTO `zyz_category` VALUES ('135', '序列化', '序列化', '序列化', '', '6', '1', '116', '1540567658', '1540567658');
+INSERT INTO `zyz_category` VALUES ('136', '其他常用模块', '其他常用模块', '其他常用模块', '', '7', '1', '116', '1540567671', '1540567671');
+INSERT INTO `zyz_category` VALUES ('137', '项目案例', '项目案例', '项目案例', '', '8', '1', '116', '1540567687', '1540567687');
+INSERT INTO `zyz_category` VALUES ('138', '参考资料', '参考资料', '参考资料', '', '9', '1', '116', '1540567703', '1540567703');
+INSERT INTO `zyz_category` VALUES ('139', '扩展课程', '扩展课程', '扩展课程', '', '10', '1', '116', '1540567715', '1540567715');
+INSERT INTO `zyz_category` VALUES ('140', '代码规范', '代码规范', '代码规范', '', '1', '1', '117', '1540567742', '1540567742');
+INSERT INTO `zyz_category` VALUES ('141', '数据结构', '数据结构', '数据结构', '', '2', '1', '117', '1540567760', '1540567760');
+INSERT INTO `zyz_category` VALUES ('142', '设计模式', '设计模式', '设计模式', '', '3', '1', '117', '1540567780', '1540567780');
+INSERT INTO `zyz_category` VALUES ('143', '版本控制', '版本控制', '版本控制', '', '4', '1', '117', '1540567805', '1540567805');
+INSERT INTO `zyz_category` VALUES ('144', '数据库简介', '数据库简介', '数据库简介', '', '5', '1', '117', '1540567861', '1540567861');
+INSERT INTO `zyz_category` VALUES ('145', 'mysql', 'mysql', 'mysql', '', '6', '1', '117', '1540567877', '1540567877');
+INSERT INTO `zyz_category` VALUES ('146', 'mongodb', 'mongodb', 'mongodb', '', '7', '1', '117', '1540567891', '1540567891');
+INSERT INTO `zyz_category` VALUES ('147', 'redis', 'redis', 'redis', '', '8', '1', '117', '1540567907', '1540567907');
+INSERT INTO `zyz_category` VALUES ('148', 'html', 'html', 'html', '', '9', '1', '117', '1540567922', '1540567922');
+INSERT INTO `zyz_category` VALUES ('149', 'css', 'css', 'css', '', '10', '1', '117', '1540567940', '1540567940');
+INSERT INTO `zyz_category` VALUES ('150', 'javascript', 'javascript', 'javascript', '', '11', '1', '117', '1540567970', '1540567970');
+INSERT INTO `zyz_category` VALUES ('151', 'ajax', 'ajax', 'ajax', '', '12', '1', '117', '1540567986', '1540567986');
+INSERT INTO `zyz_category` VALUES ('152', 'jquery', 'jquery', 'jquery', '', '13', '1', '117', '1540567998', '1540567998');
+INSERT INTO `zyz_category` VALUES ('153', '项目案例', '项目案例', '项目案例', '', '14', '1', '117', '1540568011', '1540568011');
+INSERT INTO `zyz_category` VALUES ('154', '参考资料', '参考资料', '参考资料', '<p></p><ul><li>bootstrap官方教程</li><li>数据结构与算法 Python语言描述 ，裘宗燕 著，机械工业出版社</li><li>精通Python设计模式，Sakis Kasampalis 著，人民邮电出版社</li></ul><p><br></p>', '15', '1', '117', '1540568029', '1540568029');
+INSERT INTO `zyz_category` VALUES ('155', '扩展课程', '扩展课程', '扩展课程', '', '16', '1', '117', '1540568046', '1540568046');
+INSERT INTO `zyz_category` VALUES ('156', 'Django', 'Django', 'Django', '', '1', '1', '118', '1540568072', '1540568072');
+INSERT INTO `zyz_category` VALUES ('157', 'Tornado', 'Tornado', 'Tornado', '', '2', '1', '118', '1540568087', '1540568087');
+INSERT INTO `zyz_category` VALUES ('158', '项目案例', '项目案例', '项目案例', '', '3', '1', '118', '1540568102', '1540568102');
+INSERT INTO `zyz_category` VALUES ('159', '参考资料', '参考资料', '参考资料', '<p></p><ul><li>python新手使用django架站的16堂课，何敏煌 著，清华大学出版社</li><li>Django官方文档</li><li>Flask官方文档</li><li>Python高效开发实战：Django,Tornado,Flask,Twisted，刘长龙 著，电子工业出版社</li><li>Python web开发实战，董伟明 著，电子工业出版社</li></ul><p><br></p>', '4', '1', '118', '1540568126', '1540568126');
+INSERT INTO `zyz_category` VALUES ('160', '扩展课程', '扩展课程', '扩展课程', '', '5', '1', '118', '1540568157', '1540568157');
+INSERT INTO `zyz_category` VALUES ('161', '爬虫', '爬虫', '爬虫', '', '1', '1', '119', '1540568181', '1540568181');
+INSERT INTO `zyz_category` VALUES ('162', '大数据', '大数据', '大数据', '', '2', '1', '119', '1540568199', '1540568199');
+INSERT INTO `zyz_category` VALUES ('163', '人工智能', '人工智能', '人工智能', '', '3', '1', '119', '1540568218', '1540568218');
+INSERT INTO `zyz_category` VALUES ('164', '项目案例', '项目案例', '项目案例', '', '4', '1', '119', '1540568235', '1540568235');
+INSERT INTO `zyz_category` VALUES ('165', '参考资料', '参考资料', '参考资料', '<p></p><ul><li>利用python进行数据分析，Wes McKinney 著，机械工业出版社</li><li>深入浅出数据分析，Michael Milton 著，电子工业出版社</li><li>Tensoflow官方文档中文翻译版</li><li>python网络数据采集，Ryan Mitchell著，人民邮电出版社</li><li>用python写网络爬虫，Richard Lawson著，人民邮电出版社</li></ul><p><br></p>', '5', '1', '119', '1540568262', '1540568262');
 
 -- ----------------------------
 -- Table structure for zyz_member
@@ -543,7 +797,7 @@ CREATE TABLE `zyz_member` (
   `account` varchar(30) DEFAULT '' COMMENT '账号',
   `pwd` varchar(50) DEFAULT '' COMMENT '密码',
   `salt` varchar(10) DEFAULT '' COMMENT '密码盐',
-  `status` tinyint(1) DEFAULT '1' COMMENT '0锁定1正常',
+  `status` tinyint(1) DEFAULT 1 COMMENT '0锁定1正常',
   `create_time` int(10) DEFAULT NULL COMMENT '添加时间',
   `update_time` int(10) DEFAULT NULL COMMENT '更新时间',
   `login_time` int(10) DEFAULT NULL COMMENT '登录时间',
@@ -554,7 +808,7 @@ CREATE TABLE `zyz_member` (
 -- ----------------------------
 -- Records of zyz_member
 -- ----------------------------
-INSERT INTO `zyz_member` VALUES ('1', '焦伟佳', 'jiaoweijia', 'b8137188fe687bdf3d8052fcd41317b4', '1b8f12ef', '1', '1539712439', '1539712439', '1540525201');
+INSERT INTO `zyz_member` VALUES ('1', '焦伟佳', 'jiaoweijia', 'b8137188fe687bdf3d8052fcd41317b4', '1b8f12ef', '1', '1539712439', '1539712439', '1540570013');
 INSERT INTO `zyz_member` VALUES ('2', '牛云飞', 'niuyunfei', '2a178fedd0ab95219312e0e4c4f3ec42', 'd9c8fa6c', '1', '1539712491', '1539712491', null);
 INSERT INTO `zyz_member` VALUES ('3', '陶甜', 'taotian', '216e71307caf2f730c66618809079f92', 'a5d06cd7', '1', '1539712520', '1539712520', null);
 INSERT INTO `zyz_member` VALUES ('4', '侯凯', 'houkai', '17a5b3e27ac09f745702cd367aaef741', 'feb876c5', '1', '1539712545', '1539712567', null);
@@ -566,20 +820,20 @@ DROP TABLE IF EXISTS `zyz_statistics`;
 CREATE TABLE `zyz_statistics` (
   `id` int(10) NOT NULL AUTO_INCREMENT COMMENT 'id',
   `tablename` varchar(30) DEFAULT '' COMMENT '表名',
-  `quantity` mediumint(7) DEFAULT '1' COMMENT '数量',
-  `type` tinyint(1) DEFAULT '0' COMMENT '类型',
+  `quantity` mediumint(7) DEFAULT 1 COMMENT '数量',
+  `type` tinyint(1) DEFAULT 0 COMMENT '类型',
   `create_time` int(10) DEFAULT NULL COMMENT '添加时间',
   `update_time` int(10) DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8 COMMENT='统计表';
+) ENGINE=InnoDB AUTO_INCREMENT=183 DEFAULT CHARSET=utf8 COMMENT='统计表';
 
 -- ----------------------------
 -- Records of zyz_statistics
 -- ----------------------------
 INSERT INTO `zyz_statistics` VALUES ('1', 'admin', '2', '0', '1539697600', '1539712673');
 INSERT INTO `zyz_statistics` VALUES ('2', 'member', '4', '0', '1539712440', '1539712618');
-INSERT INTO `zyz_statistics` VALUES ('3', 'category', '113', '0', '1539932982', '1540525170');
-INSERT INTO `zyz_statistics` VALUES ('4', 'article', '335', '0', '1540360705', '1540555144');
+INSERT INTO `zyz_statistics` VALUES ('3', 'category', '163', '0', '1539932982', '1540568262');
+INSERT INTO `zyz_statistics` VALUES ('4', 'article', '539', '0', '1540360705', '1540571050');
 INSERT INTO `zyz_statistics` VALUES ('5', 'article', '13', '103', '1540527509', '1540527530');
 INSERT INTO `zyz_statistics` VALUES ('6', 'article', '11', '104', '1540530008', '1540530178');
 INSERT INTO `zyz_statistics` VALUES ('7', 'article', '6', '105', '1540530287', '1540530349');
@@ -622,3 +876,139 @@ INSERT INTO `zyz_statistics` VALUES ('43', 'article', '7', '57', '1540553172', '
 INSERT INTO `zyz_statistics` VALUES ('44', 'article', '7', '58', '1540553252', '1540554832');
 INSERT INTO `zyz_statistics` VALUES ('45', 'article', '5', '60', '1540554850', '1540555144');
 INSERT INTO `zyz_statistics` VALUES ('46', 'article', '6', '59', '1540555047', '1540555098');
+INSERT INTO `zyz_statistics` VALUES ('47', 'article', '5', '61', '1540565025', '1540565091');
+INSERT INTO `zyz_statistics` VALUES ('48', 'article', '6', '62', '1540565104', '1540565151');
+INSERT INTO `zyz_statistics` VALUES ('49', 'article', '7', '63', '1540565161', '1540565226');
+INSERT INTO `zyz_statistics` VALUES ('50', 'article', '6', '64', '1540565241', '1540565290');
+INSERT INTO `zyz_statistics` VALUES ('51', 'article', '4', '65', '1540565301', '1540565325');
+INSERT INTO `zyz_statistics` VALUES ('52', 'article', '7', '66', '1540566127', '1540566249');
+INSERT INTO `zyz_statistics` VALUES ('53', 'article', '4', '67', '1540566270', '1540566297');
+INSERT INTO `zyz_statistics` VALUES ('54', 'article', '4', '68', '1540566311', '1540566339');
+INSERT INTO `zyz_statistics` VALUES ('55', 'article', '5', '69', '1540566353', '1540566388');
+INSERT INTO `zyz_statistics` VALUES ('56', 'article', '6', '70', '1540566427', '1540566471');
+INSERT INTO `zyz_statistics` VALUES ('57', 'article', '5', '71', '1540566485', '1540566522');
+INSERT INTO `zyz_statistics` VALUES ('58', 'article', '3', '72', '1540566531', '1540566546');
+INSERT INTO `zyz_statistics` VALUES ('59', 'article', '3', '120', '1540569203', '1540569220');
+INSERT INTO `zyz_statistics` VALUES ('60', 'article', '3', '121', '1540569236', '1540569259');
+INSERT INTO `zyz_statistics` VALUES ('61', 'article', '4', '122', '1540569283', '1540569325');
+INSERT INTO `zyz_statistics` VALUES ('62', 'article', '3', '123', '1540569346', '1540569365');
+INSERT INTO `zyz_statistics` VALUES ('63', 'article', '4', '125', '1540569375', '1540569404');
+INSERT INTO `zyz_statistics` VALUES ('64', 'article', '5', '126', '1540569416', '1540569459');
+INSERT INTO `zyz_statistics` VALUES ('65', 'article', '4', '127', '1540569470', '1540569496');
+INSERT INTO `zyz_statistics` VALUES ('66', 'article', '1', '127', '1540569517', '1540569517');
+INSERT INTO `zyz_statistics` VALUES ('67', 'article', '1', '127', '1540569528', '1540569528');
+INSERT INTO `zyz_statistics` VALUES ('68', 'article', '1', '127', '1540569538', '1540569538');
+INSERT INTO `zyz_statistics` VALUES ('69', 'article', '1', '127', '1540569554', '1540569554');
+INSERT INTO `zyz_statistics` VALUES ('70', 'article', '1', '127', '1540569567', '1540569567');
+INSERT INTO `zyz_statistics` VALUES ('71', 'article', '1', '127', '1540569587', '1540569587');
+INSERT INTO `zyz_statistics` VALUES ('72', 'article', '1', '127', '1540569609', '1540569609');
+INSERT INTO `zyz_statistics` VALUES ('73', 'article', '1', '127', '1540569618', '1540569618');
+INSERT INTO `zyz_statistics` VALUES ('74', 'article', '1', '127', '1540569631', '1540569631');
+INSERT INTO `zyz_statistics` VALUES ('75', 'article', '1', '127', '1540569641', '1540569641');
+INSERT INTO `zyz_statistics` VALUES ('76', 'article', '1', '127', '1540569650', '1540569650');
+INSERT INTO `zyz_statistics` VALUES ('77', 'article', '1', '127', '1540569660', '1540569660');
+INSERT INTO `zyz_statistics` VALUES ('78', 'article', '1', '127', '1540569671', '1540569671');
+INSERT INTO `zyz_statistics` VALUES ('79', 'article', '1', '127', '1540569680', '1540569680');
+INSERT INTO `zyz_statistics` VALUES ('80', 'article', '1', '127', '1540569689', '1540569689');
+INSERT INTO `zyz_statistics` VALUES ('81', 'article', '1', '127', '1540569699', '1540569699');
+INSERT INTO `zyz_statistics` VALUES ('82', 'article', '1', '127', '1540569708', '1540569708');
+INSERT INTO `zyz_statistics` VALUES ('83', 'article', '1', '127', '1540569722', '1540569722');
+INSERT INTO `zyz_statistics` VALUES ('84', 'article', '1', '127', '1540569734', '1540569734');
+INSERT INTO `zyz_statistics` VALUES ('85', 'article', '1', '127', '1540569744', '1540569744');
+INSERT INTO `zyz_statistics` VALUES ('86', 'article', '1', '127', '1540569755', '1540569755');
+INSERT INTO `zyz_statistics` VALUES ('87', 'article', '1', '127', '1540569769', '1540569769');
+INSERT INTO `zyz_statistics` VALUES ('88', 'article', '1', '127', '1540569778', '1540569778');
+INSERT INTO `zyz_statistics` VALUES ('89', 'article', '1', '127', '1540569790', '1540569790');
+INSERT INTO `zyz_statistics` VALUES ('90', 'article', '1', '127', '1540569801', '1540569801');
+INSERT INTO `zyz_statistics` VALUES ('91', 'article', '1', '127', '1540569811', '1540569811');
+INSERT INTO `zyz_statistics` VALUES ('92', 'article', '1', '127', '1540569822', '1540569822');
+INSERT INTO `zyz_statistics` VALUES ('93', 'article', '1', '127', '1540569833', '1540569833');
+INSERT INTO `zyz_statistics` VALUES ('94', 'article', '1', '127', '1540569854', '1540569854');
+INSERT INTO `zyz_statistics` VALUES ('95', 'article', '1', '127', '1540569866', '1540569866');
+INSERT INTO `zyz_statistics` VALUES ('96', 'article', '1', '127', '1540569876', '1540569876');
+INSERT INTO `zyz_statistics` VALUES ('97', 'article', '1', '127', '1540569888', '1540569888');
+INSERT INTO `zyz_statistics` VALUES ('98', 'article', '1', '127', '1540569897', '1540569897');
+INSERT INTO `zyz_statistics` VALUES ('99', 'article', '1', '127', '1540569909', '1540569909');
+INSERT INTO `zyz_statistics` VALUES ('100', 'article', '1', '127', '1540569923', '1540569923');
+INSERT INTO `zyz_statistics` VALUES ('101', 'article', '1', '127', '1540569936', '1540569936');
+INSERT INTO `zyz_statistics` VALUES ('102', 'article', '1', '127', '1540569945', '1540569945');
+INSERT INTO `zyz_statistics` VALUES ('103', 'article', '1', '127', '1540569955', '1540569955');
+INSERT INTO `zyz_statistics` VALUES ('104', 'article', '1', '127', '1540569963', '1540569963');
+INSERT INTO `zyz_statistics` VALUES ('105', 'article', '1', '127', '1540569973', '1540569973');
+INSERT INTO `zyz_statistics` VALUES ('106', 'article', '1', '127', '1540569984', '1540569984');
+INSERT INTO `zyz_statistics` VALUES ('107', 'article', '1', '127', '1540570134', '1540570134');
+INSERT INTO `zyz_statistics` VALUES ('108', 'article', '1', '127', '1540570145', '1540570145');
+INSERT INTO `zyz_statistics` VALUES ('109', 'article', '1', '127', '1540570156', '1540570156');
+INSERT INTO `zyz_statistics` VALUES ('110', 'article', '1', '127', '1540570165', '1540570165');
+INSERT INTO `zyz_statistics` VALUES ('111', 'article', '1', '127', '1540570176', '1540570176');
+INSERT INTO `zyz_statistics` VALUES ('112', 'article', '1', '127', '1540570184', '1540570184');
+INSERT INTO `zyz_statistics` VALUES ('113', 'article', '1', '127', '1540570193', '1540570193');
+INSERT INTO `zyz_statistics` VALUES ('114', 'article', '1', '127', '1540570203', '1540570203');
+INSERT INTO `zyz_statistics` VALUES ('115', 'article', '1', '127', '1540570214', '1540570214');
+INSERT INTO `zyz_statistics` VALUES ('116', 'article', '1', '127', '1540570233', '1540570233');
+INSERT INTO `zyz_statistics` VALUES ('117', 'article', '1', '127', '1540570242', '1540570242');
+INSERT INTO `zyz_statistics` VALUES ('118', 'article', '1', '127', '1540570275', '1540570275');
+INSERT INTO `zyz_statistics` VALUES ('119', 'article', '1', '127', '1540570285', '1540570285');
+INSERT INTO `zyz_statistics` VALUES ('120', 'article', '1', '127', '1540570300', '1540570300');
+INSERT INTO `zyz_statistics` VALUES ('121', 'article', '1', '127', '1540570312', '1540570312');
+INSERT INTO `zyz_statistics` VALUES ('122', 'article', '1', '127', '1540570320', '1540570320');
+INSERT INTO `zyz_statistics` VALUES ('123', 'article', '1', '127', '1540570331', '1540570331');
+INSERT INTO `zyz_statistics` VALUES ('124', 'article', '1', '127', '1540570361', '1540570361');
+INSERT INTO `zyz_statistics` VALUES ('125', 'article', '1', '127', '1540570375', '1540570375');
+INSERT INTO `zyz_statistics` VALUES ('126', 'article', '1', '127', '1540570398', '1540570398');
+INSERT INTO `zyz_statistics` VALUES ('127', 'article', '1', '127', '1540570406', '1540570406');
+INSERT INTO `zyz_statistics` VALUES ('128', 'article', '1', '127', '1540570417', '1540570417');
+INSERT INTO `zyz_statistics` VALUES ('129', 'article', '1', '127', '1540570429', '1540570429');
+INSERT INTO `zyz_statistics` VALUES ('130', 'article', '1', '127', '1540570437', '1540570437');
+INSERT INTO `zyz_statistics` VALUES ('131', 'article', '1', '127', '1540570448', '1540570448');
+INSERT INTO `zyz_statistics` VALUES ('132', 'article', '1', '127', '1540570470', '1540570470');
+INSERT INTO `zyz_statistics` VALUES ('133', 'article', '1', '127', '1540570481', '1540570481');
+INSERT INTO `zyz_statistics` VALUES ('134', 'article', '1', '127', '1540570493', '1540570493');
+INSERT INTO `zyz_statistics` VALUES ('135', 'article', '1', '127', '1540570518', '1540570518');
+INSERT INTO `zyz_statistics` VALUES ('136', 'article', '1', '127', '1540570528', '1540570528');
+INSERT INTO `zyz_statistics` VALUES ('137', 'article', '1', '127', '1540570540', '1540570540');
+INSERT INTO `zyz_statistics` VALUES ('138', 'article', '1', '127', '1540570548', '1540570548');
+INSERT INTO `zyz_statistics` VALUES ('139', 'article', '1', '127', '1540570558', '1540570558');
+INSERT INTO `zyz_statistics` VALUES ('140', 'article', '1', '127', '1540570574', '1540570574');
+INSERT INTO `zyz_statistics` VALUES ('141', 'article', '1', '127', '1540570587', '1540570587');
+INSERT INTO `zyz_statistics` VALUES ('142', 'article', '1', '127', '1540570604', '1540570604');
+INSERT INTO `zyz_statistics` VALUES ('143', 'article', '1', '127', '1540570613', '1540570613');
+INSERT INTO `zyz_statistics` VALUES ('144', 'article', '1', '127', '1540570624', '1540570624');
+INSERT INTO `zyz_statistics` VALUES ('145', 'article', '1', '127', '1540570634', '1540570634');
+INSERT INTO `zyz_statistics` VALUES ('146', 'article', '1', '127', '1540570646', '1540570646');
+INSERT INTO `zyz_statistics` VALUES ('147', 'article', '1', '127', '1540570656', '1540570656');
+INSERT INTO `zyz_statistics` VALUES ('148', 'article', '1', '127', '1540570666', '1540570666');
+INSERT INTO `zyz_statistics` VALUES ('149', 'article', '1', '127', '1540570676', '1540570676');
+INSERT INTO `zyz_statistics` VALUES ('150', 'article', '1', '127', '1540570685', '1540570685');
+INSERT INTO `zyz_statistics` VALUES ('151', 'article', '1', '127', '1540570695', '1540570695');
+INSERT INTO `zyz_statistics` VALUES ('152', 'article', '1', '127', '1540570704', '1540570704');
+INSERT INTO `zyz_statistics` VALUES ('153', 'article', '1', '127', '1540570713', '1540570713');
+INSERT INTO `zyz_statistics` VALUES ('154', 'article', '1', '127', '1540570729', '1540570729');
+INSERT INTO `zyz_statistics` VALUES ('155', 'article', '1', '127', '1540570739', '1540570739');
+INSERT INTO `zyz_statistics` VALUES ('156', 'article', '1', '127', '1540570748', '1540570748');
+INSERT INTO `zyz_statistics` VALUES ('157', 'article', '1', '127', '1540570758', '1540570758');
+INSERT INTO `zyz_statistics` VALUES ('158', 'article', '1', '127', '1540570769', '1540570769');
+INSERT INTO `zyz_statistics` VALUES ('159', 'article', '1', '127', '1540570794', '1540570794');
+INSERT INTO `zyz_statistics` VALUES ('160', 'article', '1', '127', '1540570803', '1540570803');
+INSERT INTO `zyz_statistics` VALUES ('161', 'article', '1', '127', '1540570813', '1540570813');
+INSERT INTO `zyz_statistics` VALUES ('162', 'article', '1', '127', '1540570831', '1540570831');
+INSERT INTO `zyz_statistics` VALUES ('163', 'article', '1', '127', '1540570844', '1540570844');
+INSERT INTO `zyz_statistics` VALUES ('164', 'article', '1', '127', '1540570854', '1540570854');
+INSERT INTO `zyz_statistics` VALUES ('165', 'article', '1', '127', '1540570865', '1540570865');
+INSERT INTO `zyz_statistics` VALUES ('166', 'article', '1', '127', '1540570876', '1540570876');
+INSERT INTO `zyz_statistics` VALUES ('167', 'article', '1', '127', '1540570884', '1540570884');
+INSERT INTO `zyz_statistics` VALUES ('168', 'article', '1', '127', '1540570893', '1540570893');
+INSERT INTO `zyz_statistics` VALUES ('169', 'article', '1', '127', '1540570904', '1540570904');
+INSERT INTO `zyz_statistics` VALUES ('170', 'article', '1', '127', '1540570914', '1540570914');
+INSERT INTO `zyz_statistics` VALUES ('171', 'article', '1', '127', '1540570924', '1540570924');
+INSERT INTO `zyz_statistics` VALUES ('172', 'article', '1', '127', '1540570943', '1540570943');
+INSERT INTO `zyz_statistics` VALUES ('173', 'article', '1', '127', '1540570956', '1540570956');
+INSERT INTO `zyz_statistics` VALUES ('174', 'article', '1', '127', '1540570966', '1540570966');
+INSERT INTO `zyz_statistics` VALUES ('175', 'article', '1', '127', '1540570977', '1540570977');
+INSERT INTO `zyz_statistics` VALUES ('176', 'article', '1', '127', '1540570987', '1540570987');
+INSERT INTO `zyz_statistics` VALUES ('177', 'article', '1', '127', '1540570999', '1540570999');
+INSERT INTO `zyz_statistics` VALUES ('178', 'article', '1', '127', '1540571009', '1540571009');
+INSERT INTO `zyz_statistics` VALUES ('179', 'article', '1', '127', '1540571020', '1540571020');
+INSERT INTO `zyz_statistics` VALUES ('180', 'article', '1', '127', '1540571029', '1540571029');
+INSERT INTO `zyz_statistics` VALUES ('181', 'article', '1', '127', '1540571039', '1540571039');
+INSERT INTO `zyz_statistics` VALUES ('182', 'article', '1', '127', '1540571050', '1540571050');

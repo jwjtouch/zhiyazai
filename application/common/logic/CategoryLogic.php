@@ -48,7 +48,7 @@ class CategoryLogic extends Model
             $map2[] = ['pid','IN',function ($query) use ($pid){
                 $query->table('zyz_category')->where('pid',$pid)->field('id');
             }];
-            $category = db('zyz_category')
+            $category = db('category')
                 ->whereOr([$map1,$map2])
                 ->where($map)
                 ->select();
