@@ -29,7 +29,7 @@ class Category extends Base
                 if(count($articleList) == 0){
 	                $map[] = ['pid','=',$cate_id];
 	                $curCategory['child'] = CategoryModel::where($map)
-	                ->order('id asc')
+	                ->order('rank desc,id asc')
 	                ->select();
 	                if(count($articleList) > 0){
 		                foreach($curCategory['child'] as $key=>$val){
