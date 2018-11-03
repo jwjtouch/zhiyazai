@@ -38,7 +38,8 @@
 <script src="/static/js/index.js?t=123"></script>
 <script>
 $(function(){
-    $("#iframewrap",window.parent.document).css("height",$(document).height()+120);
+    var fHeight = document.body.scrollHeight || document.body.clientHeight; 
+    $("#iframewrap",window.parent.document).css("height",fHeight+120);
 })
 </script>
 </html>

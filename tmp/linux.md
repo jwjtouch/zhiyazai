@@ -40,3 +40,171 @@ linux
 
 
 linux系统的安装
+
+设置密码原则：
+
+1. 复杂性
+   - 八位字符以上、大小写字母、数字、符号
+   - 不能是英文单词
+   - 不能是和用户相关的内容
+2. 易记忆性
+3. 时效性
+
+
+
+软件包选择
+
+1. desktop桌面
+2. minimal desktop 最小化桌面
+3. minimal 最小化
+4. basic server 基本服务器（方便讲课，安装该项，实际应该安装minimal）
+5. database server 数据库服务器
+6. web server 网页服务器
+7. virtual host 虚拟主机
+8. software development workstation 软件开发工作站
+
+
+
+安装日志：
+
+1. /root/install.log:存储了安装在系统中的软件包及其版本信息
+2. /root/install.log.syslog:存储了安装过程中留下的事件记录
+3. /root/anaconda-ks.cfg:以Kickstart配置文件的格式记录安装过程中设置的选项信息
+
+
+
+
+
+xshell安装待补充
+
+
+
+linux 常用命令（大概有超过3000个，咱们常用的有200个左右，咱们要学的有60/70个）
+
+一、命令基本格式
+
+1. 命令提示符
+
+   [root@localhost ~]#
+
+   其中：root  当前登录用户
+
+   	localhost  主机名
+
+   	~  当前所在目录（家目录） 超级用户的家目录是/root   普通用户的家目录/home/user1/
+
+   	超级用户的提示符    普通用户的提示符是$
+
+2. 命令格式
+
+   命令   [选项][参数]
+
+   注意：个别命令使用不遵循此格式  当有多个选项时，可以写在一起，简化选项与完整选项    	-a 等于 --all  (简化选项用一个-，完整选项用两个--)
+
+   - 查询目录中内容：ls
+
+     ls  【选项】 【文件或目录】	
+
+     选项：
+
+     	-a	显示所有文件，包括隐藏文件
+
+     	-l	显示详细信息
+
+     	-d	查看目录属性
+
+     	-h	人性化显示文件大小
+
+     	-i	显示inode
+
+     ls -l命令中权限解释：
+
+     -rw-r--r-- . 1 root root 24772 1月  14  18:17 install.log
+
+     第一位：-文件类型（-文件 d目录 l软链接文件）
+
+     rw- 			r--			r--  			.				1			root			root					
+
+     u所有者		g所属组		o其它人		代表ACL权限	引用计数	用户所有者	所有者所在组
+
+     24772								1月  14  18:17			install.log
+
+     字节，想看到k单位，可用ls -lh命令		最后一次修改时间	文件名
+
+     r读	 w写    x执行
+
+     .bashrc  linux中.开头的文件为隐藏文件  ls -a可以看到隐藏文件
+
+二、文件处理命令
+
+1. 目录处理命令
+
+   - 建立目录：mkdir
+
+   mkdir -p [目录名]
+
+   -p	递归创建   mkdir -p jiaoweijia/learn/php
+
+   命令英文原意：make directories
+
+   - 切换所在目录：cd
+
+     cd [目录]
+
+     命令英文原意：change directory
+
+     简化操作：
+
+     	cd ~	进入当前用户的家目录
+
+     	cd 也是进入当前用户的家目录
+
+     	cd - 进入上次目录
+
+     	cd .. 进入上一级目录
+
+     	cd . 进入当前目录
+
+     - 相对路径：参照当前所在目录，进行查找
+
+       如： 【root@imooc ~】#cd ../usr/local/src/
+
+     - 绝对路径：从根目录开始指定，一级一级递归查找。在任何目录下，都能进入指定位置
+
+       如：【root@imooc ~】#cd /etic/
+
+       tab键补全操作 单击补全，如果不存在双击两次列出所有目录和命令
+
+     - 查看所在目录位置：pwd
+
+       命令英文原意：print working directory
+
+     - 删除空目录：rmdir(用的较少)
+
+       rmdir [目录名]
+
+       命令英文原意：remove empty directories
+
+     - 删除文件或目录：rm(常用)
+
+       rm -rf [文件或目录]
+
+       命令英文原意：remove
+
+       选项：-r	删除目录
+
+       	    -f  强制
+
+2. 文件处理命令
+
+3. 链接命令
+
+三、文件搜索命令
+
+四、帮助命令
+
+五、压缩与解压缩命令
+
+六、关机和重启命令
+
+七、其它常用命令
