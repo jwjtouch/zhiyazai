@@ -90,7 +90,6 @@ $(function(){
                 success:function(data){
                     switch(data.status){
                         case 1:
-                            alert(data.message);
                             window.location.href="{:url('index/index')}";
                             break;
                         case 0:
