@@ -20,7 +20,7 @@
     {if isset($empty)}
     {$empty}
     {else/}
-    <form class="layui-form" action="" id="addform">
+    <form class="layui-form" action="" id="addform" enctype="multipart/form-data">
         <div class="layui-form-item">
             <label class="layui-form-label">标题</label>
             <div class="layui-input-block">
@@ -38,6 +38,15 @@
             <div class="layui-input-block">
                 <textarea name="description" placeholder="" class="layui-textarea"></textarea>
             </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">附件</label>
+            <div class="layui-input-inline">
+                <button type="button" class="layui-btn" id="attachment">
+                    <i class="layui-icon">&#xe67c;</i>上传图片
+                </button>
+           </div>
+            <div class="layui-form-mid layui-word-aux attachmenttips"></div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">排序</label>
@@ -62,6 +71,7 @@
         <div class="layui-form-item">
             <div class="layui-input-block">
                 <input type="hidden" name="cate_id" value="{$cate_id}">
+                <input type="hidden" name="attachment" class="attachment">
                 <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
                 <button type="reset" class="layui-btn layui-btn-primary">重置</button>
             </div>
@@ -121,6 +131,30 @@
         });
     });
 </script>
+<script>
+    layui.use('upload', function(){
+        var upload = layui.upload;
 
+        //执行实例
+        var uploadInst = upload.render({
+            elem: '#attachment' //绑定元素
+            ,url: '/mydream.php/mydream/article/attachment' //上传接口
+            ,accept: 'file'
+            ,done: function(res){
+                //上传完毕回调
+                if(res.status == 1){
+                    $(".attachment").val(res.message);
+                    $(".attachmenttips").text("传上成功");
+                }else{
+                    $(".attachmenttips").text("传上失败");
+                }
+            }
+            ,error: function(){
+                //请求异常回调
+                alert("请求异常");
+            }
+        });
+    });
+</script>
 </body>
 </html>

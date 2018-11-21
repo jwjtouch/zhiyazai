@@ -26,6 +26,9 @@
             <section id="article">
                 <article>
                     <h3 class="title">{$article.title}</h3>
+                    {if $article.attachment != ''}
+                    <p class="title"><a href="{:url('article/downloadAttach',['id'=>$article['id']])}" target="_blank">下载附件</a></p>
+                    {/if}
                     {$article.content|raw}
                 </article>
             </section>
